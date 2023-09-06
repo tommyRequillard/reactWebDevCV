@@ -1,6 +1,7 @@
-const MainArea = () => {
+// @ts-ignore
+const MainArea = ({children}) => {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{/* Content goes here */}</div>
+    <div className="mx-auto max-w-full px-4 sm:px-6 lg:ml-72 xl:mr-96">{children}</div>
   )
 }
 

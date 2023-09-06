@@ -1,11 +1,13 @@
-import MainLayout from "./layouts/MainLayout.tsx"
+import AppRouter from "./router/AppRouter.tsx"
+import {Provider} from "react-redux"
+import {store} from "./store/Store.tsx"
 
 function App() {
 
   return (
-    <div className="h-full bg-white">
-      <MainLayout/>
-    </div>
+    <Provider store={store}>
+      <AppRouter/>
+    </Provider>
   )
 }
 

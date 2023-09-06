@@ -1,0 +1,307 @@
+{
+  "softs": [
+    {
+      "id": 1,
+      "name": "Adobe Illustrator",
+      "stars": 4,
+      "logoPath": "./../assets/Adobe_Illustrator_CC_icon.svg",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 2,
+      "name": "Adobe Photoshop",
+      "stars": 4,
+      "logoPath": "./../assets/Adobe_Photoshop_CC_icon.svg",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 3,
+      "name": "Adobe InDesign",
+      "stars": 4,
+      "logoPath": "./../assets/Adobe_InDesign_CC_icon.svg",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 4,
+      "name": "Blender",
+      "stars": 4,
+      "logoPath": "./../assets/Blender_logo_no_text.svg",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 5,
+      "name": "Chrome",
+      "stars": 4,
+      "logoPath": "./../assets/chrome-brands.svg",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 6,
+      "name": "Google Drive",
+      "stars": 3,
+      "logoPath": "./../assets/Google_Drive_icon_(2020).svg",
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 7,
+      "name": "Microsoft Office",
+      "stars": 4,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 8,
+      "name": "node_modules",
+      "stars": 4,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 9,
+      "name": "npm",
+      "stars": 4,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 10,
+      "name": "Visual Studio Code",
+      "stars": 4,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 11,
+      "name": "Windows",
+      "stars": 5,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/5Stars.png"
+    },
+    {
+      "id": 12,
+      "name": "Wordpress",
+      "stars": 5,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/5Stars.png"
+    },
+    {
+      "id": 13,
+      "name": "Github",
+      "stars": 5,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/5Stars.png"
+    },
+    {
+      "id": 14,
+      "name": "Git",
+      "stars": 4,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    }
+  ],
+  "programmingLanguages": [
+    {
+      "id": 1,
+      "name": "html",
+      "stars": 5,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/5Stars.png"
+    },
+    {
+      "id": 2,
+      "name": "css",
+      "stars": 4,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 3,
+      "name": "javascript",
+      "stars": 4,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 4,
+      "name": "php",
+      "stars": 3,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 5,
+      "name": "python",
+      "stars": 2,
+      "logoPath": "./../assets/2Stars.png",
+      "imgPathStars": "./../assets/2Stars.png"
+    }
+  ],
+  "foreignLanguages": [
+    {
+      "id": 1,
+      "name": "Français",
+      "stars": 5,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 2,
+      "name": "Anglais",
+      "stars": 4,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 3,
+      "name": "Allemand",
+      "stars": 2,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    }
+  ],
+  "libraries": [
+    {
+      "id": 1,
+      "name": "Bootstrap",
+      "stars": 3,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 2,
+      "name": "jQuery",
+      "stars": 3,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 3,
+      "name": "React",
+      "stars": 3,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 4,
+      "name": "Sass",
+      "stars": 3,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 5,
+      "name": "Wordpress",
+      "stars": 5,
+      "logoPath": "./../assets/4Stars.png",
+      "imgPathStars": "./../assets/5Stars.png"
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "WEB",
+      "stars": 5,
+      "imgPathStars": "./../assets/5Stars.png"
+    },
+    {
+      "id": 2,
+      "name": "Créations graphiques",
+      "stars": 4,
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 3,
+      "name": "Communication",
+      "stars": 4,
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 4,
+      "name": "Productivité",
+      "stars": 4,
+      "imgPathStars": "./../assets/4Stars.png"
+    },
+    {
+      "id": 5,
+      "name": "Juridique",
+      "stars": 3,
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 6,
+      "name": "Commerciale",
+      "stars": 3,
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 7,
+      "name": "Logistique",
+      "stars": 3,
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 8,
+      "name": "Gestion",
+      "stars": 3,
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 9,
+      "name": "Comptabilité",
+      "stars": 3,
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 10,
+      "name": "Ressources humaines",
+      "stars": 2,
+      "imgPathStars": "./../assets/2Stars.png"
+    },
+    {
+      "id": 11,
+      "name": "Management",
+      "stars": 3,
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 12,
+      "name": "Marketing",
+      "stars": 3,
+      "imgPathStars": "./../assets/3Stars.png"
+    },
+    {
+      "id": 13,
+      "name": "Réseaux sociaux",
+      "stars": 2,
+      "imgPathStars": "./../assets/2Stars.png"
+    },
+    {
+      "id": 14,
+      "name": "E-commerce",
+      "stars": 3,
+      "imgPathStars": "./../assets/3Stars.png"
+    }
+  ],
+  "softSkills": [
+    {
+      "id": 1,
+      "name": "Savoir être",
+      "value": "Adaptabilité à tous les postes"
+    },
+    {
+      "id": 2,
+      "name": "Savoir être",
+      "value": "Autonomie"
+    },
+    {
+      "id": 3,
+      "name": "Savoir être",
+      "value": "Créativité"
+    },
+    {
+      "id": 4,
+      "name": "Savoir être",
+      "value": "Curiosité"
+    }
+  ]
+}

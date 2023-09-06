@@ -12,20 +12,22 @@ import {
 } from '@heroicons/react/24/outline'
 import MainArea from "./MainArea.tsx"
 import SecondaryCol from "./SecondaryCol.tsx"
+import photoProfil from "../assets/photoProfil.png"
+import lion from "../assets/lion-face.png"
 
 
 const navigation = [
-  {name: 'Dashboard', href: '#', icon: HomeIcon, current: true},
-  {name: 'Team', href: '#', icon: UsersIcon, current: false},
-  {name: 'Projects', href: '#', icon: FolderIcon, current: false},
-  {name: 'Calendar', href: '#', icon: CalendarIcon, current: false},
-  {name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false},
-  {name: 'Reports', href: '#', icon: ChartPieIcon, current: false},
+  {name: 'CV', href: '/', icon: HomeIcon, current: true, active: true},
+  {name: 'Team', href: '/team', icon: UsersIcon, current: false, active: false},
+  {name: 'Projects', href: '/projects', icon: FolderIcon, current: false, active: false},
+  {name: 'Calendar', href: '/calendar', icon: CalendarIcon, current: false, active: false},
+  {name: 'Documents', href: '/documents', icon: DocumentDuplicateIcon, current: false, active: false},
+  {name: 'Reports', href: '/reports', icon: ChartPieIcon, current: false, active: false},
 ]
 const teams = [
-  {id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false},
-  {id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false},
-  {id: 3, name: 'Workcation', href: '#', initial: 'W', current: false},
+  {id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false, active: false},
+  {id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false, active: false},
+  {id: 3, name: 'Workcation', href: '#', initial: 'W', current: false, active: false},
 ]
 
 function classNames(...classes: string[]) {
@@ -36,7 +38,7 @@ function MainLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="h-full">
+    <>
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
           <Transition.Child
@@ -80,11 +82,11 @@ function MainLayout() {
                   </div>
                 </Transition.Child>
                 {/* Sidebar component, swap this element with another sidebar if you like */}
-                <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2">
+                <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-dark px-6 pb-2">
                   <div className="flex h-16 shrink-0 items-center">
                     <img
                       className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                      src={lion}
                       alt="Your Company"
                     />
                   </div>
@@ -97,16 +99,18 @@ function MainLayout() {
                               <a
                                 href={item.href}
                                 className={classNames(
+                                  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                                   item.current
-                                    ? 'bg-gray-50 text-indigo-600'
-                                    : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                                  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                                    ? 'bg-gray-50 text-cvblue'
+                                    : 'text-cvblue hover:text-cvcyan hover:bg-gray-50',
+                                  item.active ? 'text-gold' : ''
                                 )}
                               >
                                 <item.icon
                                   className={classNames(
-                                    item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',
-                                    'h-6 w-6 shrink-0'
+                                    'h-6 w-6 shrink-0',
+                                    item.current ? 'text-cvblue' : 'text-gray-400 group-hover:text-cvcyan',
+                                    item.active ? 'text-gold' : ''
                                   )}
                                   aria-hidden="true"
                                 />
@@ -126,18 +130,20 @@ function MainLayout() {
                               <a
                                 href={team.href}
                                 className={classNames(
+                                  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                                   team.current
-                                    ? 'bg-gray-50 text-indigo-600'
-                                    : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                                  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                                    ? 'bg-gray-50 text-cvblue'
+                                    : 'text-cvblue hover:text-cvcyan hover:bg-gray-50',
+                                  team.active ? 'text-gold' : ''
                                 )}
                               >
                                 <span
                                   className={classNames(
+                                    'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white',
                                     team.current
-                                      ? 'text-indigo-600 border-indigo-600'
-                                      : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                                    'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white'
+                                      ? 'text-cvblue border-cvblue'
+                                      : 'text-gray-400 border-gray-200 group-hover:border-cvblue group-hover:text-cvcyan',
+                                    team.active ? 'text-gold' : ''
                                   )}
                                 >
                                   {team.initial}
@@ -160,11 +166,11 @@ function MainLayout() {
       {/* Static sidebar for desktop */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
+        <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-dark px-6">
           <div className="flex h-16 shrink-0 items-center">
             <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              className="h-10 w-auto text-cvblued"
+              src={lion}
               alt="Your Company"
             />
           </div>
@@ -177,16 +183,18 @@ function MainLayout() {
                       <a
                         href={item.href}
                         className={classNames(
+                          'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                           item.current
-                            ? 'bg-gray-50 text-indigo-600'
-                            : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                          'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                            ? 'bg-gray-50 text-cvblue'
+                            : 'text-cvblue hover:text-cvcyan hover:bg-gray-50',
+                          item.active ? 'text-gold' : ''
                         )}
                       >
                         <item.icon
                           className={classNames(
-                            item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',
-                            'h-6 w-6 shrink-0'
+                            'h-6 w-6 shrink-0',
+                            item.current ? 'text-cvblue' : 'text-gray-400 group-hover:text-cvcyan',
+                            item.active ? 'text-gold' : ''
                           )}
                           aria-hidden="true"
                         />
@@ -204,18 +212,20 @@ function MainLayout() {
                       <a
                         href={team.href}
                         className={classNames(
+                          'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                           team.current
-                            ? 'bg-gray-50 text-indigo-600'
-                            : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                          'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                            ? 'bg-gray-50 text-cvblue'
+                            : 'text-cvblue hover:text-cvcyan hover:bg-gray-50',
+                          team.active ? 'text-gold' : ''
                         )}
                       >
                         <span
                           className={classNames(
+                            'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white',
                             team.current
-                              ? 'text-indigo-600 border-indigo-600'
-                              : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                            'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white'
+                              ? 'text-cvblue border-cvblue'
+                              : 'text-gray-400 border-gray-200 group-hover:border-cvblue group-hover:text-cvcyan',
+                            team.active ? 'text-gold' : ''
                           )}
                         >
                           {team.initial}
@@ -229,15 +239,15 @@ function MainLayout() {
               <li className="-mx-6 mt-auto">
                 <a
                   href="#"
-                  className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
+                  className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white-900 hover:bg-gray-50"
                 >
                   <img
                     className="h-8 w-8 rounded-full bg-gray-50"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    src={photoProfil}
                     alt=""
                   />
                   <span className="sr-only">Your profile</span>
-                  <span aria-hidden="true">Tom Cook</span>
+                  <span className="text-cvblued" aria-hidden="true">Tommy REQUILLARD</span>
                 </a>
               </li>
             </ul>
@@ -245,18 +255,19 @@ function MainLayout() {
         </div>
       </div>
 
-      <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
-        <button type="button" className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
+      <div
+        className="sticky top-0 z-40 flex items-center gap-x-6 bg-dark px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+        <button type="button" className="-m-2.5 p-2.5 text-cvblue lg:hidden"
           onClick={() => setSidebarOpen(true)}>
           <span className="sr-only">Open sidebar</span>
           <Bars3Icon className="h-6 w-6" aria-hidden="true"/>
         </button>
-        <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">Dashboard</div>
+        <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">CV</div>
         <a href="#">
           <span className="sr-only">Your profile</span>
           <img
             className="h-8 w-8 rounded-full bg-gray-50"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            src={photoProfil}
             alt=""
           />
         </a>
@@ -264,15 +275,15 @@ function MainLayout() {
 
       <main className="lg:pl-72">
         <div className="xl:pr-96">
-          <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">{<MainArea/>}</div>
+          <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6"><MainArea children={undefined}/></div>
         </div>
       </main>
 
       <aside
         className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
-        {<SecondaryCol/>}
+        <SecondaryCol children={undefined}/>
       </aside>
-    </div>
+    </>
   )
 }
 
