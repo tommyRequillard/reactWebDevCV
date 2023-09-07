@@ -74,6 +74,7 @@ export default function Calendar() {
     <>
       <MainLayout/>
       <MainArea>
+        <h2 className="text-3xl font-semibold text-red-600">En cours de developpement</h2>
         <div className="flex h-full flex-col">
           <header className="flex flex-none items-center justify-between border-b border-gray-200 px-6 py-4">
             <div>

@@ -7,7 +7,6 @@ import {
   DocumentDuplicateIcon,
   FolderIcon,
   HomeIcon,
-  UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import MainArea from "./MainArea.tsx"
@@ -18,16 +17,10 @@ import lion from "../assets/lion-face.png"
 
 const navigation = [
   {name: 'CV', href: '/', icon: HomeIcon, current: true, active: true},
-  {name: 'Team', href: '/team', icon: UsersIcon, current: false, active: false},
-  {name: 'Projects', href: '/projects', icon: FolderIcon, current: false, active: false},
+  {name: 'Portfolio', href: '/portfolio', icon: FolderIcon, current: false, active: false},
   {name: 'Calendar', href: '/calendar', icon: CalendarIcon, current: false, active: false},
   {name: 'Documents', href: '/documents', icon: DocumentDuplicateIcon, current: false, active: false},
-  {name: 'Reports', href: '/reports', icon: ChartPieIcon, current: false, active: false},
-]
-const teams = [
-  {id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false, active: false},
-  {id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false, active: false},
-  {id: 3, name: 'Workcation', href: '#', initial: 'W', current: false, active: false},
+  {name: 'Counter', href: '/counter', icon: ChartPieIcon, current: false, active: false},
 ]
 
 function classNames(...classes: string[]) {
@@ -120,40 +113,6 @@ function MainLayout() {
                           ))}
                         </ul>
                       </li>
-                      <li>
-                        <div className="text-xs font-semibold leading-6 text-gray-400">Your
-                                                    teams
-                        </div>
-                        <ul role="list" className="-mx-2 mt-2 space-y-1">
-                          {teams.map((team) => (
-                            <li key={team.name}>
-                              <a
-                                href={team.href}
-                                className={classNames(
-                                  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
-                                  team.current
-                                    ? 'bg-gray-50 text-cvblue'
-                                    : 'text-cvblue hover:text-cvcyan hover:bg-gray-50',
-                                  team.active ? 'text-gold' : ''
-                                )}
-                              >
-                                <span
-                                  className={classNames(
-                                    'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white',
-                                    team.current
-                                      ? 'text-cvblue border-cvblue'
-                                      : 'text-gray-400 border-gray-200 group-hover:border-cvblue group-hover:text-cvcyan',
-                                    team.active ? 'text-gold' : ''
-                                  )}
-                                >
-                                  {team.initial}
-                                </span>
-                                <span className="truncate">{team.name}</span>
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
                     </ul>
                   </nav>
                 </div>
@@ -204,38 +163,6 @@ function MainLayout() {
                   ))}
                 </ul>
               </li>
-              <li>
-                <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                <ul role="list" className="-mx-2 mt-2 space-y-1">
-                  {teams.map((team) => (
-                    <li key={team.name}>
-                      <a
-                        href={team.href}
-                        className={classNames(
-                          'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
-                          team.current
-                            ? 'bg-gray-50 text-cvblue'
-                            : 'text-cvblue hover:text-cvcyan hover:bg-gray-50',
-                          team.active ? 'text-gold' : ''
-                        )}
-                      >
-                        <span
-                          className={classNames(
-                            'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white',
-                            team.current
-                              ? 'text-cvblue border-cvblue'
-                              : 'text-gray-400 border-gray-200 group-hover:border-cvblue group-hover:text-cvcyan',
-                            team.active ? 'text-gold' : ''
-                          )}
-                        >
-                          {team.initial}
-                        </span>
-                        <span className="truncate">{team.name}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
               <li className="-mx-6 mt-auto">
                 <a
                   href="#"
@@ -262,7 +189,7 @@ function MainLayout() {
           <span className="sr-only">Open sidebar</span>
           <Bars3Icon className="h-6 w-6" aria-hidden="true"/>
         </button>
-        <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">CV</div>
+        <div className="flex-1 text-sm font-semibold leading-6 text-cvblue">CV</div>
         <a href="#">
           <span className="sr-only">Your profile</span>
           <img

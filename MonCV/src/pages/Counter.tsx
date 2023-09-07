@@ -1,16 +1,16 @@
 import MainLayout from "./../layouts/MainLayout.tsx"
 import MainArea from "./../layouts/MainArea.tsx"
-import Counter from './../components/Counter.tsx'
+import CounterRedux from '../components/CounterRedux.tsx'
 
-const Reports = () => {
+const Counter = () => {
   return (
     <>
       <MainLayout/>
       <MainArea>
-        <Counter/>
+        <CounterRedux/>
       </MainArea>
     </>
   )
 }
 
-export default Reports
+export default Counter

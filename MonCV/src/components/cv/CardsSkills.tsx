@@ -7,7 +7,7 @@ const CardSkill = () => {
       <ul className="flex flex-col justify-center">
         {data.skills.map((skills) => (
           <li key={skills.id} className="flex flex-col justify-center">
-            <div className="flex justify-center flex-col items-center"> {skills.name} :
+            <div className="flex justify-center flex-col items-center mb-2"> {skills.name}
               <div className="flex justify-center items-center gap-2">
                 {starsRating({stars: skills.stars})}
               </div>

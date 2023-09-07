@@ -4,91 +4,91 @@
       "id": 1,
       "name": "Suite Office",
       "stars": 4,
-      "logoPath": "./../assets/Adobe_Illustrator_CC_icon.svg"
+      "logoPath": "/src/assets/office.svg"
     },
     {
       "id": 2,
       "name": "Suite Adobe",
       "stars": 4,
-      "logoPath": "./../assets/Adobe_Photoshop_CC_icon.svg"
+      "logoPath": "/src/assets/Adobe.svg"
     },
     {
       "id": 3,
       "name": "Suite Google",
       "stars": 4,
-      "logoPath": "./../assets/Adobe_InDesign_CC_icon.svg"
+      "logoPath": "/src/assets/google.svg"
     },
     {
       "id": 4,
       "name": "PhpStorm",
       "stars": 4,
-      "logoPath": "./../assets/Blender_logo_no_text.svg"
+      "logoPath": "/src/assets/phpstorm.svg"
     },
     {
       "id": 5,
       "name": "Visual Studio Code",
       "stars": 4,
-      "logoPath": "./../assets/chrome-brands.svg"
+      "logoPath": "/src/assets/vsc.svg"
     },
     {
       "id": 6,
       "name": "Docker",
       "stars": 3,
-      "logoPath": "./../assets/Google_Drive_icon_(2020).svg"
+      "logoPath": "/src/assets/docker.svg"
     },
     {
       "id": 7,
       "name": "MongoDB",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/mongodb.svg"
     },
     {
       "id": 8,
       "name": "Laragon",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/laragon.svg"
     },
     {
       "id": 9,
       "name": "npm",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/npm.svg"
     },
     {
       "id": 10,
       "name": "Git",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/git.svg"
     },
     {
       "id": 11,
       "name": "Github",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/github.svg"
     },
     {
       "id": 12,
       "name": "Windows",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/window.svg"
     },
     {
       "id": 13,
       "name": "Linux",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/linux.svg"
     },
     {
       "id": 14,
       "name": "Wordpress",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/wordpress.svg"
     },
     {
       "id": 15,
       "name": "KeyShot 3D",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/KeyShotLogo.png"
     }
   ],
   "programmingLanguages": [
@@ -96,31 +96,43 @@
       "id": 1,
       "name": "html",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/html.svg"
     },
     {
       "id": 2,
       "name": "css",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/css.svg"
     },
     {
       "id": 3,
       "name": "javascript",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/javascript.svg"
     },
     {
       "id": 4,
       "name": "php",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/php.svg"
     },
     {
       "id": 5,
       "name": "python",
       "stars": 2,
-      "logoPath": "./../assets/2Stars.png"
+      "logoPath": "/src/assets/python.svg"
+    },
+    {
+      "id": 6,
+      "name": "MySQL",
+      "stars": 3,
+      "logoPath": "/src/assets/mysql.svg"
+    },
+    {
+      "id": 7,
+      "name": "TypeScript",
+      "stars": 3,
+      "logoPath": "/src/assets/typescript.svg"
     }
   ],
   "foreignLanguages": [
@@ -145,31 +157,31 @@
       "id": 1,
       "name": "Bootstrap",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/bootstrap.svg"
     },
     {
       "id": 2,
       "name": "jQuery",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/jquery.svg"
     },
     {
       "id": 3,
       "name": "React",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/react.svg"
     },
     {
       "id": 4,
       "name": "Sass",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/sass.svg"
     },
     {
       "id": 5,
       "name": "Wordpress",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png"
+      "logoPath": "/src/assets/wordpress.svg"
     }
   ],
   "skills": [

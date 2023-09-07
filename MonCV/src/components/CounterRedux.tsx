@@ -1,9 +1,9 @@
 import {useDispatch, useSelector} from "react-redux"
 import {decrement, increment, reset} from "./../features/Counter.tsx"
+import {RootState} from "./../store/Store.tsx"
 
-const Counter = () => {
-  // @ts-ignore
-  const total = useSelector(state => state.counter.total)
+const CounterRedux = () => {
+  const total = useSelector((state: RootState) => state.counter.total)
   const dispatch = useDispatch()
 
   return (
@@ -27,4 +27,4 @@ const Counter = () => {
   )
 }
 
-export default Counter
+export default CounterRedux
