@@ -18,7 +18,6 @@ const Home = () => {
             <Interets/>
           </div>
         </div>
-
       </MainArea>
     </>
   )

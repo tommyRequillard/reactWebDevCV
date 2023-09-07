@@ -2,101 +2,93 @@
   "softs": [
     {
       "id": 1,
-      "name": "Adobe Illustrator",
+      "name": "Suite Office",
       "stars": 4,
-      "logoPath": "./../assets/Adobe_Illustrator_CC_icon.svg",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/Adobe_Illustrator_CC_icon.svg"
     },
     {
       "id": 2,
-      "name": "Adobe Photoshop",
+      "name": "Suite Adobe",
       "stars": 4,
-      "logoPath": "./../assets/Adobe_Photoshop_CC_icon.svg",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/Adobe_Photoshop_CC_icon.svg"
     },
     {
       "id": 3,
-      "name": "Adobe InDesign",
+      "name": "Suite Google",
       "stars": 4,
-      "logoPath": "./../assets/Adobe_InDesign_CC_icon.svg",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/Adobe_InDesign_CC_icon.svg"
     },
     {
       "id": 4,
-      "name": "Blender",
+      "name": "PhpStorm",
       "stars": 4,
-      "logoPath": "./../assets/Blender_logo_no_text.svg",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/Blender_logo_no_text.svg"
     },
     {
       "id": 5,
-      "name": "Chrome",
+      "name": "Visual Studio Code",
       "stars": 4,
-      "logoPath": "./../assets/chrome-brands.svg",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/chrome-brands.svg"
     },
     {
       "id": 6,
-      "name": "Google Drive",
+      "name": "Docker",
       "stars": 3,
-      "logoPath": "./../assets/Google_Drive_icon_(2020).svg",
-      "imgPathStars": "./../assets/3Stars.png"
+      "logoPath": "./../assets/Google_Drive_icon_(2020).svg"
     },
     {
       "id": 7,
-      "name": "Microsoft Office",
+      "name": "MongoDB",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 8,
-      "name": "node_modules",
+      "name": "Laragon",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 9,
       "name": "npm",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 10,
-      "name": "Visual Studio Code",
+      "name": "Git",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 11,
-      "name": "Windows",
+      "name": "Github",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/5Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 12,
-      "name": "Wordpress",
+      "name": "Windows",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/5Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 13,
-      "name": "Github",
+      "name": "Linux",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/5Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 14,
-      "name": "Git",
+      "name": "Wordpress",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
+    },
+    {
+      "id": 15,
+      "name": "KeyShot 3D",
+      "stars": 5,
+      "logoPath": "./../assets/4Stars.png"
     }
   ],
   "programmingLanguages": [
@@ -104,59 +96,48 @@
       "id": 1,
       "name": "html",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/5Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 2,
       "name": "css",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 3,
       "name": "javascript",
       "stars": 4,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 4,
       "name": "php",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/3Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 5,
       "name": "python",
       "stars": 2,
-      "logoPath": "./../assets/2Stars.png",
-      "imgPathStars": "./../assets/2Stars.png"
+      "logoPath": "./../assets/2Stars.png"
     }
   ],
   "foreignLanguages": [
     {
       "id": 1,
       "name": "Français",
-      "stars": 5,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/3Stars.png"
+      "value": 100
     },
     {
       "id": 2,
       "name": "Anglais",
-      "stars": 4,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/3Stars.png"
+      "value": 75
     },
     {
       "id": 3,
       "name": "Allemand",
-      "stars": 2,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "value": 40
     }
   ],
   "libraries": [
@@ -164,122 +145,103 @@
       "id": 1,
       "name": "Bootstrap",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/3Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 2,
       "name": "jQuery",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 3,
       "name": "React",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 4,
       "name": "Sass",
       "stars": 3,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/4Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     },
     {
       "id": 5,
       "name": "Wordpress",
       "stars": 5,
-      "logoPath": "./../assets/4Stars.png",
-      "imgPathStars": "./../assets/5Stars.png"
+      "logoPath": "./../assets/4Stars.png"
     }
   ],
   "skills": [
     {
       "id": 1,
-      "name": "WEB",
-      "stars": 5,
-      "imgPathStars": "./../assets/5Stars.png"
+      "name": "Web",
+      "stars": 5
     },
     {
       "id": 2,
       "name": "Créations graphiques",
-      "stars": 4,
-      "imgPathStars": "./../assets/4Stars.png"
+      "stars": 4
     },
     {
       "id": 3,
       "name": "Communication",
-      "stars": 4,
-      "imgPathStars": "./../assets/4Stars.png"
+      "stars": 4
     },
     {
       "id": 4,
       "name": "Productivité",
-      "stars": 4,
-      "imgPathStars": "./../assets/4Stars.png"
+      "stars": 4
     },
     {
       "id": 5,
       "name": "Juridique",
-      "stars": 3,
-      "imgPathStars": "./../assets/3Stars.png"
+      "stars": 3
     },
     {
       "id": 6,
       "name": "Commerciale",
-      "stars": 3,
-      "imgPathStars": "./../assets/3Stars.png"
+      "stars": 3
     },
     {
       "id": 7,
       "name": "Logistique",
-      "stars": 3,
-      "imgPathStars": "./../assets/3Stars.png"
+      "stars": 3
     },
     {
       "id": 8,
       "name": "Gestion",
-      "stars": 3,
-      "imgPathStars": "./../assets/3Stars.png"
+      "stars": 3
     },
     {
       "id": 9,
       "name": "Comptabilité",
-      "stars": 3,
-      "imgPathStars": "./../assets/3Stars.png"
+      "stars": 3
     },
     {
       "id": 10,
       "name": "Ressources humaines",
-      "stars": 2,
-      "imgPathStars": "./../assets/2Stars.png"
+      "stars": 2
     },
     {
       "id": 11,
       "name": "Management",
-      "stars": 3,
-      "imgPathStars": "./../assets/3Stars.png"
+      "stars": 3
     },
     {
       "id": 12,
       "name": "Marketing",
-      "stars": 3,
-      "imgPathStars": "./../assets/3Stars.png"
+      "stars": 3
     },
     {
       "id": 13,
       "name": "Réseaux sociaux",
-      "stars": 2,
-      "imgPathStars": "./../assets/2Stars.png"
+      "stars": 2
     },
     {
       "id": 14,
       "name": "E-commerce",
-      "stars": 3,
-      "imgPathStars": "./../assets/3Stars.png"
+      "stars": 3
     }
   ],
   "softSkills": [
