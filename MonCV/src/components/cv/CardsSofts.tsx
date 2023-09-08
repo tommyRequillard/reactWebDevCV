@@ -4,7 +4,7 @@ import SimpleGauge from "../SimpleGauge.tsx"
 const CardSofts = () => {
   return (
     <>
-      <div className="flex mx-2 items-center mb-5">
+      <div className="flex mx-2 items-center mt-2 mb-5">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
           stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round"

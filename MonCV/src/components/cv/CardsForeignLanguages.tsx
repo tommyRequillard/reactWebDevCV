@@ -13,15 +13,15 @@ const CardsForeignLanguages = () => {
 
         <h2 className="text-xl font-semibold leading-7">Langues étrangères</h2>
       </div>
-      <div className="flex w-full flex-row justify-around  mx-auto">
+      <div className="flex w-full flex-row justify-around mx-auto">
         {data.foreignLanguages.map((foreignLanguages) => (
           <ul key={foreignLanguages.id} className="flex flex-row justify-between gap-2">
-            <li className="flex justify-center flex-col items-center"> {foreignLanguages.name} :
-              <div className="flex justify-between gap-2">
+            <li className="flex justify-center flex-col items-center my-1"> {foreignLanguages.name} :
+              <div className="flex justify-between gap-2 my-1">
                 <Gauge value={foreignLanguages.value} size="large" showValue={true}/>
               </div>
               <div className="absolute flex opacity-0 animate-gauge_fadeIn">
-                <p className="text-darker text-3xl">{foreignLanguages.value}</p>
+                <p className="text-darker text-3xl my-1">{foreignLanguages.value}</p>
               </div>
             </li>
           </ul>

@@ -19,9 +19,9 @@ const CardsProgrammingLanguages: React.FC = () => {
           <li key={programmingLanguage.id} className="flex flex-col justify-center">
             <img src={programmingLanguage.logoPath} alt={programmingLanguage.name}
               className="mt-3 w-6 mx-auto"/>
-            <div className="flex justify-center flex-col items-center">
+            <div className="flex justify-center flex-col items-center  my-1">
               {programmingLanguage.name}
-              <div className="flex justify-center items-center gap-2">
+              <div className="flex justify-center items-center gap-2 my-1">
                 <SegmentedGauge data={Array(programmingLanguage.stars).fill(1)}/>
               </div>
             </div>
