@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 const Experiences = () => {
   return (
-    <section className="w-full text-darker border-b border-darker pt-2 rounded-t-3xl my-6 pb-5">
+    <section className="w-full text-darker border-y border-darker pt-3 my-6 pb-5">
       <div className="flex flex-col mx-2 ">
         <div className="flex">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}

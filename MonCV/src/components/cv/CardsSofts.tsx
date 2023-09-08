@@ -15,9 +15,9 @@ const CardSofts = () => {
       </div>
       <div className="flex w-full flex-col items-centermb-2">
         <div className="flex w-full mx-auto">
-          <ul className="flex flex-row flex-wrap justify-around items-center">
+          <ul className="flex flex-row flex-wrap justify-around items-end">
             {data.softs.map((softs) => (
-              <li key={softs.id} className="flex flex-col justify-center item-center">
+              <li key={softs.id} className="flex flex-col justify-center item-center mb-3">
                 <div className="flex justify-center">
                   <img src={softs.logoPath} alt={softs.name} className="w-10"/>
                 </div>

@@ -39,7 +39,7 @@
     {
       "id": 7,
       "name": "MongoDB",
-      "stars": 4,
+      "stars": 3,
       "logoPath": "/src/assets/mongodb.svg"
     },
     {
@@ -58,7 +58,7 @@
       "id": 10,
       "name": "Git",
       "stars": 4,
-      "logoPath": "/src/assets/git.svg"
+      "logoPath": "/src/assets/gitlogo.svg"
     },
     {
       "id": 11,
@@ -75,19 +75,19 @@
     {
       "id": 13,
       "name": "Linux",
-      "stars": 5,
+      "stars": 3,
       "logoPath": "/src/assets/linux.svg"
     },
     {
       "id": 14,
       "name": "Wordpress",
-      "stars": 4,
+      "stars": 5,
       "logoPath": "/src/assets/wordpress.svg"
     },
     {
       "id": 15,
       "name": "KeyShot 3D",
-      "stars": 5,
+      "stars": 4,
       "logoPath": "/src/assets/KeyShotLogo.png"
     }
   ],
@@ -113,7 +113,7 @@
     {
       "id": 4,
       "name": "php",
-      "stars": 3,
+      "stars": 4,
       "logoPath": "/src/assets/php.svg"
     },
     {
@@ -131,7 +131,7 @@
     {
       "id": 7,
       "name": "TypeScript",
-      "stars": 3,
+      "stars": 2,
       "logoPath": "/src/assets/typescript.svg"
     }
   ],

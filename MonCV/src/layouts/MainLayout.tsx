@@ -29,6 +29,15 @@ function classNames(...classes: string[]) {
 
 function MainLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [isGeneratingPDF, setIsGeneretingPDF] = useState(false)
+
+  const HandleGeneratePDF = async () => {
+    setIsGeneretingPDF(true)
+    // when the pdf  generation is complete setIsGeneretingPDF(false)
+
+    setIsGeneretingPDF(false)
+
+  }
 
   return (
     <>
@@ -205,11 +214,12 @@ function MainLayout() {
           <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6"><MainArea children={undefined}/></div>
         </div>
       </main>
-
-      <aside
-        className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
-        <SecondaryCol children={undefined}/>
-      </aside>
+      {isGeneratingPDF ? " " : (
+        <aside
+          className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
+          <SecondaryCol children={undefined}/>
+        </aside>
+      )}
     </>
   )
 }
