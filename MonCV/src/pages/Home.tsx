@@ -11,6 +11,7 @@ import CardForeignLanguages from "../components/cv/CardsForeignLanguages.tsx"
 import CardsSoft from "../components/cv/CardsSofts.tsx"
 import PersonnalProfile from "../components/cv/PersonnalProfile.tsx"
 import {useRef, RefObject, useState} from "react"
+import CardsLibrairies from "../components/cv/CardsLibraries.tsx"
 
 
 const Home = () => {
@@ -46,7 +47,6 @@ const Home = () => {
     pdf.save("download.pdf")
   }
 
-
   const HandleGeneratePDF = async () => {
     setIsGeneretingPDF(true)
     // when the pdf  generation is complete setIsGeneretingPDF(false)
@@ -77,6 +77,8 @@ const Home = () => {
                       </div>
                       <div id="formations">
                         <Formations/>
+                        <CardsLibrairies/>
+
                       </div>
                     </div>
                   </div>

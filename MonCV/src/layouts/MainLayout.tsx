@@ -1,4 +1,4 @@
-import {Fragment, useState} from 'react'
+import React, {Fragment, useState} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import {
   Bars3Icon,
@@ -27,17 +27,13 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-function MainLayout() {
+interface MainLayoutProps {
+    handleGeneratePDF: () => void,
+    children: React.ReactNode;
+}
+
+function MainLayout({handleGeneratePDF, children}: MainLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [isGeneratingPDF, setIsGeneretingPDF] = useState(false)
-
-  const HandleGeneratePDF = async () => {
-    setIsGeneretingPDF(true)
-    // when the pdf  generation is complete setIsGeneretingPDF(false)
-
-    setIsGeneretingPDF(false)
-
-  }
 
   return (
     <>
@@ -211,15 +207,19 @@ function MainLayout() {
 
       <main className="lg:pl-72">
         <div className="xl:pr-96">
-          <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6"><MainArea children={undefined}/></div>
+          <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
+            <MainArea handleGeneratePDF={handleGeneratePDF}>
+              {children}
+            </MainArea>
+          </div>
         </div>
       </main>
-      {isGeneratingPDF ? " " : (
-        <aside
-          className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
-          <SecondaryCol children={undefined}/>
-        </aside>
-      )}
+      <aside
+        className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
+        <SecondaryCol>
+          {children}
+        </SecondaryCol>
+      </aside>
     </>
   )
 }
