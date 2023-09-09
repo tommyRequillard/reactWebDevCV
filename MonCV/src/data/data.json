@@ -4,43 +4,43 @@
       "id": 1,
       "name": "html",
       "stars": 5,
-      "logoPath": "src/assets/html.svg"
+      "logoPath": "./assets/html.svg"
     },
     {
       "id": 2,
       "name": "css",
       "stars": 4,
-      "logoPath": "src/assets/css.svg"
+      "logoPath": "./assets/css.svg"
     },
     {
       "id": 3,
       "name": "javascript",
       "stars": 4,
-      "logoPath": "src/assets/javascript.svg"
+      "logoPath": "./assets/javascript.svg"
     },
     {
       "id": 4,
       "name": "php",
       "stars": 3,
-      "logoPath": "src/assets/php.svg"
+      "logoPath": "./assets/php.svg"
     },
     {
       "id": 5,
       "name": "python",
       "stars": 2,
-      "logoPath": "src/assets/python.svg"
+      "logoPath": "./assets/python.svg"
     },
     {
       "id": 6,
       "name": "MySQL",
       "stars": 3,
-      "logoPath": "src/assets/mysql.svg"
+      "logoPath": "./assets/mysql.svg"
     },
     {
       "id": 7,
       "name": "TypeScript",
       "stars": 2,
-      "logoPath": "src/assets/typescript.svg"
+      "logoPath": "./assets/typescript.svg"
     }
   ]
 }
