@@ -1,4 +1,4 @@
-import LibrariesCards from "./LibrariesCards.tsx"
+import LibrairiesCards from "./LibrairiesCards.tsx"
 
 const Librairies = () => {
   return (
@@ -13,7 +13,7 @@ const Librairies = () => {
         <h2 className="text-xl font-semibold leading-7 mx-2">Librairies</h2>
       </div>
       <div>
-        <LibrariesCards/>
+        <LibrairiesCards/>
       </div>
     </div>
   )

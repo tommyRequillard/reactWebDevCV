@@ -5,7 +5,7 @@ interface SimpleGaugeProps {
     total: number
 }
 
-const SimpleGauge: React.FC<SimpleGaugeProps> = ({filled, total}) => {
+const GaugeLine: React.FC<SimpleGaugeProps> = ({filled, total}) => {
   function getSegmentWidth(filled: number, total: number) {
     const percent = (filled / total) * 100
     const str = `${percent}%`
@@ -24,4 +24,4 @@ const SimpleGauge: React.FC<SimpleGaugeProps> = ({filled, total}) => {
   )
 }
 
-export default SimpleGauge
+export default GaugeLine

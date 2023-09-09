@@ -17,9 +17,7 @@ export default {
         'greylight': '#cccccc',
         'greylighter': '#f3f4f6'
       },
-      backgroundImage: {
-        'my-image': "url('/src/assets/bckgrdwindow-2048x1280.jpg')",
-      },
+      backgroundImage: {},
     },
   },
   plugins: [],

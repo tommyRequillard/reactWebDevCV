@@ -1,4 +1,4 @@
-export const Gauge = ({
+export const GaugeRing = ({
   value,
   size = "small",
   showValue = true,

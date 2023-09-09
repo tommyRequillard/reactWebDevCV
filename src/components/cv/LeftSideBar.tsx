@@ -1,4 +1,4 @@
-import CardSkills from "./SkillsCards.tsx"
+import SkillsCards from "./SkillsCards.tsx"
 import Materiels from "./Materiels.tsx"
 import ProgrammingLanguagesCards from "./ProgrammingLanguagesCards.tsx"
 
@@ -13,7 +13,7 @@ const LeftSideBar = () => {
         </svg>
         <h2 className="text-xl font-semibold leading-7 pb-4">Skills pro</h2>
 
-        <CardSkills/>
+        <SkillsCards/>
         <Materiels/>
         <ProgrammingLanguagesCards/>
       </div>

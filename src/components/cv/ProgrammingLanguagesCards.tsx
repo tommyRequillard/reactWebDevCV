@@ -1,6 +1,6 @@
 import React from "react"
 import data from "../../data/data.json"
-import SegmentedGauge from "../SegmentedGauge.tsx"
+import GaugeSegmented from "../GaugeSegmented.tsx"
 
 interface ProgrammingLanguage {
     id: number;
@@ -17,7 +17,6 @@ const ProgrammingLanguagesCards: React.FC = () => {
       <ul className="flex flex-col justify-center">
         {programmingLanguages
           .sort((a, b) => b.stars - a.stars)
-          .slice(0, 8)
           .map((programmingLanguage) => (
             <li key={programmingLanguage.id} className="flex flex-col justify-center">
               <img src={programmingLanguage.logoPath} alt={programmingLanguage.name}
@@ -25,7 +24,7 @@ const ProgrammingLanguagesCards: React.FC = () => {
               <div className="flex justify-center flex-col items-center  my-1">
                 {programmingLanguage.name}
                 <div className="flex justify-center items-center gap-2 my-1">
-                  <SegmentedGauge data={Array(programmingLanguage.stars).fill(1)}/>
+                  <GaugeSegmented data={Array(programmingLanguage.stars).fill(1)}/>
                 </div>
               </div>
             </li>

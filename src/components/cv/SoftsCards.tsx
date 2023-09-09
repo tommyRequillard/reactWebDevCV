@@ -1,5 +1,5 @@
 import {softs} from "../../data/softs.ts"
-import SimpleGauge from "../SimpleGauge.tsx"
+import GaugeLine from "../GaugeLine.tsx"
 
 const CardSofts = () => {
   return (
@@ -10,12 +10,11 @@ const CardSofts = () => {
           <path strokeLinecap="round" strokeLinejoin="round"
             d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/>
         </svg>
-
         <h2 className="text-xl font-semibold leading-7 mx-2">Informatique</h2>
       </div>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-12">
         {softs
-          .sort((a, b) => b.stars - a.stars)
+          .sort((a: number, b: number) => b.stars - a.stars)
           .map((softs) => (
             <li key={softs.id} className="flex flex-col item-center mb-3">
               <div className="flex justify-center items-center h-12">
@@ -24,7 +23,7 @@ const CardSofts = () => {
               <div className="flex justify-center items-center gap-2">
                 {softs.name}
               </div>
-              <SimpleGauge filled={softs.stars} total={5}/>
+              <GaugeLine filled={softs.stars} total={5}/>
             </li>
           ))}
       </ul>

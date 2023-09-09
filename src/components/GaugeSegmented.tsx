@@ -4,7 +4,7 @@ interface SegmentedGaugeProps {
     data: number[]; // Tableau des segments
 }
 
-const SegmentedGauge: React.FC<SegmentedGaugeProps> = ({data}) => {
+const GaugeSegmented: React.FC<SegmentedGaugeProps> = ({data}) => {
   const total = data.reduce((a, b) => a + b, 0)
 
   function getSegmentProps(filled: number, total: number, index: number) {
@@ -46,4 +46,4 @@ const SegmentedGauge: React.FC<SegmentedGaugeProps> = ({data}) => {
   )
 }
 
-export default SegmentedGauge
+export default GaugeSegmented
