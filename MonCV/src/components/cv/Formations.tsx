@@ -1,6 +1,6 @@
 const Formations = () => {
   return (
-    <>
+    <div className="p-4">
       <div className="flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
           stroke="currentColor" className="w-6 h-6 mb-5">
@@ -29,7 +29,7 @@ const Formations = () => {
             <h3 className="text-lg font-semibold leading-7 mr-2 w-8">2013</h3>
             <p className="ml-2">- Initiateur Fédéral de Football Américain- FFFA</p>
           </li>
-          <li className="flex justify-start items-center  mb-2 ">
+          <li className="flex justify-start items-center mb-2 ">
             <h3 className="text-lg font-semibold leading-7 mr-2 w-8">2004</h3>
             <p className="ml-2">- Formation AXA</p>
           </li>
@@ -68,7 +68,7 @@ const Formations = () => {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   )
 }
 

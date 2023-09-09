@@ -15,19 +15,19 @@
     {
       "id": 3,
       "name": "Suite Google",
-      "stars": 4,
+      "stars": 3,
       "logoPath": "/src/assets/google.svg"
     },
     {
       "id": 4,
       "name": "PhpStorm",
-      "stars": 4,
+      "stars": 3,
       "logoPath": "/src/assets/phpstorm.svg"
     },
     {
       "id": 5,
       "name": "Visual Studio Code",
-      "stars": 4,
+      "stars": 3,
       "logoPath": "/src/assets/vsc.svg"
     },
     {
@@ -63,7 +63,7 @@
     {
       "id": 11,
       "name": "Github",
-      "stars": 5,
+      "stars": 4,
       "logoPath": "/src/assets/github.svg"
     },
     {
@@ -113,7 +113,7 @@
     {
       "id": 4,
       "name": "php",
-      "stars": 4,
+      "stars": 3,
       "logoPath": "/src/assets/php.svg"
     },
     {
@@ -139,12 +139,12 @@
     {
       "id": 1,
       "name": "Français",
-      "value": 100
+      "value": 99
     },
     {
       "id": 2,
       "name": "Anglais",
-      "value": 75
+      "value": 70
     },
     {
       "id": 3,
@@ -168,7 +168,7 @@
     {
       "id": 3,
       "name": "React",
-      "stars": 3,
+      "stars": 4,
       "logoPath": "/src/assets/react.svg"
     },
     {
@@ -228,7 +228,7 @@
     {
       "id": 9,
       "name": "Comptabilité",
-      "stars": 3
+      "stars": 2
     },
     {
       "id": 10,
@@ -248,34 +248,12 @@
     {
       "id": 13,
       "name": "Réseaux sociaux",
-      "stars": 2
+      "stars": 4
     },
     {
       "id": 14,
       "name": "E-commerce",
       "stars": 3
-    }
-  ],
-  "softSkills": [
-    {
-      "id": 1,
-      "name": "Savoir être",
-      "value": "Adaptabilité à tous les postes"
-    },
-    {
-      "id": 2,
-      "name": "Savoir être",
-      "value": "Autonomie"
-    },
-    {
-      "id": 3,
-      "name": "Savoir être",
-      "value": "Créativité"
-    },
-    {
-      "id": 4,
-      "name": "Savoir être",
-      "value": "Curiosité"
     }
   ]
 }

@@ -1,9 +1,9 @@
 import data from "../../data/data.json"
 import {Gauge} from "../Gauge.tsx"
 
-const CardsForeignLanguages = () => {
+const ForeignLanguagesCards = () => {
   return (
-    <div className="flex flex-col w-full mx-2 mb-8 mt-5">
+    <div className="flex flex-col w-full p-4">
       <div className="flex items-center mb-5">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
           stroke="currentColor" className="w-6 h-6">
@@ -31,4 +31,4 @@ const CardsForeignLanguages = () => {
   )
 }
 
-export default CardsForeignLanguages
+export default ForeignLanguagesCards

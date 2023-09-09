@@ -1,6 +1,6 @@
 const Interets = () => {
   return (
-    <section className="w-full flex flex-col text-darker pt-2 my-5 mx-2 ">
+    <section className="w-full flex flex-col text-darker border-b border-darker p-4 ">
       <div className="flex items-center mb-5">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
           stroke="currentColor" className="w-6 h-6">
@@ -9,7 +9,8 @@ const Interets = () => {
         </svg>
         <h2 className="text-xl font-semibold leading-7">Centres d’Intérêts</h2>
       </div>
-      <p>Coach fédéral diplomé (fédération française de football américain) ancien arbitre et ancien membre du
+      <p className="text-lg">Coach fédéral diplomé (fédération française de football américain) ancien arbitre et
+                ancien membre du
                 bureau de
                 l’association de football américain de la Roche sur Yon, la boxe, la natation, le basket, la
                 musique, l’informatique, le cinéma, la finance, la politique et l’écologie…

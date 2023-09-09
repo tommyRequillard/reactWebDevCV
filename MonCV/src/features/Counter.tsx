@@ -1,5 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit'
 
+export interface CounterState {
+    total: number
+}
+
 const counterSlice = createSlice({
   name: 'counter',
   initialState: {
