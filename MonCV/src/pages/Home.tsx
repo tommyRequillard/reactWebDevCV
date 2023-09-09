@@ -1,5 +1,3 @@
-import html2canvas from "html2canvas"
-import jsPDF from "jspdf"
 import MainLayout from "../layouts/MainLayout.tsx"
 import MainArea from "../layouts/MainArea.tsx"
 import EtatCivil from "../components/cv/EtatCivil.tsx"
@@ -12,47 +10,15 @@ import CardsSoft from "../components/cv/SoftsCards.tsx"
 import PersonnalProfile from "../components/cv/PersonnalProfile.tsx"
 import {useRef, RefObject, useState} from "react"
 import Librairies from "../components/cv/Librairies.tsx"
-import SkillsCards from "../components/cv/SkillsCards.tsx"
 import SoftSkillsCards from "../components/cv/SoftSkillsCards.tsx"
-
+import {downloadPDF} from "../Services/pdfService.ts"
 
 function Home() {
   const [isGeneratingPDF, setIsGeneretingPDF] = useState(false)
 
-  const downloadPDF = async () => {
-    const pdf = new jsPDF("p", "mm", "a4")
-
-    if (!pdfRef.current) {
-      console.error("L'élément avec la référence 'pdfRef' n'a pas été trouvé.")
-      return
-    }
-
-    // Get references to the top and bottom content elements
-    const topContent = document.getElementById("topContent")
-    const bottomContent = document.getElementById("bottomContent")
-
-    // Create a canvas for the top content
-    const canvas1 = await html2canvas(topContent)
-
-    // Add the top content to the first page
-    pdf.addImage(canvas1.toDataURL("image/jpeg"), "JPEG", 0, 0, 210, 297) // A4 portrait
-
-    // Add a new page for the second part of the content
-    pdf.addPage()
-
-    // Create a canvas for the bottom content
-    const canvas2 = await html2canvas(bottomContent)
-
-    // Add the bottom content to the second page
-    pdf.addImage(canvas2.toDataURL("image/jpeg"), "JPEG", 0, 0, 210, 297)
-
-    pdf.save("download.pdf")
-  }
-
   async function handleGeneratePDF() {
     setIsGeneretingPDF(true)
-    // when the pdf  generation is complete setIsGeneretingPDF(false)
-    downloadPDF()
+    await downloadPDF()
     setIsGeneretingPDF(false)
   }
 
@@ -60,8 +26,8 @@ function Home() {
 
   return (
     <>
-      <MainLayout handleGeneratePDF={handleGeneratePDF} isGeneratingPDF={isGeneratingPDF}/>
-      <MainArea>
+      <MainLayout handleGeneratePDF={handleGeneratePDF} isGeneratingPDF={isGeneratingPDF} children={null}/>
+      <MainArea handleGeneratePDF={handleGeneratePDF}>
         <div ref={pdfRef}>
           <div className="flex flex-col justify-center items-center mb-2">
             <div id="etatCivil" className="flex flex-col shadow-2xl rounded-3xl bg-greylighter mb-10">

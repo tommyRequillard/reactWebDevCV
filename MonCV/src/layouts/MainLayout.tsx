@@ -2,7 +2,6 @@ import React, {Fragment, useState} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import {
   Bars3Icon,
-  CalendarIcon,
   ChartPieIcon,
   DocumentDuplicateIcon,
   FolderIcon,
@@ -18,7 +17,6 @@ import lion from "../assets/lion-face.png"
 const navigation = [
   {name: 'CV', href: '/', icon: HomeIcon, current: true, active: true},
   {name: 'Portfolio', href: '/portfolio', icon: FolderIcon, current: false, active: false},
-  {name: 'Calendar', href: '/calendar', icon: CalendarIcon, current: false, active: false},
   {name: 'Documents', href: '/documents', icon: DocumentDuplicateIcon, current: false, active: false},
   {name: 'Counter', href: '/counter', icon: ChartPieIcon, current: false, active: false},
 ]
