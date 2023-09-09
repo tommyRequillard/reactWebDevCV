@@ -1,10 +1,10 @@
-import data from "../../data/data.json"
+import {libraries} from "../../data/libraries.ts"
 import SimpleGauge from "../SimpleGauge.tsx"
 
-const CardsLibrairies = () => {
+const LibrariesCards = () => {
   return (
     <ul className="flex flex-row flex-wrap justify-around items-end">
-      {data.libraries
+      {libraries
         .sort((a, b) => b.stars - a.stars)
         .slice(0, 6)
         .map((libraries) => (
@@ -21,4 +21,4 @@ const CardsLibrairies = () => {
   )
 }
 
-export default CardsLibrairies
+export default LibrariesCards

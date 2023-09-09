@@ -1,11 +1,11 @@
-import data from "../../data/data.json"
+import {skills} from "../../data/skills.ts"
 import {starsRating} from "../../Services/starsRating.tsx"
 
 const CardSkill = () => {
   return (
     <div className="flex flex-col mx-auto">
       <ul className="flex flex-col justify-center">
-        {data.skills
+        {skills
           .sort((a, b) => b.stars - a.stars)
           .slice(0, 8)
           .map((skills) => (

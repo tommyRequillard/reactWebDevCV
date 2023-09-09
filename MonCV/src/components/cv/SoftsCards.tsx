@@ -1,4 +1,4 @@
-import data from "../../data/data.json"
+import {softs} from "../../data/softs.ts"
 import SimpleGauge from "../SimpleGauge.tsx"
 
 const CardSofts = () => {
@@ -13,12 +13,9 @@ const CardSofts = () => {
 
         <h2 className="text-xl font-semibold leading-7 mx-2">Informatique</h2>
       </div>
-      {/*<div className="flex w-full flex-col items-centermb-2">*/}
-      {/*  <div className="flex w-full mx-auto">*/}
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-12">
-        {data.softs
+        {softs
           .sort((a, b) => b.stars - a.stars)
-          .slice(0, 12)
           .map((softs) => (
             <li key={softs.id} className="flex flex-col item-center mb-3">
               <div className="flex justify-center items-center h-12">
@@ -31,8 +28,6 @@ const CardSofts = () => {
             </li>
           ))}
       </ul>
-      {/*  </div>*/}
-      {/*</div>*/}
     </div>
   )
 }
