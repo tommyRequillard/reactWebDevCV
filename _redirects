@@ -1,5 +1,4 @@
-# Redirects from what the browser requests to what we serve
 /home                /
-/documents           /Documents
-/portfolio           /Portfolio
-/counter             /Counter
+/documents           /pages/Documents.tsx
+/portfolio           /pages/Portfolio.tsx
+/counter             /pages/Counter.tsx
