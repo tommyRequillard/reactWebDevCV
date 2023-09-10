@@ -1,4 +1,4 @@
 /home                /
-/documents           /pages/Documents.tsx
-/portfolio           /pages/Portfolio.tsx
-/counter             /pages/Counter.tsx
+/documents           /documents
+/portfolio           /portfolio
+/counter             /counter
