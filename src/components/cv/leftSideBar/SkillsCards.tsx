@@ -1,4 +1,10 @@
-export const skills = [
+import {starsRating} from "../../../services/starsRating.tsx"
+
+const skills: {
+    id: number;
+    name: string;
+    stars: number
+}[] = [
   {
     "id": 1,
     "name": "Web",
@@ -69,4 +75,27 @@ export const skills = [
     "name": "E-commerce",
     "stars": 3
   }
-] as const
+]
+
+const CardSkill = () => {
+  const sortedSkills = skills.sort((a, b) => b.stars - a.stars)
+
+  return (
+    <div className="flex flex-col mx-auto">
+      <ul className="flex flex-col justify-center">
+        {sortedSkills.slice(0, 6).map((skill) => (
+          <li key={skill.id} className="flex flex-col justify-center">
+            <div className="flex justify-center flex-col items-center mb-2">
+              {skill.name}
+              <div className="flex justify-center items-center gap-2 my-1">
+                {starsRating({stars: skill.stars})}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default CardSkill

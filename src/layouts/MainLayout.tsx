@@ -27,7 +27,8 @@ function classNames(...classes: string[]) {
 
 interface MainLayoutProps {
     handleGeneratePDF: () => void,
-    children: React.ReactNode;
+    isGeneratingPDF: boolean,
+    children: React.ReactNode | React.ReactNode[] | null | string
 }
 
 function MainLayout({handleGeneratePDF, children}: MainLayoutProps) {

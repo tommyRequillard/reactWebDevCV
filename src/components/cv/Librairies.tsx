@@ -12,7 +12,7 @@ const Librairies = () => {
 
         <h2 className="text-xl font-semibold leading-7 mx-2">Librairies</h2>
       </div>
-      <div>
+      <div className="flex w-full flex-col items-center mb-5">
         <LibrairiesCards/>
       </div>
     </div>

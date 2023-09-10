@@ -1,31 +1,136 @@
-import {softs} from "../../data/softs.ts"
-import GaugeLine from "../GaugeLine.tsx"
+import Card from "./Card.tsx"
+
+const softs: {
+    id: number,
+    name: string,
+    stars: number,
+    logoPath: string
+}[] = [
+  {
+    "id": 1,
+    "name": "Suite Office",
+    "stars": 4,
+    "logoPath": "/assets/office.svg"
+  },
+  {
+    "id": 2,
+    "name": "Suite Adobe",
+    "stars": 4,
+    "logoPath": "/assets/adobe.svg"
+  },
+  {
+    "id": 3,
+    "name": "Suite Google",
+    "stars": 3,
+    "logoPath": "/assets/google.svg"
+  },
+  {
+    "id": 4,
+    "name": "PhpStorm",
+    "stars": 3,
+    "logoPath": "/assets/phpstorm.svg"
+  },
+  {
+    "id": 5,
+    "name": "Visual Studio Code",
+    "stars": 3,
+    "logoPath": "/assets/vsc.svg"
+  },
+  {
+    "id": 6,
+    "name": "Docker",
+    "stars": 3,
+    "logoPath": "/assets/docker.svg"
+  },
+  {
+    "id": 7,
+    "name": "MongoDB",
+    "stars": 3,
+    "logoPath": "/assets/mongodb.svg"
+  },
+  {
+    "id": 8,
+    "name": "Laragon",
+    "stars": 4,
+    "logoPath": "/assets/laragon.svg"
+  },
+  {
+    "id": 9,
+    "name": "npm",
+    "stars": 4,
+    "logoPath": "/assets/npm.svg"
+  },
+  {
+    "id": 10,
+    "name": "Git",
+    "stars": 4,
+    "logoPath": "/assets/gitlogo.svg"
+  },
+  {
+    "id": 11,
+    "name": "Github",
+    "stars": 4,
+    "logoPath": "/assets/github.svg"
+  },
+  {
+    "id": 12,
+    "name": "Windows",
+    "stars": 5,
+    "logoPath": "/assets/window.svg"
+  },
+  {
+    "id": 13,
+    "name": "Linux",
+    "stars": 3,
+    "logoPath": "/assets/linux.svg"
+  },
+  {
+    "id": 14,
+    "name": "Wordpress",
+    "stars": 5,
+    "logoPath": "/assets/wordpress.svg"
+  },
+  {
+    "id": 15,
+    "name": "KeyShot 3D",
+    "stars": 4,
+    "logoPath": "/assets/KeyShotLogo.png"
+  },
+  {
+    "id": 16,
+    "name": "Blender",
+    "stars": 2,
+    "logoPath": "/assets/blender.svg"
+  },
+  {
+    "id": 17,
+    "name": "Unity",
+    "stars": 2,
+    "logoPath": "/assets/unity.svg"
+  },
+  {
+    "id": 18,
+    "name": "Figma",
+    "stars": 5,
+    "logoPath": "/assets/figma.svg"
+  }
+]
 
 const CardSofts = () => {
+  const sortedSofts = softs.sort((a, b) => b.stars - a.stars)
+
   return (
-    <div className="p-4 border-b border-darker">
-      <div className="flex mx-2 items-center mt-2 mb-5">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-          stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round"
-            d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/>
-        </svg>
-        <h2 className="text-xl font-semibold leading-7 mx-2">Informatique</h2>
-      </div>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-12">
-        {softs
-          .sort((a: number, b: number) => b.stars - a.stars)
-          .map((softs) => (
-            <li key={softs.id} className="flex flex-col item-center mb-3">
-              <div className="flex justify-center items-center h-12">
-                <img src={softs.logoPath} alt={softs.name} className="w-10"/>
-              </div>
-              <div className="flex justify-center items-center gap-2">
-                {softs.name}
-              </div>
-              <GaugeLine filled={softs.stars} total={5}/>
-            </li>
-          ))}
+    <div className="flex w-full flex-col items-center mb-5">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-16 ">
+        {sortedSofts.map((softs) => (
+          <li key={softs.id} className="flex flex-col item-centermb-3">
+            <Card
+              name={softs.name}
+              stars={softs.stars}
+              logoPath={softs.logoPath}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   )

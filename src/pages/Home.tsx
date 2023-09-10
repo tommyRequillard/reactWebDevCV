@@ -1,32 +1,37 @@
 import MainLayout from "../layouts/MainLayout.tsx"
 import MainArea from "../layouts/MainArea.tsx"
-import EtatCivil from "../components/cv/EtatCivil.tsx"
+import EtatCivil from "../components/cv/header/EtatCivil.tsx"
 import Formations from "../components/cv/Formations.tsx"
-import Experiences from "../components/cv/Experiences.tsx"
+import Experiences from "../components/cv/main/Experiences.tsx"
 import Interets from "../components/cv/Interets.tsx"
-import LeftSideBar from "../components/cv/LeftSideBar.tsx"
+import LeftSideBar from "../components/cv/leftSideBar/LeftSideBar.tsx"
 import CardForeignLanguages from "../components/cv/ForeignLanguages.tsx"
-import CardsSoft from "../components/cv/SoftsCards.tsx"
-import PersonnalProfile from "../components/cv/PersonnalProfile.tsx"
+import Softs from "../components/cv/Softs.tsx"
+import PersonnalProfile from "../components/cv/main/PersonnalProfile.tsx"
 import {useRef, RefObject, useState} from "react"
 import Librairies from "../components/cv/Librairies.tsx"
-import SoftSkillsCards from "../components/cv/SoftSkills.tsx"
+import SoftSkillsCards from "../components/cv/main/SoftSkills.tsx"
 import {downloadPDF} from "../services/pdfService.ts"
 
-function Home() {
-  const [isGeneratingPDF, setIsGeneretingPDF] = useState(false)
+interface HomeProps {
+    children: React.ReactNode | string | null | undefined
+}
+
+function Home({children}: HomeProps) {
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false)
 
   async function handleGeneratePDF() {
-    setIsGeneretingPDF(true)
+    setIsGeneratingPDF(true)
     await downloadPDF()
-    setIsGeneretingPDF(false)
+    setIsGeneratingPDF(false)
   }
 
   const pdfRef: RefObject<HTMLDivElement> = useRef(null)
 
   return (
     <>
-      <MainLayout handleGeneratePDF={handleGeneratePDF} isGeneratingPDF={isGeneratingPDF} children={null}/>
+      {/* eslint-disable-next-line react/no-children-prop */}
+      <MainLayout handleGeneratePDF={handleGeneratePDF} isGeneratingPDF={isGeneratingPDF} children={children}/>
       <MainArea handleGeneratePDF={handleGeneratePDF}>
         <div ref={pdfRef}>
           <div className="flex flex-col justify-center items-center mb-2">
@@ -47,7 +52,7 @@ function Home() {
               <div id="bottomContent">
                 <Formations/>
                 <Librairies/>
-                <CardsSoft/>
+                <Softs/>
                 <Interets/>
                 <CardForeignLanguages/>
               </div>

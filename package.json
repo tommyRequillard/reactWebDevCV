@@ -1,13 +1,13 @@
 {
   "homepage": "https://tiamygarden.github.io/reactWebDevCV",
-  "name": "moncv",
+  "name": "reactWebDevCV",
   "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "tsc": "tsc",
-    "build": "vite build --base=/my/public/path/",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"

@@ -1,6 +1,6 @@
-import profil from '../../assets/photoProfil.png'
+import profil from './../../../assets/photoProfil.png'
 import {Link} from "react-router-dom"
-import ButtonMailto from "../../services/ButtonMailTo.tsx"
+import ButtonMailto from "../../../services/ButtonMailTo.tsx"
 
 const EtatCivil = () => {
   return (

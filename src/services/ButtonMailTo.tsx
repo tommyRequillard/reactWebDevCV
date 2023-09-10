@@ -1,8 +1,9 @@
 import {Link} from "react-router-dom"
+import React from "react"
 
 interface ButtonMailtoProps {
     mailto: string;
-    label: string;
+    label: React.ReactNode
 }
 
 const ButtonMailto: React.FC<ButtonMailtoProps> = ({mailto, label}) => {

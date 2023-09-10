@@ -1,5 +1,5 @@
 import {Key} from "react"
-import GaugeLine from "../GaugeLine.tsx"
+import Card from "./Card.tsx"
 
 const librairiesData = [
   {
@@ -61,22 +61,23 @@ const librairiesData = [
 const LibrairiesCards = () => {
   const librairiesArray = Array.from(librairiesData)
   return (
-    <ul className="flex flex-row flex-wrap justify-around items-end pb-4 gap-3">
-      {librairiesArray.map((librairie: {
-                id: Key;
-                logoPath: string;
-                name: string;
-                stars: number;
-            }) => (
-        <li key={librairie.id} className="flex flex-col items-center">
-          <div className="flex justify-center items-center h-10 mt-5">
-            <img src={librairie.logoPath} alt={librairie.name} className="w-10 py-3"/>
-          </div>
-          {librairie.name}
-          <GaugeLine filled={librairie.stars} total={5}/>
-        </li>
-      ))}
-    </ul>
+    <div className="py-4">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-16 ">
+        {librairiesArray.map((librairie: {
+                    id: Key;
+                    logoPath: string;
+                    name: string;
+                    stars: number;
+                }) => (
+          <li key={librairie.id} className="flex flex-col items-center">
+            <Card
+              name={librairie.name}
+              stars={librairie.stars}
+              logoPath={librairie.logoPath}/>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
