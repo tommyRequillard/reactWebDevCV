@@ -24,6 +24,7 @@ export default defineConfig({
             'src/components/cv/main/PersonnalProfile.tsx',
             'src/components/cv/main/SoftSkills.tsx',
             'src/components/cv/Card.tsx',
+            'src/components/cv/Cv.tsx',
             'src/components/cv/ForeignLanguages.tsx',
             'src/components/cv/Formations.tsx',
             'src/components/cv/Interets.tsx',

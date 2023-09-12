@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import {Fragment, useState} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import {
   Bars3Icon,
@@ -13,7 +13,6 @@ import SecondaryCol from "./SecondaryCol.tsx"
 import photoProfil from "../assets/photoProfil.png"
 import lion from "../assets/lion-face.png"
 
-
 const navigation = [
   {name: 'CV', href: '/', icon: HomeIcon, current: true, active: true},
   {name: 'Portfolio', href: '/portfolio', icon: FolderIcon, current: false, active: false},
@@ -26,12 +25,10 @@ function classNames(...classes: string[]) {
 }
 
 interface MainLayoutProps {
-    handleGeneratePDF: () => void,
-    isGeneratingPDF: boolean,
-    children: React.ReactNode | React.ReactNode[] | null | string
+    children: string
 }
 
-function MainLayout({handleGeneratePDF, children}: MainLayoutProps) {
+function MainLayout({children}: MainLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -207,17 +204,13 @@ function MainLayout({handleGeneratePDF, children}: MainLayoutProps) {
       <main className="lg:pl-72">
         <div className="xl:pr-96">
           <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
-            <MainArea handleGeneratePDF={handleGeneratePDF}>
-              {children}
-            </MainArea>
+            <MainArea children={children}/>
           </div>
         </div>
       </main>
       <aside
         className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
-        <SecondaryCol>
-          {children}
-        </SecondaryCol>
+        <SecondaryCol/>
       </aside>
     </>
   )

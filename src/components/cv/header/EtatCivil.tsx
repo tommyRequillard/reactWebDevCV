@@ -32,7 +32,10 @@ const EtatCivil = () => {
               </svg>
               <p>: 06 88 63 53 23</p>
             </div>
-            <Link to="https://github.com/tiamygarden" className="flex justify-start items-center md:pl-4">
+            <Link
+              to="https://github.com/tiamygarden"
+              target="_blank"
+              className="flex justify-start items-center md:pl-4">
               <svg fill="white" className="w-6 " viewBox="0 0 24 24">
                 <path
                   fillRule="evenodd"

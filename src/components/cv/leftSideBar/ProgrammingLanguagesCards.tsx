@@ -1,12 +1,7 @@
 import React from "react"
 import GaugeSegmented from "../../GaugeSegmented.tsx"
 
-const programmingLanguages: {
-    id: number,
-    name: string,
-    stars: number,
-    logoPath: string
-}[] = [
+const programmingLanguages = [
   {
     "id": 1,
     "name": "html",
@@ -46,8 +41,14 @@ const programmingLanguages: {
   {
     "id": 7,
     "name": "TypeScript",
-    "stars": 2,
+    "stars": 3,
     "logoPath": "/assets/typescript.svg"
+  },
+  {
+    "id": 8,
+    "name": "React",
+    "stars": 4,
+    "logoPath": "/assets/react.svg"
   }
 ]
 
