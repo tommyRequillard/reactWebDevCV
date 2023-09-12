@@ -24,7 +24,7 @@ const Cv = () => {
   const pdfRef: RefObject<HTMLDivElement> = useRef(null)
 
   return (
-    <div ref={pdfRef}>
+    <div ref={pdfRef} className="sm:mx-2">
       <div className="flex flex-col justify-center items-center mb-2">
         <div className="flex flex-col shadow-2xl rounded-3xl bg-greylighter mb-10">
           <div id="topContent">

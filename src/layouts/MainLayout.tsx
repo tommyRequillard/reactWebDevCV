@@ -1,4 +1,5 @@
 import {Fragment, useState} from 'react'
+import {Link, useLocation} from 'react-router-dom'
 import {Dialog, Transition} from '@headlessui/react'
 import {
   Bars3Icon,
@@ -30,6 +31,13 @@ interface MainLayoutProps {
 
 function MainLayout({children}: MainLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const location = useLocation()
+  const activeNavItem = navigation.find(item => location.pathname === item.href)
+
+  const updatedNavigation = navigation.map((item) => ({
+    ...item,
+    current: location.pathname === item.href,
+  }))
 
   return (
     <>
@@ -86,34 +94,28 @@ function MainLayout({children}: MainLayoutProps) {
                   </div>
                   <nav className="flex flex-1 flex-col">
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
-                      <li>
-                        <ul role="list" className="-mx-2 space-y-1">
-                          {navigation.map((item) => (
-                            <li key={item.name}>
-                              <a
-                                href={item.href}
-                                className={classNames(
-                                  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
-                                  item.current
-                                    ? 'bg-gray-50 text-cvblue'
-                                    : 'text-cvblue hover:text-cvcyan hover:bg-gray-50',
-                                  item.active ? 'text-gold' : ''
-                                )}
-                              >
-                                <item.icon
-                                  className={classNames(
-                                    'h-6 w-6 shrink-0',
-                                    item.current ? 'text-cvblue' : 'text-gray-400 group-hover:text-cvcyan',
-                                    item.active ? 'text-gold' : ''
-                                  )}
-                                  aria-hidden="true"
-                                />
-                                {item.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
+                      {updatedNavigation.map((item) => (
+                        <li key={item.name}>
+                          <Link
+                            to={item.href}
+                            className={classNames(
+                              'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
+                              item.current
+                                ? 'bg-gray-50 text-cvblue text-gold'
+                                : 'text-cvblue hover:text-cvcyan hover:bg-gray-50'
+                            )}
+                          >
+                            <item.icon
+                              className={classNames(
+                                'h-6 w-6 shrink-0',
+                                item.current ? 'text-cvblue text-gold' : 'text-gray-400 group-hover:text-cvcyan'
+                              )}
+                              aria-hidden="true"
+                            />
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </nav>
                 </div>
@@ -136,61 +138,43 @@ function MainLayout({children}: MainLayoutProps) {
           </div>
           <nav className="flex flex-1 flex-col">
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
-              <li>
-                <ul role="list" className="-mx-2 space-y-1">
-                  {navigation.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className={classNames(
-                          'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
-                          item.current
-                            ? 'bg-gray-50 text-cvblue'
-                            : 'text-cvblue hover:text-cvcyan hover:bg-gray-50',
-                          item.active ? 'text-gold' : ''
-                        )}
-                      >
-                        <item.icon
-                          className={classNames(
-                            'h-6 w-6 shrink-0',
-                            item.current ? 'text-cvblue' : 'text-gray-400 group-hover:text-cvcyan',
-                            item.active ? 'text-gold' : ''
-                          )}
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-              <li className="-mx-6 mt-auto">
-                <a
-                  href="#"
-                  className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white-900 hover:bg-gray-50"
-                >
-                  <img
-                    className="h-8 w-8 rounded-full bg-gray-50"
-                    src={photoProfil}
-                    alt=""
-                  />
-                  <span className="sr-only">Your profile</span>
-                  <span className="text-cvblued" aria-hidden="true">Tommy REQUILLARD</span>
-                </a>
-              </li>
+              {updatedNavigation.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.href}
+                    className={classNames(
+                      'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
+                      item.current
+                        ? 'bg-gray-50 text-cvblue text-gold' // Ajoutez text-gold seulement si l'élément est actif
+                        : 'text-cvblue hover:text-cvcyan hover:bg-gray-50'
+                    )}
+                  >
+                    <item.icon
+                      className={classNames(
+                        'h-6 w-6 shrink-0',
+                        item.current ? 'text-cvblue text-gold' : 'text-gray-400 group-hover:text-cvcyan'
+                      )}
+                      aria-hidden="true"
+                    />
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
       </div>
 
       <div
-        className="sticky top-0 z-40 flex items-center gap-x-6 bg-dark px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+        className="sticky w-full top-0 z-40 flex items-center gap-x-6 bg-dark px-4 py-4 shadow-sm lg:hidden">
         <button type="button" className="-m-2.5 p-2.5 text-cvblue lg:hidden"
           onClick={() => setSidebarOpen(true)}>
           <span className="sr-only">Open sidebar</span>
           <Bars3Icon className="h-6 w-6" aria-hidden="true"/>
         </button>
-        <div className="flex-1 text-sm font-semibold leading-6 text-cvblue">CV</div>
+        <div className="flex-1 text-sm font-semibold leading-6 text-cvblue">
+          {activeNavItem ? activeNavItem.name : "CV"}
+        </div>
         <a href="#">
           <span className="sr-only">Your profile</span>
           <img
@@ -201,9 +185,9 @@ function MainLayout({children}: MainLayoutProps) {
         </a>
       </div>
 
-      <main className="lg:pl-72">
+      <main className="min-w-[425px] sm:px-1 lg:pl-72">
         <div className="xl:pr-96">
-          <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
+          <div className="px-4 py-10 sm:px-0 lg:px-8 lg:py-6">
             <MainArea children={children}/>
           </div>
         </div>
