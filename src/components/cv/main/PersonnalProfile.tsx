@@ -10,16 +10,14 @@ const PersonnalProfile = () => {
         <h2 className="text-xl font-semibold leading-7 ">Profil personnel</h2>
       </div>
       <p className="mx-2 mt-1 text-lg sm:py-6 text-gray-800">
-                Autodidacte et passionné d'informatique de 48 ans, ma reconversion vers le développement informatique
-                m'a doté de compétences solides en React
-                grâce à ma formation chez OpenClassrooms.
+                Autodidacte et passionné d'informatique de 48 ans. Ma reconversion vers le développement informatique
+                m'a doté de compétences solides en React grâce à ma formation chez OpenClassrooms.
                 Mon expérience antérieure en tant que directeur d'une startup innovante m'a enseigné la résolution de
                 problèmes et la gestion de projets. L'innovation et le développement durable m'inspirent profondément.
                 Je suis prêt à contribuer avec enthousiasme et à m'adapter rapidement aux nouvelles technologies.
                 Mon parcours professionnel varié est un atout, offrant une perspective unique et une capacité
                 à collaborer efficacement. Je suis un professionnel motivé, passionné par la technologie, et je cherche
-                à
-                apporter une valeur significative à des projets innovants en développement informatique.
+                à apporter une valeur significative à des projets innovants en développement informatique.
       </p>
     </div>
   )
