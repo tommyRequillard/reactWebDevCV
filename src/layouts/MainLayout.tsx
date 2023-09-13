@@ -166,7 +166,7 @@ function MainLayout({children}: MainLayoutProps) {
       </div>
 
       <div
-        className="sticky w-full top-0 z-40 flex items-center gap-x-6 bg-dark px-4 py-4 shadow-sm lg:hidden">
+        className="sticky top-0 z-40 flex items-center gap-x-6 bg-dark px-4 py-4 shadow-sm lg:hidden">
         <button type="button" className="-m-2.5 p-2.5 text-cvblue lg:hidden"
           onClick={() => setSidebarOpen(true)}>
           <span className="sr-only">Open sidebar</span>

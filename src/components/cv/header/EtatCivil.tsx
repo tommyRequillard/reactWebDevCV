@@ -5,8 +5,8 @@ import ButtonMailto from "../../../services/ButtonMailTo.tsx"
 const EtatCivil = () => {
   return (
     <>
-      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 w-full text-white p-4 rounded-t-3xl">
-        <div className="flex justify-between items-center">
+      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-4 rounded-t-3xl">
+        <div className="flex justify-start md:justify-between md:items-center flex-col md:flex-row">
           <h1 className="text-xl font-semibold leading-7 text-white">Tommy REQUILLARD </h1>
           <span className="mt-1 text-lg font-semibold leading-6 text-white">Developpeur web full stack</span>
         </div>

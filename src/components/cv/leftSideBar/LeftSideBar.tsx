@@ -4,8 +4,9 @@ import ProgrammingLanguagesCards from "./ProgrammingLanguagesCards.tsx"
 
 const LeftSideBar = () => {
   return (
-    <div className="shrink-0 justify-start items-center bg-greylight p-4">
-      <div className="w-full flex flex-col justify-start items-center">
+    <div
+      className="flex md:flex-row lg:shrink-0 content-start bg-greylight p-4 order-last md:order-none flex-wrap">
+      <div className="flex flex-col items-center mx-auto md:mx-0 sm:w-full">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
           stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round"
@@ -13,10 +14,10 @@ const LeftSideBar = () => {
         </svg>
         <h2 className="text-xl font-semibold leading-7 pb-4">Skills pro</h2>
         <ProgrammingLanguagesCards/>
-        <div className="flex flex-col mt-5">
+        <div className="mt-5">
           <SkillsCards/>
         </div>
-        <div className="flex flex-col flex-grow">
+        <div className="mt-5">
           <Materiels/>
         </div>
       </div>

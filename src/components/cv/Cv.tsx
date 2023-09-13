@@ -24,19 +24,17 @@ const Cv = () => {
   const pdfRef: RefObject<HTMLDivElement> = useRef(null)
 
   return (
-    <div ref={pdfRef} className="sm:mx-2">
-      <div className="flex flex-col justify-center items-center mb-2">
+    <div ref={pdfRef}>
+      <div className="flex ">
         <div className="flex flex-col shadow-2xl rounded-3xl bg-greylighter mb-10">
           <div id="topContent">
             <EtatCivil/>
-            <section className="w-full flex text-darker border-b border-darker rounded-t-3xl">
-              <div className="flex flex-row w-full ">
-                <LeftSideBar/>
-                <div className="flex flex-grow flex-col p-4">
-                  <PersonnalProfile/>
-                  <Experiences/>
-                  <SoftSkillsCards/>
-                </div>
+            <section className="flex text-darker flex-col md:flex-row border-b border-darker rounded-t-3xl">
+              <LeftSideBar/>
+              <div className="flex flex-grow flex-col p-4">
+                <PersonnalProfile/>
+                <Experiences/>
+                <SoftSkillsCards/>
               </div>
             </section>
           </div>
