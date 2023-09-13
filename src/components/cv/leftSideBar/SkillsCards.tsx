@@ -82,7 +82,7 @@ const CardSkill = () => {
 
   return (
     <div className="flex flex-col mx-auto">
-      <ul className="flex flex-col justify-center">
+      <ul className="flex flex-row justify-around flex-wrap md:flex-col md:justify-center gap-3">
         {sortedSkills.slice(0, 6).map((skill) => (
           <li key={skill.id} className="flex flex-col justify-center">
             <div className="flex justify-center flex-col items-center mb-2">

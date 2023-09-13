@@ -11,8 +11,8 @@ const ForeignLanguages = () => {
         </svg>
         <h2 className="text-xl font-semibold leading-7">Langues étrangères</h2>
       </div>
-      <div className="flex flex-row justify-around">
-        <ul className="flex w-full flex-row justify-around">
+      <div className="flex flex-col md:flex-row justify-around">
+        <ul className="flex w-full flex-col md:flex-row justify-around">
           <li className="flex justify-around flex-col items-center my-1">Français :
             <div className="flex justify-between gap-6 my-1">
               <GaugeRing value={99} size="large" showValue={true}/>

@@ -46,7 +46,8 @@ const EtatCivil = () => {
               <p>https://github.com/tiamygarden</p>
             </Link>
           </div>
-          <img className="w-16 sm:w-32 rounded-full -mb-3 sm:-mb-16 mr-9 shadow-2xl ring-4" src={profil}
+          <img className="hidden md:flex md:w-32 rounded-full md:-mb-16 md:mr-9 shadow-2xl ring-4"
+            src={profil}
             alt="photo d'identité"/>
         </div>
       </div>

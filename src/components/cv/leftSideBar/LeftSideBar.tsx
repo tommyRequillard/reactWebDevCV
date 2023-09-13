@@ -5,7 +5,7 @@ import ProgrammingLanguagesCards from "./ProgrammingLanguagesCards.tsx"
 const LeftSideBar = () => {
   return (
     <div
-      className="flex md:flex-row lg:shrink-0 content-start bg-greylight p-4 order-last md:order-none flex-wrap">
+      className="flex md:flex-row lg:shrink-0 content-start bg-greylight order-last md:order-none flex-wrap">
       <div className="flex flex-col items-center mx-auto md:mx-0 sm:w-full">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
           stroke="currentColor" className="w-6 h-6">

@@ -56,11 +56,11 @@ const ProgrammingLanguagesCards: React.FC = () => {
   const sortedProgrammingLanguages = programmingLanguages.sort((a, b) => b.stars - a.stars)
   return (
     <div className="flex flex-col mx-auto mb-3">
-      <ul className="flex flex-col justify-center">
+      <ul className="flex flex-row justify-around flex-wrap md:flex-col md:justify-center gap-3">
         {sortedProgrammingLanguages.map((programmingLanguage) => (
           <li key={programmingLanguage.id} className="flex flex-col justify-center">
             <img src={programmingLanguage.logoPath} alt={programmingLanguage.name}
-              className="mt-3 w-6 mx-auto"/>
+              className="flex justify-center mt-3 w-6 mx-auto h-10"/>
             <div className="flex justify-center flex-col items-center  my-1">
               {programmingLanguage.name}
               <div className="flex justify-center items-center gap-2 my-1">

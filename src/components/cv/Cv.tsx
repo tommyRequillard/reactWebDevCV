@@ -25,11 +25,12 @@ const Cv = () => {
 
   return (
     <div ref={pdfRef}>
-      <div className="flex ">
+      <div className="p-4">
         <div className="flex flex-col shadow-2xl rounded-3xl bg-greylighter mb-10">
           <div id="topContent">
             <EtatCivil/>
-            <section className="flex text-darker flex-col md:flex-row border-b border-darker rounded-t-3xl">
+            <section
+              className="flex text-darker flex-col md:flex-row border-b border-darker rounded-t-3xl">
               <LeftSideBar/>
               <div className="flex flex-grow flex-col p-4">
                 <PersonnalProfile/>
