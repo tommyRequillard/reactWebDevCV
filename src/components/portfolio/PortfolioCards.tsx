@@ -22,9 +22,7 @@ const PortfolioCards = () => {
             <div>
               <img src={booki} alt="Booki"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Booki</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Booki</h2>
             <p>Transformez une maquette en site web avec Html & CSS</p>
           </div>
         </Link>
@@ -35,10 +33,8 @@ const PortfolioCards = () => {
             <div>
               <img src={ohmyfood} alt="Oh my food"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Oh my food </p>
-            <h4>Project Description</h4>
-            <p>Dynamisez une page web avec des animations CSS</p>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Oh my food</h2>
+            <p className="text-sm text-gray-700">Dynamisez une page web avec des animations CSS</p>
           </div>
         </Link>
       </div>
@@ -48,9 +44,7 @@ const PortfolioCards = () => {
             <div>
               <img src={gameon} alt="Game On"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Game On</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Game On</h2>
             <p>Créez une landing page avec Javascript</p>
           </div>
         </Link>
@@ -61,9 +55,7 @@ const PortfolioCards = () => {
             <div>
               <img src={fisheye} alt="Fish Eye"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Fish Eye</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Fish Eye</h2>
             <p>Créez un site accessible pour une plateforme de photographes</p>
           </div>
         </Link>
@@ -74,9 +66,7 @@ const PortfolioCards = () => {
             <div>
               <img src={lespetitsplats} alt="Les petits plats"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Les petits plats</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Les petits plats</h2>
             <p>Développez un algorithme de recherche en JavaScript</p>
           </div>
         </Link>
@@ -87,9 +77,7 @@ const PortfolioCards = () => {
             <div>
               <img src={billedapp} alt="Billed app"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Billed app</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Billed app</h2>
             <p>Débuggez et testez un SaaS RH</p>
           </div>
         </Link>
@@ -101,9 +89,7 @@ const PortfolioCards = () => {
             <div>
               <img src={learnathome} alt="Learn at home"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Learn at home</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Learn at home</h2>
             <p>Transformez une maquette en site web avec Html & CSS</p>
           </div>
         </Link>
@@ -115,9 +101,7 @@ const PortfolioCards = () => {
             <div>
               <img src={kasa} alt="Kasa"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Kasa</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Kasa</h2>
             <p>Développez une application Web avec React et React Router</p>
           </div>
         </Link>
@@ -129,9 +113,7 @@ const PortfolioCards = () => {
             <div>
               <img src={sportsee} alt="Sportsee"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Sportsee</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Sportsee</h2>
             <p>Développez un tableau de bord d'analytics avec React</p>
           </div>
         </Link>
@@ -143,9 +125,7 @@ const PortfolioCards = () => {
             <div>
               <img src={argentbank} alt="Argent bank"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Argent bank</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Argent bank</h2>
             <p>Utilisez une API pour un compte utilisateur bancaire avec React</p>
           </div>
         </Link>
@@ -157,9 +137,7 @@ const PortfolioCards = () => {
             <div>
               <img src={hrnet} alt="Hrnet"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Hrnet</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Hrnet</h2>
             <p>Faites passer une librairie jQuery vers React</p>
           </div>
         </Link>
@@ -171,9 +149,7 @@ const PortfolioCards = () => {
             <div>
               <img src={mygarden} alt="mygarden"/>
             </div>
-            <h3>Project Name</h3>
-            <p>Mygarden</p>
-            <h4>Project Description</h4>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Mygarden</h2>
             <p>Site de mon ancienne société en php</p>
           </div>
         </Link>
