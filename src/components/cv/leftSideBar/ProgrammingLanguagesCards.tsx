@@ -4,31 +4,31 @@ import GaugeSegmented from "../../GaugeSegmented.tsx"
 const programmingLanguages = [
   {
     "id": 1,
-    "name": "html",
+    "name": "HTML",
     "stars": 5,
     "logoPath": "/assets/html.svg"
   },
   {
     "id": 2,
-    "name": "css",
+    "name": "CSS",
     "stars": 4,
     "logoPath": "/assets/css.svg"
   },
   {
     "id": 3,
-    "name": "javascript",
+    "name": "JavaScript",
     "stars": 4,
     "logoPath": "/assets/javascript.svg"
   },
   {
     "id": 4,
-    "name": "php",
+    "name": "PHP",
     "stars": 3,
     "logoPath": "/assets/php.svg"
   },
   {
     "id": 5,
-    "name": "python",
+    "name": "Python",
     "stars": 2,
     "logoPath": "/assets/python.svg"
   },

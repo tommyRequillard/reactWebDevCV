@@ -26,7 +26,7 @@ const Cv = () => {
   return (
     <div ref={pdfRef}>
       <div className="p-4">
-        <div className="flex flex-col shadow-2xl rounded-3xl bg-greylighter mb-10">
+        <div className="flex flex-col shadow-2xl rounded-3xl bg-white mb-10">
           <div id="topContent">
             <EtatCivil/>
             <section

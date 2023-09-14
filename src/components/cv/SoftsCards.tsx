@@ -1,11 +1,6 @@
 import Card from "./Card.tsx"
 
-const softs: {
-    id: number,
-    name: string,
-    stars: number,
-    logoPath: string
-}[] = [
+const softs = [
   {
     "id": 1,
     "name": "Suite Office",
@@ -121,7 +116,7 @@ const CardSofts = () => {
 
   return (
     <div className="flex w-full flex-col items-center mb-5">
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-16 ">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-20">
         {sortedSofts.map((softs) => (
           <li key={softs.id} className="flex flex-col item-centermb-3">
             <Card

@@ -2,20 +2,22 @@ import {
   createBrowserRouter,
   createRoutesFromElements, RouterProvider, Route, Outlet,
 } from "react-router-dom"
-import Home from "../pages/Home"
-import Error404 from "../pages/Error404"
-import Documents from "../pages/Documents.tsx"
-import Portfolio from "../pages/Portfolio.tsx"
-import Counter from "../pages/Counter.tsx"
+import {lazy, Suspense} from "react"
+
+const Home = lazy(() => import('../pages/Home'))
+const Error404 = lazy(() => import('../pages/Error404'))
+const Documents = lazy(() => import('../pages/Documents'))
+const Portfolio = lazy(() => import('../pages/Portfolio'))
+const Counter = lazy(() => import('../pages/Counter'))
 
 export default function AppRouter() {
   const browserRoutes = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Outlet/>}>
-      <Route index element={<Home/>}/>
-      <Route path="/documents" element={<Documents/>}/>
-      <Route path="/portfolio" element={<Portfolio/>}/>
-      <Route path="/counter" element={<Counter/>}/>
-      <Route path="*" element={<Error404/>}/>
+      <Route index element={<Suspense fallback={<>Chargement</>}> <Home/></Suspense>}/>
+      <Route path='/portfolio' element={<Suspense fallback={<>Chargement</>}> <Portfolio/></Suspense>}/>
+      <Route path="/documents" element={<Suspense fallback={<>Chargement</>}> <Documents/></Suspense>}/>
+      <Route path="/counter" element={<Suspense fallback={<>Chargement</>}> <Counter/></Suspense>}/>
+      <Route path="*" element={<Suspense fallback={<>Chargement</>}> <Error404/></Suspense>}/>
     </Route>
   ))
 

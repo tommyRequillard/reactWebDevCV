@@ -15,7 +15,8 @@ export default {
         'cvcyan': '#498c8a',
         'cvpurple': '#f3e0ec',
         'greylight': '#cccccc',
-        'greylighter': '#f3f4f6'
+        'greylighter': '#f3f4f6',
+        'cvbluetitle': '#6275f0'
       },
       backgroundImage: {},
     },
