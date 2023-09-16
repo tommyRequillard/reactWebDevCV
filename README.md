@@ -1,38 +1,43 @@
 # Mon CV en React avec TypeScript et Tailwind CSS
 
-Ce modèle vous offre une configuration minimale pour créer votre CV en utilisant React, TypeScript, et Tailwind CSS avec
-Vite. Il inclut la prise en charge du Hot Module Replacement (HMR) et quelques règles ESLint pour vous aider à maintenir
-un code propre.
+![Version](https://img.shields.io/badge/version-0.0.1-005bff)
+[![GitHub issues](https://img.shields.io/github/issues/tommy-req/P14-OPC-Wealth-Health)](https://github.com/tiamygarden/p14_react_wealth_health/issues)
+[![GitHub forks](https://img.shields.io/github/forks/tommy-req/P14-OPC-Wealth-Health)](https://github.com/tiamygarden/p14_react_wealth_health/forks)
+[![license](https://img.shields.io/github/license/ankitskvmdam/clean-jsdoc-theme)](https://github.com/ankitskvmdam/clean-jsdoc-theme/blob/master/LICENSE)
 
-Actuellement, deux plugins officiels sont disponibles :
+## Technologies utilisées
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
-  utilise [Babel](https://babeljs.io/) pour le Fast Refresh.
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) utilise [SWC](https://swc.rs/) pour le
-  Fast Refresh.
+[![HTML5](https://img.shields.io/badge/HTML5-5.0-orange)](https://developer.mozilla.org/fr/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-3.0-blue)](https://developer.mozilla.org/fr/docs/Web/CSS)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0.2-blue)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+[![Node.js](https://img.shields.io/badge/Node.js-18.16-green)](https://nodejs.org/)
+[![Vite](https://img.shields.io/badge/Vite-4.4.0-yellow)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-18.2-blueviolet)](https://reactjs.org/)
+[![React Router](https://img.shields.io/badge/React_Router-6.15.0-orange)](https://reactrouter.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.3-blue)](https://tailwindcss.com/)
+[![postcss](https://img.shields.io/badge/postcss-8.4.29-yellow)](https://postcss.org/)
+[![eslint](https://img.shields.io/badge/eslint-8.48.0-red)](https://eslint.org/)
 
-## Personnalisation du modèle
+# Mon CV portfolio :
 
-1. **Configuration ESLint :** Pour personnaliser les règles ESLint pour votre projet CV, suivez ces étapes :
+This CV portfolio is a React application using TypeScript and Tailwind CSS.
+It's a simple application that allows you to present my CV in a simple and elegant way.
+It show you what I can do and what I have done.
 
-    - Configurez la propriété `parserOptions` de niveau supérieur comme ceci dans votre fichier ESLint `.eslintrc.js` :
+## Technologies
 
-      ```js
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: ['./tsconfig.json', './tsconfig.node.json'],
-        tsconfigRootDir: __dirname,
-      },
-      ```
+- TS
+- Tailwind CSS
+- React
 
-    - Remplacez `plugin:@typescript-eslint/recommended` par `plugin:@typescript-eslint/recommended-type-checked`
-      ou `plugin:@typescript-eslint/strict-type-checked`.
+## Contribute to the project
 
-    - En option, ajoutez `plugin:@typescript-eslint/stylistic-type-checked`.
+Sleep Well is an open source project.
 
-    - Installez [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) et
-      ajoutez `plugin:react/recommended` & `plugin:react/jsx-runtime` à la liste `extends`.
+## Authors
 
-2. ** CV :** ceci est mon cv et portfolio afin de montrer mes capacités en développement web. Vous pouvez le modifier
-   pour qu'il corresponde à votre profil.
+My code : Tommy
+
+## Licensing
+
+This project was developed under the MIT License.

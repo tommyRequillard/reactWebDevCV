@@ -1,5 +1,6 @@
 import {useRef} from 'react'
 import {Modal} from "vite-react-mymodal"
+import Loading from "../Loading.tsx"
 
 const DocumentCpnt = () => {
   const modalRef = useRef(false)
