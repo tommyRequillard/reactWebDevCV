@@ -11,6 +11,7 @@ import kasa from "./../../assets/kasa.png"
 import lespetitsplats from "./../../assets/lespetitsplats.png"
 import mygarden from "./../../assets/mygarden.png"
 import sportsee from "./../../assets/sportsee.png"
+import npmPackage from "./../../assets/npmPackage.png"
 
 
 const PortfolioCards = () => {
@@ -151,6 +152,19 @@ const PortfolioCards = () => {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Mygarden</h2>
             <p>Site de mon ancienne société en php</p>
+          </div>
+        </Link>
+      </div>
+
+      <div className="bg-white rounded-3xl shadow-2xl p-4  max-w-[400px]">
+        <Link to="https://www.npmjs.com/package/vite-react-mymodal"
+          target="_blank">
+          <div className="flex flex-col">
+            <div>
+              <img src={npmPackage} alt="npm package"/>
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">Modal</h2>
+            <p>A simple and customizable modal component for React.</p>
           </div>
         </Link>
       </div>

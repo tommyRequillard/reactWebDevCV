@@ -185,7 +185,7 @@ function MainLayout({children}: MainLayoutProps) {
         </a>
       </div>
 
-      <main className="min-w-[425px] sm:px-1 lg:pl-72">
+      <main className="min-w-[425px] contents sm:px-1 lg:pl-72">
         <div className="xl:pr-96">
           <div className="px-4 py-10 sm:px-0 lg:px-8 lg:py-6">
             <MainArea children={children}/>
