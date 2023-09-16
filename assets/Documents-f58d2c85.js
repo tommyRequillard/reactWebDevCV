@@ -1,1 +1,0 @@
-import{j as s}from"./index-4f44135c.js";import{M as t,a,D as r}from"./MainLayout-02fa01db.js";const o=()=>s.jsxs(s.Fragment,{children:[s.jsx(t,{}),s.jsx(a,{children:s.jsx(r,{})})]});export{o as default};
