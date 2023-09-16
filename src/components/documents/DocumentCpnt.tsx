@@ -9,7 +9,7 @@ const DocumentCpnt = () => {
     modalRef.current.open()
   }
   return (
-    <>
+    <div className="w-full">
       <div className="flex flex-col justify-center items-center pb-6">
         <h1 className="text-6xl font-bold text-gray-900">Documents</h1>
       </div>
@@ -22,7 +22,7 @@ const DocumentCpnt = () => {
         body={"This is the content of the modal."}
         footer={"This is the footer of the modal."}>
       </Modal>
-    </>
+    </div>
   )
 }
 
