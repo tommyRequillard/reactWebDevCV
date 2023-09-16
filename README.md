@@ -32,7 +32,7 @@ It show you what I can do and what I have done.
 
 ## Contribute to the project
 
-Sleep Well is an open source project.
+ReactWebDevCV is an open source project.
 
 ## Authors
 
