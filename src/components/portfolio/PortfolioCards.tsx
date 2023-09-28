@@ -108,7 +108,7 @@ const PortfolioCards = () => {
         </Link>
       </div>
       <div className="bg-white rounded-3xl shadow-2xl p-4  max-w-[400px]">
-        <Link to="https://tiamygarden.github.io/profil/user/18"
+        <Link to="https://tiamygarden.github.io/sportsee/"
           target="_blank">
           <div className="flex flex-col">
             <div>
