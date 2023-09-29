@@ -2,7 +2,6 @@ import {useDispatch, useSelector} from "react-redux"
 import {useEffect} from "react"
 import {getNumberOfProjects} from "../features/statistics.tsx"
 
-
 const StatsRedux = () => {
   const dispatch = useDispatch()
 

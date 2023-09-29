@@ -12,6 +12,8 @@ import lespetitsplats from "./../../assets/lespetitsplats.png"
 import mygarden from "./../../assets/mygarden.png"
 import sportsee from "./../../assets/sportsee.png"
 import npmPackage from "./../../assets/npmPackage.png"
+import princepark from "./../../assets/princepark.png"
+import mydrym from "./../../assets/mydrym.png"
 
 export const projects = [
   {
@@ -52,7 +54,7 @@ export const projects = [
     image: lespetitsplats,
     link: "https://tiamygarden.github.io/les-petits-plats/",
     description: "Développez un algorithme de recherche en JavaScript",
-    skills: ["Html", "Css", "Responsive", "Javascript", "Bootstrap"],
+    skills: ["Html", "Css", "Responsive", "Javascript", "Bootstrap", "fetch"],
   },
   {
     id: 6,
@@ -76,7 +78,7 @@ export const projects = [
     image: kasa,
     link: "https://tiamygarden.github.io/kasa/",
     description: "Développez une application Web avec React et React Router",
-    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router"],
+    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "npm", "fetch"],
   },
   {
     id: 9,
@@ -84,7 +86,7 @@ export const projects = [
     image: sportsee,
     link: "https://tiamygarden.github.io/sportsee/",
     description: "Développez un tableau de bord d'analytics avec React",
-    skills: ["Html", "Css", "Responsive", "Javascript", "React", "Recharts"],
+    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "Recharts", "npm", "fetch"],
   },
   {
     id: 10,
@@ -92,7 +94,7 @@ export const projects = [
     image: argentbank,
     link: "https://p10bankapi.netlify.app/",
     description: "Utilisez une API pour un compte utilisateur bancaire avec React",
-    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "API", "JWT", "Redux"],
+    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "API", "JWT", "Redux", "npm", "fetch"],
   },
   {
     id: 11,
@@ -100,7 +102,7 @@ export const projects = [
     image: hrnet,
     link: "https://p14reactwealthhealth.netlify.app/",
     description: "Faites passer une librairie jQuery vers React",
-    skills: ["Html", "Css", "Responsive", "Javascript", "React", "Jquery", "Tailwind"],
+    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "Jquery", "Tailwind", "npm", "fetch", "node"],
   },
   {
     id: 12,
@@ -108,7 +110,7 @@ export const projects = [
     image: mygarden,
     link: "https://mygarden.flowers",
     description: "Site de mon ancienne société en php",
-    skills: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC"],
+    skills: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC", "fetch", "wordpress"],
   },
   {
     id: 13,
@@ -116,6 +118,22 @@ export const projects = [
     image: npmPackage,
     link: "https://www.npmjs.com/package/vite-react-mymodal",
     description: "A simple and customizable modal component for React.",
+    skills: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm"],
+  },
+  {
+    id: 14,
+    name: "Prince Park",
+    image: princepark,
+    link: "https://web.archive.org/web/20190125130254/https://princepark.fr/",
+    description: "Archive du Site prestashop de commerce de street-wear webMaster design par mes soins",
+    skills: ["php", "Responsive", "Prestashop", "Css", "Html"],
+  },
+  {
+    id: 15,
+    name: "Sas Mydrym",
+    image: mydrym,
+    link: "https://web.archive.org/web/20190125130254/https://princepark.fr/",
+    description: "Archive du Site Mydrym société de service informatique conçu en tant que chef de projet informatique + charte graphique par mes soins",
     skills: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm"],
   }
 ]
