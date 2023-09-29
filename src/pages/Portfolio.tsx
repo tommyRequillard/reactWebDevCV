@@ -8,7 +8,6 @@ const Portfolio = () => {
     <>
       <MainLayout/>
       <MainArea>
-
         <PortfolioCpnt/>
       </MainArea>
     </>

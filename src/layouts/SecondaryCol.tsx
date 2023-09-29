@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import PortfolioCards from "../components/portfolio/PortfolioCards.tsx"
-import DocumentCpnt from "../components/documents/DocumentCpnt.tsx"
+import Stats from "../components/StatsRedux.tsx"
 
 const SecondaryCol = () => {
   const [portfolioPagesIsActive, setPortfolioPagesIsActive] = useState(false)
@@ -17,9 +17,7 @@ const SecondaryCol = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {portfolioPagesIsActive ? (
-        <>
-          <DocumentCpnt/>
-        </>
+        <Stats/>
       ) : (
         <>
           <h2 className="text-2xl font-bold text-gray-900 mb-5">
