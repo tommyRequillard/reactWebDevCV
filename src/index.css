@@ -6,22 +6,16 @@
     position: relative;
 }
 
-.react-pdf__Page * {
-    display: none;
-}
-
 @media (max-width: 1024px) {
     .react-pdf__Page {
         width: 299px;
         height: auto;
     }
-
-    .react-pdf__Page * {
-        width: 299px;
-        height: auto;
-    }
 }
 
+.react-pdf__Page * {
+    display: none;
+}
 
 .react-pdf__Page__canvas {
     display: block;
