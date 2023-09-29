@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-pdf__Page {
+    position: relative;
+}
+
+.react-pdf__Page * {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .react-pdf__Page {
+        width: 299px;
+        height: auto;
+    }
+
+    .react-pdf__Page * {
+        width: 299px;
+        height: auto;
+    }
+}
+
+
+.react-pdf__Page__canvas {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .react-pdf__Page__canvas {
+        width: 299px; /* Largeur spécifique pour les écrans mobiles */
+        height: auto; /* Hauteur ajustée automatiquement pour conserver la proportion */
+    }
+}
