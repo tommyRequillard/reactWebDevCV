@@ -20,6 +20,7 @@ export const projects = [
     image: booki,
     link: "https://tiamygarden.github.io/booki/",
     description: "Transformez une maquette en site web avec Html & CSS",
+    skills: ["Html", "Css", "Responsive"],
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ export const projects = [
     image: ohmyfood,
     link: "https://tiamygarden.github.io/ohmyfood/",
     description: "Dynamisez une page web avec des animations CSS",
+    skills: ["Html", "Css", "Responsive", "Sass", "Animation"],
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const projects = [
     image: gameon,
     link: "https://tiamygarden.github.io/GameOn-website-FR/",
     description: "Créez une landing page avec Javascript",
+    skills: ["Html", "Css", "Responsive", "Javascript", "Algorithm"],
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ export const projects = [
     image: fisheye,
     link: "https://tiamygarden.github.io/fishEyeV2/",
     description: "Créez un site accessible pour une plateforme de photographes",
+    skills: ["Html", "Css", "Responsive", "Javascript", "fetch", "Aria"],
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const projects = [
     image: lespetitsplats,
     link: "https://tiamygarden.github.io/les-petits-plats/",
     description: "Développez un algorithme de recherche en JavaScript",
+    skills: ["Html", "Css", "Responsive", "Javascript", "Bootstrap"],
   },
   {
     id: 6,
@@ -55,6 +60,7 @@ export const projects = [
     image: billedapp,
     link: "https://tiamygarden.github.io/bill-app---Billed-app-FR-Front/",
     description: "Débuggez et testez un SaaS RH",
+    skills: ["Html", "Css", "Responsive", "Javascript"],
   },
   {
     id: 7,
@@ -62,6 +68,7 @@ export const projects = [
     image: learnathome,
     link: "https://www.figma.com/file/AmFAvVlfMJ6kkU5jCiDopT/learn%40home?node-id=11%3A131&mode=dev",
     description: "Transformez une maquette en site web avec Html & CSS",
+    skills: ["figma", "User Stories", "trello", "Kanban"],
   },
   {
     id: 8,
@@ -69,6 +76,7 @@ export const projects = [
     image: kasa,
     link: "https://tiamygarden.github.io/kasa/",
     description: "Développez une application Web avec React et React Router",
+    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router"],
   },
   {
     id: 9,
@@ -76,6 +84,7 @@ export const projects = [
     image: sportsee,
     link: "https://tiamygarden.github.io/sportsee/",
     description: "Développez un tableau de bord d'analytics avec React",
+    skills: ["Html", "Css", "Responsive", "Javascript", "React", "Recharts"],
   },
   {
     id: 10,
@@ -83,6 +92,7 @@ export const projects = [
     image: argentbank,
     link: "https://p10bankapi.netlify.app/",
     description: "Utilisez une API pour un compte utilisateur bancaire avec React",
+    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "API", "JWT", "Redux"],
   },
   {
     id: 11,
@@ -90,6 +100,7 @@ export const projects = [
     image: hrnet,
     link: "https://p14reactwealthhealth.netlify.app/",
     description: "Faites passer une librairie jQuery vers React",
+    skills: ["Html", "Css", "Responsive", "Javascript", "React", "Jquery", "Tailwind"],
   },
   {
     id: 12,
@@ -97,6 +108,7 @@ export const projects = [
     image: mygarden,
     link: "https://mygarden.flowers",
     description: "Site de mon ancienne société en php",
+    skills: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC"],
   },
   {
     id: 13,
@@ -104,6 +116,7 @@ export const projects = [
     image: npmPackage,
     link: "https://www.npmjs.com/package/vite-react-mymodal",
     description: "A simple and customizable modal component for React.",
+    skills: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm"],
   }
 ]
 

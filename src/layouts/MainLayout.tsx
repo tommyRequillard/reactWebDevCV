@@ -5,6 +5,7 @@ import {
   Bars3Icon,
   ChartPieIcon,
   DocumentDuplicateIcon,
+  PresentationChartLineIcon,
   FolderIcon,
   HomeIcon,
   XMarkIcon,
@@ -19,7 +20,7 @@ const navigation = [
   {name: 'Portfolio', href: '/portfolio', icon: FolderIcon, current: false, active: false},
   {name: 'Documents', href: '/documents', icon: DocumentDuplicateIcon, current: false, active: false},
   {name: 'Counter', href: '/counter', icon: ChartPieIcon, current: false, active: false},
-  {name: 'Stats', href: '/stats', icon: ChartPieIcon, current: false, active: false},
+  {name: 'Stats', href: '/stats', icon: PresentationChartLineIcon, current: false, active: false},
 ]
 
 function classNames(...classes: string[]) {
