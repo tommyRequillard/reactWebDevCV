@@ -132,7 +132,7 @@ export const projects = [
     id: 15,
     name: "Sas Mydrym",
     image: mydrym,
-    link: "https://web.archive.org/web/20190125130254/https://princepark.fr/",
+    link: "https://mydrym.netlify.app/",
     description: "Archive du Site Mydrym société de service informatique conçu en tant que chef de projet informatique + charte graphique par mes soins",
     skills: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm"],
   }
