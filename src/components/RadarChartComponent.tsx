@@ -1,7 +1,7 @@
 import {Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getNumberOfProjects, getSkillsMostUsed} from './../features/statistics'
+import {getSkillsMostUsed} from './../features/statistics'
 
 const formatDataForRadarChart = (skillsMostUsed) => {
   // Convertir le tableau associatif en tableau d'objets
@@ -21,10 +21,22 @@ const formatDataForRadarChart = (skillsMostUsed) => {
 
 const RadarChartComponent = () => {
   const dispatch = useDispatch()
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   useEffect(() => {
-    dispatch(getSkillsMostUsed())
+    dispatch(getSkillsMostUsed())// Fonction de gestionnaire de redimensionnement
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    // Ajouter un écouteur d'événements de redimensionnement
+    window.addEventListener('resize', handleResize)
+
+    // Nettoyer l'écouteur d'événements lorsque le composant est démonté
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
   }, [dispatch])
+
 
   const skillsMostUsed = useSelector((state) => state.statistics.skillsMostUsed)
 
@@ -33,12 +45,15 @@ const RadarChartComponent = () => {
     return null
   }
 
+  // Déterminez la classe CSS en fonction de la largeur de l'écran
+  const radarChartClass = windowWidth < 1024 ? 'radar-chart-mobile' : 'radar-chart '
+
   const data = formatDataForRadarChart(skillsMostUsed)
 
   return (
-    <div className="min-w-[600px] h-[600px] flex justify-center">
-      <ResponsiveContainer width={600} height={600}>
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+    <div className={`${radarChartClass} flex justify-center`}>
+      <ResponsiveContainer width={windowWidth < 1024 ? 299 : 600} height={600}>
+        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
           <PolarGrid/>
           <PolarAngleAxis dataKey="subject"/>
           <PolarRadiusAxis/>

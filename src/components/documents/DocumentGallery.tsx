@@ -191,14 +191,10 @@ const DocumentGallery = () => {
   const [pageNumber, setPageNumber] = useState(1)
   const [pageWidth, setPageWidth] = useState(299)
 
-  // Utilisez useEffect pour déterminer la largeur de la page en fonction de la largeur de l'écran
   useEffect(() => {
-    // Vérifier la largeur de l'écran et définir la largeur de la page en conséquence
     if (window.innerWidth >= 1024) {
-      // Largeur pour tablette ou bureau
       setPageWidth(841)
     } else {
-      // Largeur pour mobile
       setPageWidth(299)
     }
   }, [])
