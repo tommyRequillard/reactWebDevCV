@@ -103,14 +103,14 @@ function MainLayout({children}: MainLayoutProps) {
                             className={classNames(
                               'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                               item.current
-                                ? 'bg-gray-50 text-cvblue text-gold'
-                                : 'text-cvblue hover:text-cvcyan hover:bg-gray-50'
+                                ? 'bg-greylighter text-cvblue text-gold'
+                                : 'text-cvblue hover:text-gold hover:bg-greylighter'
                             )}
                           >
                             <item.icon
                               className={classNames(
                                 'h-6 w-6 shrink-0',
-                                item.current ? 'text-cvblue text-gold' : 'text-gray-400 group-hover:text-cvcyan'
+                                item.current ? 'text-cvblue text-gold' : 'text-gray-400 group-hover:text-gold'
                               )}
                               aria-hidden="true"
                             />
@@ -147,14 +147,14 @@ function MainLayout({children}: MainLayoutProps) {
                     className={classNames(
                       'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                       item.current
-                        ? 'bg-gray-50 text-cvblue text-gold' // Ajoutez text-gold seulement si l'élément est actif
-                        : 'text-cvblue hover:text-cvcyan hover:bg-gray-50'
+                        ? 'bg-greylight text-cvblue text-gold' // Ajoutez text-gold seulement si l'élément est actif
+                        : 'text-cvblue hover:text-gold hover:bg-greylight'
                     )}
                   >
                     <item.icon
                       className={classNames(
                         'h-6 w-6 shrink-0',
-                        item.current ? 'text-cvblue text-gold' : 'text-gray-400 group-hover:text-cvcyan'
+                        item.current ? 'text-cvblue text-gold' : 'text-gray-400 group-hover:text-gold'
                       )}
                       aria-hidden="true"
                     />
@@ -180,7 +180,7 @@ function MainLayout({children}: MainLayoutProps) {
         <a href="#">
           <span className="sr-only">Your profile</span>
           <img
-            className="h-8 w-8 rounded-full bg-gray-50"
+            className="h-8 rounded-full aspect-square bg-dark"
             src={photoProfil}
             alt=""
           />

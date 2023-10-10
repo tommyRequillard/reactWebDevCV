@@ -56,7 +56,7 @@ const Experiences = () => {
           </li>
 
           <li className="py-4">
-            <h4 className="text-lg font-semibold tracking-tight text-cvbluetitle">2014 à 2017</h4>
+            <h4 className="text-lg font-semibold tracking-tight text-cvbluetitle">2014 à 2015</h4>
             <h3 className="font-semibold leading-6 text-lg text-gray-600">
                             Chargé de developpement
                             associatif

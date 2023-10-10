@@ -9,11 +9,9 @@ const SoftSkills = () => {
       </div>
       <div className="flex w-full flex-col items-centermb-2">
         <div className="flex w-full mx-auto">
-          <ul className="flex flex-row flex-wrap justify-around items-end">
-            <p className="mr-1">
-                            Créativité, curiosité, adaptabilité à tous les postes, empathie...
-            </p>
-          </ul>
+          <p className="mr-1">
+                        Créativité, curiosité, adaptabilité à tous les postes, empathie...
+          </p>
         </div>
       </div>
     </div>
