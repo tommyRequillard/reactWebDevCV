@@ -1,10 +1,10 @@
-import softSkillsImg from "../../../assets/noun-soft-skills-1714291.png"
+import AttractionsIcon from '@mui/icons-material/Attractions'
 
 const SoftSkills = () => {
   return (
     <div className="py-4">
       <div className="flex items-center mb-5">
-        <img src={softSkillsImg} alt="logo soft skills" className="w-9 h-6"/>
+        <AttractionsIcon className="text-2xl"/>
         <h2 className="text-xl font-semibold leading-7 ml-3">Softs Skills</h2>
       </div>
       <div className="flex w-full flex-col items-centermb-2">

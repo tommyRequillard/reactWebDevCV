@@ -7,7 +7,7 @@ export default function LightboxButton({onClick}: LightboxButtonProps) {
   return (
     <Box sx={{mb: 2}}>
       <Button variant="contained" onClick={onClick}>
-                Open Lightbox
+                Visualisez les documents
       </Button>
     </Box>
   )

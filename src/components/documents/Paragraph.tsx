@@ -1,7 +1,8 @@
-import React from 'react'
+import * as React from "react"
+import Typography from "@mui/material/Typography"
 
 export default function Paragraph({children}: React.PropsWithChildren) {
-  return <p>{children}</p>
+  return <Typography paragraph>{children}</Typography>
 }
 
 

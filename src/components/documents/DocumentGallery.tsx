@@ -20,8 +20,8 @@ const DocumentGallery = () => {
   return (
     <div>
       <Paragraph>
-                Full-blown example with most of the plugins enabled (Captions,
-                Fullscreen, Slideshow, Thumbnails, Zoom).
+                En appuyant sur le bouton ci-dessous, vous pourrez voir les documents attestant de mes compétences.
+                Diplômes, certificats, attestations, etc...
       </Paragraph>
 
       <Lightbox
