@@ -13,8 +13,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@mui/material": "^5.14.13",
     "@reduxjs/toolkit": "^1.9.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",

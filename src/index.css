@@ -2,34 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.react-pdf__Page {
-    position: relative;
+/* lightbox-custom.css */
+.yarlb-button {
+    background-color: #333; /* Couleur de fond gris foncé */
+    color: #fff; /* Couleur du texte en blanc */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-@media (max-width: 1024px) {
-    .react-pdf__Page {
-        width: 299px;
-        height: auto;
-    }
-}
-
-.react-pdf__Page * {
-    display: none;
-}
-
-.react-pdf__Page__canvas {
-    display: block;
-}
-
-@media (max-width: 1024px) {
-    .react-pdf__Page__canvas {
-        width: 299px;
-        height: auto;
-    }
-}
-
-@media (width: 320px) {
-    .radar-chart-mobile {
-        width: 299px;
-    }
+/* Style du bouton Fermer */
+.yarlb-close-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
