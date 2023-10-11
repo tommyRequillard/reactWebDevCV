@@ -1,0 +1,2 @@
+import{j as e,P as s}from"./index-4d284d1f.js";import{M as t,a as o}from"./MainLayout-d0def9af.js";const r=()=>e.jsxs("div",{className:"flex flex-col justify-center items-center",children:[e.jsx("h1",{className:"text-6xl font-bold text-gray-900 mb-5",children:"Welcome to My portfolio"}),e.jsx("div",{className:"container flex flex-wrap justify-around gap-6 py-4",children:e.jsx(s,{})})]}),i=()=>e.jsxs(e.Fragment,{children:[e.jsx(t,{}),e.jsx(o,{children:e.jsx(r,{})})]});export{i as default};
+//# sourceMappingURL=Portfolio-73e692ce.js.map
