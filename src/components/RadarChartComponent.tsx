@@ -1,4 +1,4 @@
-import {Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts'
+import {Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend, ResponsiveContainer} from 'recharts'
 import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getSkillsMostUsed} from './../features/statistics'
@@ -11,12 +11,16 @@ const formatDataForRadarChart = (skillsMostUsed) => {
       A: count, // Les données A correspondent au nombre d'occurrences de la compétence
     }))
     .filter((item) => item.A >= 4) // Filtrer les compétences avec au moins 4 occurrences
-    .sort((a, b) => b.A - a.A) // Trier les compétences par ordre décroissant du nombre d'occurrences
+    // .filter((item) => item.A <= 15)
 
   // Limiter aux 8 premières compétences
   const top8Skills = data.slice(0, 8)
 
   return top8Skills
+}
+
+interface RadarChartComponentProps {
+    className: string
 }
 
 const RadarChartComponent = () => {
@@ -53,16 +57,49 @@ const RadarChartComponent = () => {
   return (
     <div className={`${radarChartClass} flex justify-center`}>
       <ResponsiveContainer width={windowWidth < 1024 ? 299 : 600} height={600}>
-        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
-          <PolarGrid/>
+        <RadarChart
+          cx="50%"
+          cy="50%"
+          outerRadius="70%"
+          data={data}
+        >
+          <PolarGrid
+            cx="50%"
+            cy="50%"
+            gridType="circle"
+            stroke="#967C56"
+            fill="#333333"
+            fillOpacity={0.8}
+
+          />
           <PolarAngleAxis dataKey="subject"/>
-          <PolarRadiusAxis/>
+          <PolarRadiusAxis
+            angle={0}
+            domain={[0, 16]}
+            tickCount={5}
+            tickFormatter={(tick) => tick.toFixed(0)}
+            tick={{
+              fontSize: 14,
+              fill: '#333333',
+              textShadow: '2px 2px 2px rgba(0, 0, 0, 0.5)', // Ajouter une ombre
+            }}
+          />
           <Radar
-            name="Tommy"
+            name="Evaluation"
             dataKey="A"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="#498c8a"
+            fill="#42f2f7"
             fillOpacity={0.6}
+          />
+          <Legend
+            name={''}
+            iconType={'star'}
+            wrapperStyle={{
+              top: 'auto',
+              right: 'auto',
+              bottom: 'auto',
+              left: 'auto',
+            }}
           />
         </RadarChart>
       </ResponsiveContainer>

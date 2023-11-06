@@ -89,7 +89,7 @@ const softs = [
     "id": 15,
     "name": "KeyShot 3D",
     "stars": 4,
-    "logoPath": "/assets/KeyShotLogo.png"
+    "logoPath": "/assets/KeyShot.svg"
   },
   {
     "id": 16,
