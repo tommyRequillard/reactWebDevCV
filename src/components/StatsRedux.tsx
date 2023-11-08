@@ -4,11 +4,9 @@ import {getNumberOfProjects} from "../features/statistics.tsx"
 
 const StatsRedux = () => {
   const dispatch = useDispatch()
-
   useEffect(() => {
     dispatch(getNumberOfProjects())
   }, [dispatch])
-
   const numberOfProjects = useSelector((state) => state.statistics.numberOfProjects)
 
   return (

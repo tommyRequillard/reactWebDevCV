@@ -11,9 +11,7 @@ const Stats = () => {
   useEffect(() => {
     dispatch(getNumberOfProjects())
   }, [dispatch])
-
   const numberOfProjects = useSelector((state) => state.statistics.numberOfProjects)
-
 
   return (
     <>
@@ -21,8 +19,8 @@ const Stats = () => {
       <MainArea>
         <StatsRedux/>
         <p className="text-center mt-4 mb-2">
-                    Ce shéma ne represente pas mon niveau de compétence mais le nombre de projet réalisés avec les
-                    technologies indiquées par rapport aux nombre de projet réalisés au total.
+                    Ce schéma ne représente pas mon niveau de compétence mais le nombre de projet réalisés avec les
+                    technologies indiquées par rapport au nombre de projets réalisés au total.
         </p>
         <p className="text-center mb-2">
                     Par exemple, j'ai réalisé 6 projets avec React sur un total de {numberOfProjects} projets réalisés.

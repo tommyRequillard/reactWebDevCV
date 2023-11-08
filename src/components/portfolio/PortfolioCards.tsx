@@ -16,6 +16,7 @@ import princepark from "./../../assets/princepark.png"
 import mydrym from "./../../assets/mydrym.png"
 import hussards from "./../../assets/hussards.png"
 import cvPortfolio from "./../../assets/cvPortfolio.png"
+import trello from "./../../assets/trello.png"
 
 export const projects = [
   {
@@ -23,7 +24,7 @@ export const projects = [
     name: "Booki",
     image: booki,
     link: "https://tiamygarden.github.io/booki/",
-    description: "Transformez une maquette en site web avec Html & CSS",
+    description: "Projet OpenClassRooms : Transformez une maquette en site web avec Html & CSS",
     skills: ["Html", "Css", "Responsive"],
   },
   {
@@ -31,7 +32,7 @@ export const projects = [
     name: "Oh my food",
     image: ohmyfood,
     link: "https://tiamygarden.github.io/ohmyfood/",
-    description: "Dynamisez une page web avec des animations CSS",
+    description: "Projet OpenClassRooms : Dynamisez une page web avec des animations CSS",
     skills: ["Html", "Css", "Responsive", "Sass", "Animation"],
   },
   {
@@ -39,7 +40,7 @@ export const projects = [
     name: "Game On",
     image: gameon,
     link: "https://tiamygarden.github.io/GameOn-website-FR/",
-    description: "Créez une landing page avec Javascript",
+    description: "Projet OpenClassRooms : Créez une landing page avec Javascript",
     skills: ["Html", "Css", "Responsive", "Javascript", "Algorithm"],
   },
   {
@@ -47,7 +48,7 @@ export const projects = [
     name: "Fish Eye",
     image: fisheye,
     link: "https://tiamygarden.github.io/fishEyeV2/",
-    description: "Créez un site accessible pour une plateforme de photographes",
+    description: "Projet OpenClassRooms : Créez un site accessible pour une plateforme de photographes",
     skills: ["Html", "Css", "Responsive", "Javascript", "fetch", "Aria", "npm"],
   },
   {
@@ -55,7 +56,7 @@ export const projects = [
     name: "Les petits plats",
     image: lespetitsplats,
     link: "https://tiamygarden.github.io/les-petits-plats/",
-    description: "Développez un algorithme de recherche en JavaScript",
+    description: "Projet OpenClassRooms : Développez un algorithme de recherche en JavaScript",
     skills: ["Html", "Css", "Responsive", "Javascript", "Bootstrap", "fetch", "npm"],
   },
   {
@@ -63,7 +64,7 @@ export const projects = [
     name: "Billed app",
     image: billedapp,
     link: "https://tiamygarden.github.io/bill-app---Billed-app-FR-Front/",
-    description: "Débuggez et testez un SaaS RH",
+    description: "Projet OpenClassRooms : Débuggez et testez un SaaS RH",
     skills: ["Html", "Css", "Responsive", "Javascript", "npm"],
   },
   {
@@ -71,7 +72,7 @@ export const projects = [
     name: "Learn at home",
     image: learnathome,
     link: "https://www.figma.com/file/AmFAvVlfMJ6kkU5jCiDopT/learn%40home?node-id=11%3A131&mode=dev",
-    description: "Transformez une maquette en site web avec Html & CSS",
+    description: "Projet OpenClassRooms : Transformez une maquette en site web avec Html & CSS",
     skills: ["figma", "User Stories", "trello", "Kanban"],
   },
   {
@@ -79,7 +80,7 @@ export const projects = [
     name: "Kasa",
     image: kasa,
     link: "https://tiamygarden.github.io/kasa/",
-    description: "Développez une application Web avec React et React Router",
+    description: "Projet OpenClassRooms : Développez une application Web avec React et React Router",
     skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "npm", "fetch"],
   },
   {
@@ -87,7 +88,7 @@ export const projects = [
     name: "Sportsee",
     image: sportsee,
     link: "https://tiamygarden.github.io/sportsee/",
-    description: "Développez un tableau de bord d'analytics avec React",
+    description: "Projet OpenClassRooms : Développez un tableau de bord d'analytics avec React",
     skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "Recharts", "npm", "fetch"],
   },
   {
@@ -95,7 +96,7 @@ export const projects = [
     name: "Argent bank",
     image: argentbank,
     link: "https://p10bankapi.netlify.app/",
-    description: "Utilisez une API pour un compte utilisateur bancaire avec React",
+    description: "Projet OpenClassRooms : Utilisez une API pour un compte utilisateur bancaire avec React",
     skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "API", "JWT", "React Redux", "npm", "fetch"],
   },
   {
@@ -103,7 +104,7 @@ export const projects = [
     name: "Hrnet",
     image: hrnet,
     link: "https://p14reactwealthhealth.netlify.app/",
-    description: "Faites passer une librairie jQuery vers React",
+    description: "Projet OpenClassRooms : Faites passer une librairie jQuery vers React",
     skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "React Redux", "Jquery", "Tailwind", "npm", "fetch", "node"],
   },
   {
@@ -111,7 +112,7 @@ export const projects = [
     name: "Mygarden",
     image: mygarden,
     link: "https://mygarden.flowers",
-    description: "Site de mon ancienne société en php",
+    description: "Site de mon ancienne société - latest version en php",
     skills: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC", "fetch", "wordpress", "npm"],
   },
   {
@@ -119,7 +120,7 @@ export const projects = [
     name: "Modal",
     image: npmPackage,
     link: "https://www.npmjs.com/package/vite-react-mymodal",
-    description: "A simple and customizable modal component for React.",
+    description: "Projet OpenClassRooms : A simple and customizable modal component for React.",
     skills: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm"],
   },
   {
@@ -135,7 +136,7 @@ export const projects = [
     name: "Sas Mydrym",
     image: mydrym,
     link: "https://mydrym.netlify.app/",
-    description: "Archive du Site Mydrym société de service informatique conçu en tant que chef de projet informatique + charte graphique par mes soins",
+    description: "Archive du Site Mydrym société de service informatique conçu en tant que CEO chef de projet informatique + charte graphique par mes soins",
     skills: ["Html", "Css", "Responsive", "TypeScript", "Vue", "node", "npm"],
   },
   {
@@ -143,15 +144,23 @@ export const projects = [
     name: "Hussards",
     image: hussards,
     link: "https://web.archive.org/web/20180813072840/https://teamescouade85.wordpress.com/",
-    description: "Archive wordpress de l'équipe des Hussards fait par mes soins",
+    description: "Archive/Wayback Machine wordpress de l'équipe des Hussards fait par mes soins",
     skills: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC", "fetch", "wordpress"],
   },
   {
     id: 17,
-    name: "cv & Portfolio",
+    name: "Trello",
+    image: trello,
+    link: "https://trello.com/b/pgKyUW30/p10-learnhome",
+    description: "Projet OpenClassRooms : Projet Agile avec un Kanban sur Trello fondé sur les User Stories et les diagrammes de cas d'usage",
+    skills: ["Méthode agile", "UI/UX", "User Story", "Diagramme de cas d'usage", "figma"],
+  },
+  {
+    id: 18,
+    name: "CV & Portfolio",
     image: cvPortfolio,
     link: "https://reactwebdevcv.netlify.app/",
-    description: "le projet que vous avez sous les yeux",
+    description: "Projet React que vous avez sous les yeux",
     skills: ["Html", "Css", "Responsive", "TypeScript", "React", "React Router", "React Redux", "node", "npm"],
   }
 ]
