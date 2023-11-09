@@ -20,7 +20,7 @@ const DocumentCpnt = () => {
               setIsAuthorized(authorized)
             })
         },
-        appKey: 'f5a943c9736d6431e313d9e4c4cdf6f8',
+        appKey: 'xxxxx',
         appName: 'p10-learnhome',
       })
     }
@@ -29,8 +29,8 @@ const DocumentCpnt = () => {
 
   useEffect(() => {
     if (isAuthorized) {
-      const apiKey = "f5a943c9736d6431e313d9e4c4cdf6f8"
-      const apiToken = "ATTAd16023c6fbc032b948609f4714f4dfa9338ef983fe5d9300f366b46d38609cc48075E56A"
+      const apiKey = "xxx"
+      const apiToken = "xxx"
       const boardId = "pgKyUW30"
 
       const apiUrl = `https://api.trello.com/1/boards/${boardId}?key=${apiKey}&token=${apiToken}`
