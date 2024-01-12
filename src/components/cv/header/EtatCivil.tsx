@@ -6,25 +6,23 @@ const EtatCivil = () => {
   return (
     <>
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-4 rounded-t-3xl">
-        <div className="flex justify-start md:justify-between md:items-center flex-col md:flex-row">
-          <h1 className="text-xl font-semibold leading-7 text-white">Tommy REQUILLARD </h1>
-          <span className="mt-1 text-lg font-semibold leading-6 text-white">Developpeur web full stack</span>
-        </div>
-        <p>22 rue Duchesne de Denant</p>
-        <p>85000 LA ROCHE SUR YON</p>
-        <ButtonMailto mailto="mailto:tommy.requillard@laposte.net" label={(
-          <div className="flex items-center justify-start ">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-              stroke="currentColor" className="w-6 h-6 mr-1">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z"/>
-            </svg>
-            <p>: tommy.requillard@laposte.net</p>
-          </div>
-        )}/>
         <div className="flex justify-between">
-          <div className="flex flex-col justify-start sm:flex-row">
-            <div className="flex justify-start items-center">
+          <div className="flex justify-start md:justify-between md:items-start flex-col ">
+            <h1 className="text-xl font-semibold leading-7 text-white">Tommy REQUILLARD </h1>
+            <p>22 rue Duchesne de Denant</p>
+            <p>85000 LA ROCHE SUR YON</p>
+            <ButtonMailto mailto="mailto:tommy.requillard@laposte.net" label={(
+              <div className="flex items-start  my-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor" className="w-6 h-6 mr-1">
+                  <path strokeLinecap="round" strokeLinejoin="round"
+                    d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z"/>
+                </svg>
+                <p>: tommy.requillard@laposte.net</p>
+              </div>
+            )}/>
+            <div className="flex justify-start items-start  my-0.5">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                 stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -35,7 +33,7 @@ const EtatCivil = () => {
             <Link
               to="https://github.com/tiamygarden"
               target="_blank"
-              className="flex justify-start items-center md:pl-4">
+              className="flex justify-start items-start my-0.5">
               <svg fill="white" className="w-6 " viewBox="0 0 24 24">
                 <path
                   fillRule="evenodd"
@@ -43,10 +41,37 @@ const EtatCivil = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <p>https://github.com/tiamygarden</p>
+              <p>github.com/tiamygarden</p>
+            </Link>
+            <Link
+              to="https://gitlab.com/tommy.requillard"
+              target="_blank"
+              className="flex justify-start items-start my-0.5 pb-2">
+              <svg className="w-5 h-5" viewBox="0 0 256 236">
+                <path fill="#E24329" d="m128.075 236.075l47.104-144.97H80.97z"/>
+                <path fill="#FC6D26" d="M128.075 236.074L80.97 91.104H14.956z"/>
+                <path fill="#FCA326"
+                  d="M14.956 91.104L.642 135.16a9.752 9.752 0 0 0 3.542 10.903l123.891 90.012z"/>
+                <path fill="#E24329"
+                  d="M14.956 91.105H80.97L52.601 3.79c-1.46-4.493-7.816-4.492-9.275 0z"/>
+                <path fill="#FC6D26" d="m128.075 236.074l47.104-144.97h66.015z"/>
+                <path fill="#FCA326"
+                  d="m241.194 91.104l14.314 44.056a9.752 9.752 0 0 1-3.543 10.903l-123.89 90.012z"/>
+                <path fill="#E24329"
+                  d="M241.194 91.105h-66.015l28.37-87.315c1.46-4.493 7.816-4.492 9.275 0z"/>
+              </svg>
+              <p className="ml-0.5">gitlab.com/tommy.requillard</p>
             </Link>
           </div>
-          <img className="hidden md:flex md:w-32 rounded-full md:-mb-16 md:mr-9 shadow-2xl ring-4"
+          <div
+            className="hidden  md:flex md:justify-end text-lg font-semibold leading-6 text-white">
+                        Developpeur
+                        web
+                        full stack
+          </div>
+        </div>
+        <div className="hidden md:flex md:justify-end mt-1 md:mr-9 md:-my-16">
+          <img className="w-28 rounded-full shadow-2xl ring-4 "
             src={profil}
             alt="photo d'identité"/>
         </div>

@@ -12,6 +12,11 @@ const Formations = () => {
       </div>
       <div className="flex-grow pb-5">
         <ul className="flex flex-col">
+          <li className="flex justify-start items-start mb-2 ">
+            <h3 className="text-lg font-semibold leading-7 mr-2 w-8 text-cvbluetitle">2024</h3>
+            <p className="ml-2">- Bac+5 - Bloc de compétence – Sécurité informatique & Gestion projet
+                            Titre RNCP32123BC07 – Développeur Full Stack BIG DATA - Unlearn</p>
+          </li>
           <li className="flex justify-start items-center  mb-2 ">
             <h3 className="text-lg font-semibold leading-7 mr-2 w-8 text-cvbluetitle">2023</h3>
             <p className="ml-2">- Formation de développeur Frontend - Openclassrooms</p>
