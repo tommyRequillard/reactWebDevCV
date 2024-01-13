@@ -1,2 +1,0 @@
-import{j as e,P as s}from"./index-439ede0a.js";import{M as t,a as o}from"./MainLayout-a3e31904.js";const r=()=>e.jsxs("div",{className:"flex flex-col justify-center items-center",children:[e.jsx("h1",{className:"text-6xl font-bold text-gray-900 mb-5",children:"Welcome to My portfolio"}),e.jsx("div",{className:"container flex flex-wrap justify-around gap-6 py-4",children:e.jsx(s,{})})]}),i=()=>e.jsxs(e.Fragment,{children:[e.jsx(t,{}),e.jsx(o,{children:e.jsx(r,{})})]});export{i as default};
-//# sourceMappingURL=Portfolio-c3cd8ae1.js.map
