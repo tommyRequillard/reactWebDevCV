@@ -62,7 +62,6 @@ const TrelloArray = () => {
       </>
     )
   }
-
 }
 
 export default TrelloArray
