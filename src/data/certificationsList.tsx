@@ -1,6 +1,6 @@
 const breakpoints = [4320, 2160, 1080, 640, 384, 256, 128]
 
-const formatCertification = (certification) => {
+function formatCertification(certification) {
   const width = certification.width * 4
   const height = certification.height * 4
 
@@ -23,6 +23,14 @@ const formatCertification = (certification) => {
 const certificationsList = [
   {
     id: 1,
+    title: "certification dev Front end Javascript REACT",
+    width: 800,
+    height: 600,
+    description: "diplome RNCP",
+    src: "../../assets/diplomeRNCP.png"
+  },
+  {
+    id: 2,
     title: "titre RNCP",
     width: 800,
     height: 600,
@@ -30,7 +38,7 @@ const certificationsList = [
     src: "./../../assets/titreRncp3wa.png",
   },
   {
-    id: 2,
+    id: 32,
     title: "algo1",
     width: 800,
     height: 600,
