@@ -1,6 +1,13 @@
 const breakpoints = [4320, 2160, 1080, 640, 384, 256, 128]
 
-function formatCertification(certification) {
+function formatCertification(certification: {
+    width: number;
+    height: number;
+    id: number;
+    src: string;
+    title: string,
+    description: string
+}) {
   const width = certification.width * 4
   const height = certification.height * 4
 
@@ -17,6 +24,8 @@ function formatCertification(certification) {
         height: bpHeight,
       }
     }),
+    title: certification.title,
+    description: certification.description,
   }
 }
 
@@ -273,10 +282,10 @@ const certificationsList = [
 
 const formattedCertificationsList = certificationsList.map(formatCertification)
 
-
 export const advancedCertificationsList = formattedCertificationsList.map(
-  (certification, index) => ({
+  (certification) => ({
     ...certification,
+    id: certification.id,
     title: certification.title,
     description: certification.description,
   })
