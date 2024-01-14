@@ -20,19 +20,18 @@ const TrelloArray = () => {
               setIsAuthorized(authorized)
             })
         },
-        apiKey: 'f5a943c9736d6431e313d9e4c4cdf6f8',
-        appName: 'p10-learnhome',
-        'frame-ancestors': 'self https://trello.com',
+        appId: '68935172-55cd-476d-9c55-7a82aaf00fc4',
+        appName: 'publicAccessToken',
+        'frame-ancestors': 'self https://trello.com/b/pgKyUW30',
       })
     }
   }, [])
 
   useEffect(() => {
     if (isAuthorized) {
-      const apiKey = "f5a943c9736d6431e313d9e4c4cdf6f8"
+      const apiKey = "d7Rls2tfQfo7sXc2ad2cSxmwESYM7uo3"
       const apiToken =
-                // "ATTAd16023c6fbc032b948609f4714f4dfa9338ef983fe5d9300f366b46d38609cc48075E56A"
-                "ATATT3xFfGF0vT2NPOLDL6yNwRSYBlvj0ykqj1aTtDvTQ0AlyowCQD521XFCUY9r0Kh9fYLxZhTK_SXrZHQWDSvXZZ2Wu5NpCc1UXxOV_orgts2BBcupz9OgZov8PVK3Onbr9bG1sUpVYv7hCMOgVU8fnhbxXhq0RTkh3QDA_MS2aRPWfILkzyI=F8ED6B28"
+                "ATOAQEesSpH1Qh--X5Ul8rTMNSCa8uQFhrgbagwKB3SXIvoT9rZPsXF-ChWK-fvmP2O52A6AED59"
       const boardId = "pgKyUW30"
 
       const apiUrl = `https://api.trello.com/1/boards/${boardId}?key=${apiKey}&token=${apiToken}`
@@ -53,7 +52,7 @@ const TrelloArray = () => {
       <>
         <div className="trello-iframe">
           <iframe
-            src="https://trello.com/b/pgKyUW30/p10-learnhome"
+            src="https://trello.com/b/pgKyUW30"
             className="w-full h-[760px]"
             title="Tableau Trello"
             allow="autoplay"
