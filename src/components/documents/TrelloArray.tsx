@@ -22,7 +22,7 @@ const TrelloArray = () => {
         },
         appId: '68935172-55cd-476d-9c55-7a82aaf00fc4',
         appName: 'publicAccessToken',
-        'frame-ancestors': 'self https://trello.com/b/pgKyUW30',
+        'frame-ancestors': 'self https://trello.com/b/pgKyUW30/p10-learnhome',
       })
     }
   }, [])
@@ -52,7 +52,7 @@ const TrelloArray = () => {
       <>
         <div className="trello-iframe">
           <iframe
-            src="https://trello.com/b/pgKyUW30"
+            src="https://trello.com/b/pgKyUW30/p10-learnhome"
             className="w-full h-[760px]"
             title="Tableau Trello"
             allow="autoplay"
