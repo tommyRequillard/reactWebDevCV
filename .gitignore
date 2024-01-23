@@ -23,4 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 src/components/documents/TrelloArray.tsx
-src/components/documents/TrelloArray.tsx
