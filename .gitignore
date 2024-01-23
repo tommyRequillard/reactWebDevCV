@@ -22,4 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-TrelloArray.tsx
+src/components/documents/TrelloArray.tsx
+src/components/documents/TrelloArray.tsx
