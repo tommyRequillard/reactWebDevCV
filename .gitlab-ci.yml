@@ -1,7 +1,7 @@
 stages:
   - build
   - test
-  - beforedeploy
+  - predeploy
   - deploy
 
 image: node
@@ -23,8 +23,8 @@ test:
   script:
     sonar-scanner
 
-beforedeploy:
-  stage: beforedeploy
+predeploy:
+  stage: predeploy
   before_script:
     - npm install -g netlify-cli
   script:
