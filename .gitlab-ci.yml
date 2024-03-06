@@ -1,6 +1,10 @@
 stages:
   - build
+
   - test
+
+  - predeploy
+  
   - deploy
 
 image: node
@@ -16,21 +20,26 @@ build:
   script:
     - npm run build
 
+
 test:
   stage: test
   image: sonarsource/sonar-scanner-cli:latest
   script:
-    - sonar-scanner
+    sonar-scanner
 
-deploy:
-  stage: deploy
-  image: node:latest
+predeploy:
+  stage: predeploy
   before_script:
     - npm install -g netlify-cli
   script:
     - cp netlify.toml dist/
     - cd dist
-    - git add .
-    - npm publish
   only:
     - master
+
+deploy:
+  stage: deploy
+  before_script:
+    - npm install
+  script:
+    - npm publish
