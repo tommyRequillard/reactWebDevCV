@@ -15,8 +15,10 @@ deploy:
   stage: deploy
   image: node:latest
   before_script:
+    - npm install
     - npm install -g netlify-cli
   script:
+    - npm run build
     - cp netlify.toml dist/
     - cd dist
     - git init
