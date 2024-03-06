@@ -1,7 +1,10 @@
 stages:
   - build
+
   - test
+
   - predeploy
+  
   - deploy
 
 image: node
