@@ -1,0 +1,25 @@
+stages:
+  - test
+  - deploy
+
+variables:
+  SONAR_TOKEN: "votre_token_sonar"
+  NPM_TOKEN: "votre_token_npm"
+
+test:
+  stage: test
+  image: sonarsource/sonar-scanner-cli:latest
+  script:
+    - sonar-scanner
+
+deploy:
+  stage: deploy
+  image: node:latest
+  before_script:
+    - npm install -g netlify-cli
+  script:
+    - cp netlify.toml dist/
+    - cd dist
+    - npm publish
+  only:
+    - master
