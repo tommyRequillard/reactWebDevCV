@@ -17,6 +17,7 @@ build:
   script:
     - npm run build
 
+
 test:
   stage: test
   image: sonarsource/sonar-scanner-cli:latest
