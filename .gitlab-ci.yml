@@ -39,5 +39,3 @@ deploy:
     - npm install
   script:
     - npm publish
-  only:
-    - gh-pages
