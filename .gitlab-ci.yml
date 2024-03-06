@@ -4,7 +4,6 @@ stages:
 
 variables:
   SONAR_TOKEN: "6801c799ab4f8a6c2f91e4778d9f5cabd843377e"
-  NPM_TOKEN: "votre_token_npm"
 
 test:
   stage: test
@@ -20,6 +19,11 @@ deploy:
   script:
     - cp netlify.toml dist/
     - cd dist
-    - npm publish
+    - git init
+    - git config user.name "GitLab CI"
+    - git config user.email "gitlab-ci@example.com"
+    - git add .
+    - git commit -m "Deploy to gh-pages"
+    - git push --force --quiet "https://${CI_JOB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}"
   only:
     - master
