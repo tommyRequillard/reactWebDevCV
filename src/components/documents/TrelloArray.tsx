@@ -53,7 +53,7 @@ const TrelloArray = () => {
         <div className="trello-iframe">
           <iframe
             src="https://trello.com/b/pgKyUW30.html"
-            className="w-full h-[760px]"
+            className="w-full h-[650px]"
             title="Tableau Trello"
             allow="autoplay"
           ></iframe>
