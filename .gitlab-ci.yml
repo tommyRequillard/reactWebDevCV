@@ -14,7 +14,11 @@ test:
   stage: test
   image: sonarsource/sonar-scanner-cli:latest
   script:
-    - sonar-scanner
+    sonar-scanner \
+    -Dsonar.organization=tommy-requillard \
+    -Dsonar.projectKey=tommy-requillard_trmhtt-req \
+    -Dsonar.sources=. \
+    -Dsonar.host.url=https://sonarcloud.io
 
 deploy:
   stage: deploy
