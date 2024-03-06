@@ -1,6 +1,14 @@
 stages:
+  - build
   - test
   - deploy
+
+build:
+  stage: build
+  before_script:
+    - npm install
+  script:
+    - npm run build
 
 test:
   stage: test
@@ -12,13 +20,11 @@ deploy:
   stage: deploy
   image: node:latest
   before_script:
-    - npm install
     - npm install -g netlify-cli
   script:
-    - npm run build
     - cp netlify.toml dist/
     - cd dist
     - git add .
-    - git push --force --quiet "https://${CI_JOB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}"
+    - npm publish
   only:
     - master
