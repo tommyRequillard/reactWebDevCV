@@ -3,6 +3,11 @@ stages:
   - test
   - deploy
 
+image: node
+cache:
+  paths:
+    - "node_modules"
+
 build:
   stage: build
   before_script:
