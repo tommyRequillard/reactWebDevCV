@@ -1,0 +1,39 @@
+stages:
+  - build
+  - test
+  - deploy
+
+image: node
+cache:
+  paths:
+    - "node_modules"
+
+build:
+  stage: build
+  before_script:
+    - npm install
+  script:
+    - npm run build
+
+test:
+  stage: test
+  image: sonarsource/sonar-scanner-cli:latest
+  script:
+    sonar-scanner \
+    -Dsonar.organization=tommy-requillard \
+    -Dsonar.projectKey=tommy-requillard_trmhtt-req \
+    -Dsonar.sources=. \
+    -Dsonar.host.url=https://sonarcloud.io
+
+deploy:
+  stage: deploy
+  image: node:latest
+  before_script:
+    - npm install -g netlify-cli
+  script:
+    - cp netlify.toml dist/
+    - cd dist
+    - git add .
+    - npm publish
+  only:
+    - master
