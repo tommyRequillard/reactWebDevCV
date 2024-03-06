@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  SONAR_TOKEN: "votre_token_sonar"
+  SONAR_TOKEN: "6801c799ab4f8a6c2f91e4778d9f5cabd843377e"
   NPM_TOKEN: "votre_token_npm"
 
 test:
