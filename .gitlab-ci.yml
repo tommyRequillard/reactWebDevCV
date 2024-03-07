@@ -1,10 +1,7 @@
 stages:
   - build
-
   - test
-
   - predeploy
-  
   - deploy
 
 image: node
@@ -42,4 +39,4 @@ deploy:
   before_script:
     - npm install
   script:
-    - npm publish
+    - npm deploy
