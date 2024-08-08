@@ -6,6 +6,7 @@ stages:
   - deploy
 
 image: node
+
 cache:
   paths:
     - "node_modules"
@@ -15,7 +16,7 @@ test:
   stage: test
   image: sonarsource/sonar-scanner-cli:latest
   script:
-    sonar-scanner
+    - sonar-scanner
 
 setup:
   stage: setup
@@ -29,7 +30,6 @@ predeploy:
     - npm install
   script:
     - cp netlify.toml dist/
-    - cd dist
   only:
     - master
 
@@ -46,13 +46,14 @@ build:
 
 deploy:
   stage: deploy
+  image: node:latest
   before_script:
     - npm install -g netlify-cli
     - npm install
-    - export AUTH_TOKEN_GITLAB=$AUTH_TOKEN_GITLAB
-    - export NETLIFY_SITE_ID=$NETLIFY_SITE_ID
   script:
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> ".env"
-    - netlify deploy --dir "build" --auth $AUTH_TOKEN_GITLAB --site $NETLIFY_SITE_ID --prod
+    - netlify deploy --dir "build" --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod
   only:
     - master
+  dependencies:
+    - build
