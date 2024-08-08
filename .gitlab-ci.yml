@@ -43,4 +43,4 @@ deploy:
   script:
     - npm deploy --prod --dir=dist --site=$NETLIFY_SITE_ID
   only:
-    - gh-pages
+    - master
