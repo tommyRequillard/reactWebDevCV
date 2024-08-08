@@ -1,8 +1,8 @@
 stages:
-  - build
   - test
-  - predeploy
   - setup
+  - predeploy
+  - build
   - deploy
 
 image: node
@@ -11,19 +11,17 @@ cache:
     - "node_modules"
     - "dist"
 
-build:
-  stage: build
-  before_script:
-    - npm install
-  script:
-    - npm run build
-
-
 test:
   stage: test
   image: sonarsource/sonar-scanner-cli:latest
   script:
     sonar-scanner
+
+setup:
+  stage: setup
+  script:
+    - git config user.email "tommy.requillard@gmail.com"
+    - git config user.name "tommy.requillard"
 
 predeploy:
   stage: predeploy
@@ -35,11 +33,16 @@ predeploy:
   only:
     - master
 
-setup:
-  stage: setup
+build:
+  stage: build
   script:
-    - git config user.email "tommy.requillard@gmail.com"
-    - git config user.name "tommy.requillard"
+    - npm install
+    - npm run build
+  artifacts:
+    paths: 
+      - build/
+  only:
+    - master
 
 deploy:
   stage: deploy
@@ -49,7 +52,6 @@ deploy:
     - export NETLIFY_SITE_ID=$NETLIFY_SITE_ID
   script:
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> ".env"
-    - npm install --legacy-peer-deps
     - netlify deploy --dir "build" --auth $AUTH_TOKEN_GITLAB --site $NETLIFY_SITE_ID --prod
   only:
     - master
