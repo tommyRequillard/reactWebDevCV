@@ -26,7 +26,7 @@ setup:
 predeploy:
   stage: predeploy
   before_script:
-    - npm install -g netlify-cli
+    - npm install
   script:
     - cp netlify.toml dist/
     - cd dist
@@ -47,6 +47,7 @@ build:
 deploy:
   stage: deploy
   before_script:
+    - npm install -g netlify-cli
     - npm install
     - export AUTH_TOKEN_GITLAB=$AUTH_TOKEN_GITLAB
     - export NETLIFY_SITE_ID=$NETLIFY_SITE_ID
