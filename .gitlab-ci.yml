@@ -38,8 +38,8 @@ predeploy:
 setup:
   stage: setup
   script:
-    - git config user.email "${GITLAB_EMAIL}"
-    - git config user.name "${GITLAB_NAME}"
+    - git config user.email "tommy.requillard@gmail.com"
+    - git config user.name "tommy.requillard"
 
 deploy:
   stage: deploy
