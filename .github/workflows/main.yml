@@ -12,11 +12,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3  # Utilisez la dernière version de l'action
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '14'  # Continue à utiliser Node.js 14 pour votre projet
+
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
@@ -24,22 +27,28 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm install
+
       - name: Build
         run: npm run build
 
   test:
     runs-on: ubuntu-latest
-    needs: build  # Assure que le build est terminé avant de lancer les tests
+    needs: build
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '14'  # Continue à utiliser Node.js 14 pour les tests
+
       - name: Install dependencies
         run: npm install
+
       - name: SonarQube Scan
         uses: sonarsource/sonarcloud-github-action@v1.5
         env:
@@ -47,31 +56,39 @@ jobs:
 
   predeploy:
     runs-on: ubuntu-latest
-    needs: test  # Assure que les tests sont terminés avant le pré-déploiement
+    needs: test
     if: github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '14'  # Continue à utiliser Node.js 14 pour la préparation du déploiement
+
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
+
       - name: Prepare for deployment
         run: cp netlify.toml dist/
 
   deploy:
     runs-on: ubuntu-latest
-    needs: predeploy  # Assure que le pré-déploiement est terminé avant de déployer
+    needs: predeploy
     if: github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '14'  # Continue à utiliser Node.js 14 pour le déploiement
+
       - name: Install dependencies
         run: npm install
+
       - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
