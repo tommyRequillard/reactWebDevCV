@@ -38,5 +38,8 @@ deploy:
   stage: deploy
   before_script:
     - npm install
+    - export NETLIFY_AUTH_TOKEN=$NETLIFY_AUTH_TOKEN
   script:
-    - npm run deploy
+    - netlify deploy --prod --dir=dist --site=$NETLIFY_SITE_ID
+  only:
+    - gh-pages
