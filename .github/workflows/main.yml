@@ -12,13 +12,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3  # Utilisez la dernière version de l'action
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
       - name: Cache node_modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -31,10 +31,11 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: build  # Assure que le build est terminé avant de lancer les tests
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
       - name: Install dependencies
@@ -46,27 +47,27 @@ jobs:
 
   predeploy:
     runs-on: ubuntu-latest
+    needs: test  # Assure que les tests sont terminés avant le pré-déploiement
     if: github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
       - name: Prepare for deployment
-        run: |
-          cp netlify.toml dist/
-          cd dist
+        run: cp netlify.toml dist/
 
   deploy:
     runs-on: ubuntu-latest
+    needs: predeploy  # Assure que le pré-déploiement est terminé avant de déployer
     if: github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
       - name: Install dependencies
@@ -75,4 +76,4 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: npm run deploy --prod --dir=dist --site=$NETLIFY_SITE_ID
+        run: netlify deploy --prod --dir=dist --site=$NETLIFY_SITE_ID
