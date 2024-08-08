@@ -2,6 +2,7 @@ stages:
   - build
   - test
   - predeploy
+  - setup
   - deploy
 
 image: node
@@ -33,6 +34,12 @@ predeploy:
     - cd dist
   only:
     - master
+
+setup:
+  stage: setup
+  script:
+    - git config user.email "${GITLAB_EMAIL}"
+    - git config user.name "${GITLAB_NAME}"
 
 deploy:
   stage: deploy
