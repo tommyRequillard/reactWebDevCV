@@ -38,5 +38,9 @@ deploy:
   stage: deploy
   before_script:
     - npm install
+    - export NETLIFY_AUTH_TOKEN=$NETLIFY_AUTH_TOKEN
+    - export NETLIFY_SITE_ID=$NETLIFY_SITE_ID
   script:
-    - npm run deploy
+    - npm run deploy --prod --dir=dist --site=$NETLIFY_SITE_ID
+  only:
+    - master
