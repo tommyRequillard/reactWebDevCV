@@ -38,9 +38,10 @@ build:
   script:
     - npm ci
     - npm run build
+    - ls -la dist/  # Vérifie le contenu du répertoire build
   artifacts:
     paths: 
-      - build/
+      - dist/
   only:
     - master
 
@@ -52,8 +53,9 @@ deploy:
     - npm ci
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> ".env"
   script:
+    - ls -la dist/  # Vérifie que le répertoire build existe avant le déploiement
     - netlify link --id $NETLIFY_SITE_ID
-    - netlify deploy --dir "build" --auth $NETLIFY_AUTH_TOKEN --prod
+    - netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
   only:
     - master
   dependencies:
