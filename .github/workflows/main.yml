@@ -41,8 +41,8 @@ jobs:
 
       - name: Set up Git Configuration
         run: |
-          git config user.email "tommy.requillard@gmail.com"
-          git config user.name "tommy.requillard"
+          git config user.email "tommy.requillard@laposte.net"
+          git config user.name "tiamygarden"
 
   predeploy:
     runs-on: ubuntu-latest
