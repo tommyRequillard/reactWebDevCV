@@ -116,9 +116,9 @@ const CardSofts = () => {
 
   return (
     <div className="flex w-full flex-col items-center mb-5">
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-20">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-20">
         {sortedSofts.map((softs) => (
-          <li key={softs.id} className="flex flex-col item-centermb-3">
+          <li key={softs.id} className="flex flex-col item-center mb-3">
             <Card
               name={softs.name}
               stars={softs.stars}

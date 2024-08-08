@@ -111,8 +111,8 @@ export const projects = [
     id: 12,
     name: "Mygarden",
     image: mygarden,
-    link: "https://mygarden.flowers",
-    description: "Site de mon ancienne société - latest version en php",
+    link: "https://web.archive.org/web/20240720165930/http://www.mygarden.flowers/",
+    description: "Archive du site de mon ancienne société - latest version en php",
     skills: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC", "fetch", "wordpress", "npm"],
   },
   {

@@ -39,4 +39,4 @@ deploy:
   before_script:
     - npm install
   script:
-    - npm deploy
+    - npm run deploy
