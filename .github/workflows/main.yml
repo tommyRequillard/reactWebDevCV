@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Continue à utiliser Node.js 14 pour votre projet
+          node-version: '14'  # Vous pouvez changer en '20' si vous avez vérifié la compatibilité
 
       - name: Cache node_modules
         uses: actions/cache@v3
@@ -44,7 +44,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Continue à utiliser Node.js 14 pour les tests
+          node-version: '14'  # Vous pouvez changer en '20' si vous avez vérifié la compatibilité
 
       - name: Install dependencies
         run: npm install
@@ -65,7 +65,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Continue à utiliser Node.js 14 pour la préparation du déploiement
+          node-version: '14'  # Vous pouvez changer en '20' si vous avez vérifié la compatibilité
 
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
@@ -84,7 +84,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Continue à utiliser Node.js 14 pour le déploiement
+          node-version: '14'  # Vous pouvez changer en '20' si vous avez vérifié la compatibilité
 
       - name: Install dependencies
         run: npm install
