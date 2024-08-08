@@ -52,7 +52,7 @@ deploy:
     - npm install
   script:
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> ".env"
-    - netlify deploy --dir "build" --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod
+    - netlify deploy --dir "build" --auth $AUTH_TOKEN_GITLAB --site $NETLIFY_SITE_ID --prod
   only:
     - master
   dependencies:
