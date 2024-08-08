@@ -5,7 +5,7 @@ stages:
   - build
   - deploy
 
-image: node
+image: node:latest
 
 cache:
   paths:
@@ -27,7 +27,7 @@ setup:
 predeploy:
   stage: predeploy
   before_script:
-    - npm install
+    - npm ci
   script:
     - cp netlify.toml dist/
   only:
@@ -36,7 +36,7 @@ predeploy:
 build:
   stage: build
   script:
-    - npm install
+    - npm ci
     - npm run build
   artifacts:
     paths: 
@@ -49,11 +49,11 @@ deploy:
   image: node:latest
   before_script:
     - npm install -g netlify-cli
-    - npm install
+    - npm ci
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> ".env"
   script:
     - netlify link --id $NETLIFY_SITE_ID
-    - netlify deploy --dir "build" --auth $AUTH_TOKEN_GITLAB --prod
+    - netlify deploy --dir "build" --auth $NETLIFY_AUTH_TOKEN --prod
   only:
     - master
   dependencies:
