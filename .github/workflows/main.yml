@@ -43,6 +43,8 @@ jobs:
         run: sonar-scanner
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_PROJECT_KEY: "your_project_key"  # Replace with your project key
 
   setup:
     runs-on: ubuntu-latest
@@ -67,7 +69,6 @@ jobs:
 
       - name: Copy netlify.toml to dist/
         run: cp netlify.toml dist/
-        if: github.ref == 'refs/heads/master'
 
   build:
     runs-on: ubuntu-latest
@@ -114,9 +115,6 @@ jobs:
 
       - name: Verify Build Directory
         run: ls -la dist/
-
-      - name: Link Netlify Site
-        run: netlify link --id ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Deploy to Netlify
         run: netlify deploy --dir "dist" --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
