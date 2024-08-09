@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '16'
 
       - name: Cache Node.js modules
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
@@ -27,6 +27,12 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+
+      - name: Install SonarScanner
+        run: |
+          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/4.8.0.2856/sonar-scanner-cli-4.8.0.2856-linux.zip
+          unzip sonar-scanner.zip -d sonar-scanner
+          echo "${{ github.workspace }}/sonar-scanner/sonar-scanner-4.8.0.2856-linux/bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner
         run: sonar-scanner
