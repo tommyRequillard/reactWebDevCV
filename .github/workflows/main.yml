@@ -31,8 +31,13 @@ jobs:
       - name: Install SonarScanner
         run: |
           curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/4.8.0.2856/sonar-scanner-cli-4.8.0.2856-linux.zip
-          unzip sonar-scanner.zip -d sonar-scanner
-          echo "${{ github.workspace }}/sonar-scanner/sonar-scanner-4.8.0.2856-linux/bin" >> $GITHUB_PATH
+          if [ -f sonar-scanner.zip ]; then
+            unzip sonar-scanner.zip -d sonar-scanner
+            echo "${{ github.workspace }}/sonar-scanner/sonar-scanner-4.8.0.2856-linux/bin" >> $GITHUB_PATH
+          else
+            echo "SonarScanner zip file not found!"
+            exit 1
+          fi
 
       - name: Run SonarQube Scanner
         run: sonar-scanner
