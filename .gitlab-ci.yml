@@ -1,8 +1,8 @@
 stages:
   - test
   - setup
-  - predeploy
   - build
+  - predeploy
   - deploy
 
 image: node:latest
@@ -24,15 +24,6 @@ setup:
     - git config user.email "tommy.requillard@gmail.com"
     - git config user.name "tommy.requillard"
 
-predeploy:
-  stage: predeploy
-  before_script:
-    - npm ci
-  script:
-    - cp netlify.toml dist/
-  only:
-    - master
-
 build:
   stage: build
   script:
@@ -46,6 +37,15 @@ build:
   only:
     - master
 
+predeploy:
+  stage: predeploy
+  before_script:
+    - npm ci
+  script:
+    - cp netlify.toml dist/
+  only:
+    - master
+
 deploy:
   stage: deploy
   image: node:latest
@@ -56,7 +56,6 @@ deploy:
   script:
     - ls -la dist/  # Vérifie que le répertoire build existe avant le déploiement
     - netlify link --id $NETLIFY_SITE_ID
-    - netlify deploy --dir "build" --auth $NETLIFY_AUTH_TOKEN --prod
     - netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
   only:
     - master
