@@ -277,6 +277,14 @@ const certificationsList = [
     height: 600,
     description: "certificat en algo",
     src: "../../assets/certifAlgo.png",
+  },
+  {
+    id: 32,
+    title: "certification Cybersécurité Google",
+    width: 800,
+    height: 600,
+    description: "certificat cybersécurité Google",
+    src: "../../assets/Coursera_MKX297ILAX8R.png",
   }
 ]
 
