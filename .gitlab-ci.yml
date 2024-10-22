@@ -1,42 +1,62 @@
 stages:
-  - build
   - test
+  - setup
   - predeploy
+  - build
   - deploy
 
-image: node
+image: node:latest
+
 cache:
   paths:
     - "node_modules"
     - "dist"
 
-build:
-  stage: build
-  before_script:
-    - npm install
-  script:
-    - npm run build
-
-
 test:
   stage: test
   image: sonarsource/sonar-scanner-cli:latest
   script:
-    sonar-scanner
+    - sonar-scanner
+
+setup:
+  stage: setup
+  script:
+    - git config user.email "tommy.requillard@gmail.com"
+    - git config user.name "tommy.requillard"
 
 predeploy:
   stage: predeploy
   before_script:
-    - npm install -g netlify-cli
+    - npm ci
   script:
     - cp netlify.toml dist/
-    - cd dist
+  only:
+    - master
+
+build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+    - ls -la dist/  # Vérifie le contenu du répertoire build
+  artifacts:
+    paths: 
+      - dist/
   only:
     - master
 
 deploy:
   stage: deploy
+  image: node:latest
   before_script:
-    - npm install
+    - npm install -g netlify-cli
+    - npm ci
+    - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> ".env"
   script:
-    - npm run deploy
+    - ls -la dist/  # Vérifie que le répertoire build existe avant le déploiement
+    - netlify link --id $NETLIFY_SITE_ID
+    - netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
+  only:
+    - master
+  dependencies:
+    - build
