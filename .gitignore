@@ -22,4 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.bat
 src/components/documents/TrelloArray.tsx
