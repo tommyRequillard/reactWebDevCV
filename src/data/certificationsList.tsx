@@ -31,6 +31,14 @@ function formatCertification(certification: {
 
 const certificationsList = [
   {
+    id: 0,
+    title: "certification Cybersécurité Google",
+    width: 800,
+    height: 600,
+    description: "certificat cybersécurité Google",
+    src: "../../assets/Coursera_MKX297ILAX8R.png",
+  },
+  {
     id: 1,
     title: "certification dev Front end Javascript REACT",
     width: 800,
@@ -277,14 +285,6 @@ const certificationsList = [
     height: 600,
     description: "certificat en algo",
     src: "../../assets/certifAlgo.png",
-  },
-  {
-    id: 32,
-    title: "certification Cybersécurité Google",
-    width: 800,
-    height: 600,
-    description: "certificat cybersécurité Google",
-    src: "../../assets/Coursera_MKX297ILAX8R.png",
   }
 ]
 
