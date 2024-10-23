@@ -5,7 +5,7 @@ stages:
   - predeploy
   - deploy
 
-image: node:14  # Use a stable version
+image: node:latest  # Use a stable version
 
 cache:
   paths:
@@ -22,7 +22,7 @@ setup:
   stage: setup
   script:
     - git config user.email "tommy.requillard@gmail.com"
-    - git config user.name "@tommyRequillard"
+    - git config user.name "tommy.requillard"
 
 build:
   stage: build
@@ -32,7 +32,6 @@ build:
     - ls -la dist/
   artifacts:
     paths:
-      - build/
       - dist/
   only:
     - master
@@ -48,7 +47,7 @@ predeploy:
 
 deploy:
   stage: deploy
-  image: node:14  # Use a stable version
+  image: node:latest
   before_script:
     - npm install -g netlify-cli
     - npm ci
