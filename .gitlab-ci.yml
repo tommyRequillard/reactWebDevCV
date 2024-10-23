@@ -22,7 +22,7 @@ setup:
   stage: setup
   script:
     - git config user.email "tommy.requillard@gmail.com"
-    - git config user.name "tommy.requillard"
+    - git config user.name "tommyRequillard"
 
 build:
   stage: build
@@ -32,6 +32,7 @@ build:
     - ls -la dist/  # Vérifie le contenu du répertoire build
   artifacts:
     paths:
+      - build/
       - dist/
   only:
     - master
