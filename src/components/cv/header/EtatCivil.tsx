@@ -31,7 +31,7 @@ const EtatCivil = () => {
               <p>: 06 88 63 53 23</p>
             </div>
             <Link
-              to="https://github.com/tiamygarden"
+              to="https://github.com/tommyRequillard"
               target="_blank"
               className="flex justify-start items-start my-0.5">
               <svg fill="white" className="w-6 " viewBox="0 0 24 24">
@@ -41,10 +41,10 @@ const EtatCivil = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <p>github.com/tiamygarden</p>
+              <p>github.com/tommyRequillard</p>
             </Link>
             <Link
-              to="https://gitlab.com/tommy.requillard"
+              to="https://gitlab.com/tommyRequillard"
               target="_blank"
               className="flex justify-start items-start my-0.5 pb-2">
               <svg className="w-5 h-5" viewBox="0 0 256 236">
@@ -60,14 +60,12 @@ const EtatCivil = () => {
                 <path fill="#E24329"
                   d="M241.194 91.105h-66.015l28.37-87.315c1.46-4.493 7.816-4.492 9.275 0z"/>
               </svg>
-              <p className="ml-0.5">gitlab.com/tommy.requillard</p>
+              <p className="ml-0.5">gitlab.com/tommyRequillard</p>
             </Link>
           </div>
           <div
             className="hidden  md:flex md:justify-end text-lg font-semibold leading-6 text-white">
-                        Developpeur
-                        web
-                        full stack
+                        DevSecOps
           </div>
         </div>
         <div className="hidden md:flex md:justify-end mt-1 md:mr-9 md:-my-16">

@@ -32,7 +32,6 @@ build:
     - ls -la dist/  # Vérifie le contenu du répertoire build
   artifacts:
     paths:
-      - build/
       - dist/
   only:
     - master
