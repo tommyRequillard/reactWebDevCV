@@ -1,5 +1,5 @@
 import SkillsCards from "./SkillsCards.tsx"
-import Materiels from "./Materiels.tsx"
+//import Materiels from "./Materiels.tsx"
 import ProgrammingLanguagesCards from "./ProgrammingLanguagesCards.tsx"
 
 const LeftSideBar = () => {
@@ -17,9 +17,9 @@ const LeftSideBar = () => {
         <div className="mt-5">
           <SkillsCards/>
         </div>
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <Materiels/>
-        </div>
+        </div> */}
       </div>
     </div>
   )

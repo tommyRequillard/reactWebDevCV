@@ -5,7 +5,7 @@ stages:
   - predeploy
   - deploy
 
-image: node:latest
+image: node:14  # Use a stable version
 
 cache:
   paths:
@@ -29,7 +29,7 @@ build:
   script:
     - npm ci
     - npm run build
-    - ls -la dist/  # Vérifie le contenu du répertoire build
+    - ls -la dist/
   artifacts:
     paths:
       - build/
@@ -48,13 +48,13 @@ predeploy:
 
 deploy:
   stage: deploy
-  image: node:latest
+  image: node:14  # Use a stable version
   before_script:
     - npm install -g netlify-cli
     - npm ci
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> ".env"
   script:
-    - ls -la dist/  # Vérifie que le répertoire build existe avant le déploiement
+    - ls -la dist/
     - netlify link --id $NETLIFY_SITE_ID
     - netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
   only:

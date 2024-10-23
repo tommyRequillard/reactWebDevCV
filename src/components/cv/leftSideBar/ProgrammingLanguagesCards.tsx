@@ -29,7 +29,7 @@ const programmingLanguages = [
   {
     "id": 5,
     "name": "Python",
-    "stars": 2,
+    "stars": 3,
     "logoPath": "/assets/python.svg"
   },
   {
