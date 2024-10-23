@@ -22,7 +22,7 @@ setup:
   stage: setup
   script:
     - git config user.email "tommy.requillard@gmail.com"
-    - git config user.name "tommyRequillard"
+    - git config user.name "@tommyRequillard"
 
 build:
   stage: build
