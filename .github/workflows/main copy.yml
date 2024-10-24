@@ -2,17 +2,13 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: 
-      - master
+    branches: [master]
   pull_request:
-    branches: 
-      - master
+    branches: [master]
 
 jobs:
   test:
-    runs-on: node:alpine
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Analyse SonarCloud
@@ -22,9 +18,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   setup:
-    runs-on: node:alpine
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Configurer Git
@@ -33,10 +27,8 @@ jobs:
           git config user.name "tommy.requillard"
 
   build:
-    runs-on: node:alpine
     needs: [test, setup]
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js
@@ -47,18 +39,20 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Create dist directory (if needed)
-        run: mkdir -p dist
+        run: mkdir -p dist  # Ajoute cette ligne si le répertoire n'est pas créé par le build
       - name: Build
         run: npm run build
 
   predeploy:
-    runs-on: node:alpine
     needs: build
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
       - name: Prepare for deployment
@@ -67,29 +61,31 @@ jobs:
           cd dist
 
   deploy:
-    runs-on: node:alpine
     needs: predeploy
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Utiliser Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: Installer les dépendances
         run: |
           npm ci
           npm install -g netlify-cli
       - name: Définir la variable d'environnement
         run: echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> $GITHUB_ENV
-      - name: Télécharger l'artefact (si nécessaire)
+      - name: Télécharger l'artefact
         uses: actions/download-artifact@v2
         with:
           name: dist
           path: dist
-      - name: Lister le contenu du répertoire dist
+      - name: Lister le contenu du répertoire build
         run: ls -la dist/
       - name: Déployer sur Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
+        run:
           netlify link --id $NETLIFY_SITE_ID
           netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
