@@ -20,6 +20,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   setup:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,14 +30,14 @@ jobs:
           git config user.name "tommy.requillard"
 
   build:
-    needs: [test, setup]
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Mise à jour vers Node.js 18
+          node-version: '20'  # Mise à jour vers Node.js 20
           cache: 'npm'
       - name: Install dependencies
         run: npm install
@@ -59,7 +60,7 @@ jobs:
       - name: Set up Node.js for predeploy
         uses: actions/setup-node@v2  # Ajout d'une étape pour configurer Node.js ici aussi.
         with:
-          node-version: '18'  # Mise à jour vers Node.js 18 pour le pré-déploiement.
+          node-version: '20'  # Mise à jour vers Node.js 20 pour le pré-déploiement.
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
       - name: Prepare for deployment
