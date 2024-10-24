@@ -10,21 +10,21 @@ on:
 
 jobs:
   test:
-    runs-on: node:alpine
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest  # Environnement d'exécution
     steps:
       - uses: actions/checkout@v2
-      - name: Analyse SonarCloud
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Setup Alpine Linux
+        uses: jirutka/setup-alpine@v1
+        with:
+          branch: v3.15  # Version d'Alpine à utiliser
+      - name: Run Node.js in Alpine
+        run: |
+          apk add --no-cache nodejs npm  # Installer Node.js et npm dans l'environnement Alpine
+          node --version  # Vérifier la version de Node.js
+          npm --version   # Vérifier la version de npm
 
   setup:
-    runs-on: node:alpine
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Configurer Git
@@ -33,10 +33,8 @@ jobs:
           git config user.name "tommy.requillard"
 
   build:
-    runs-on: node:alpine
     needs: [test, setup]
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js
@@ -52,10 +50,8 @@ jobs:
         run: npm run build
 
   predeploy:
-    runs-on: node:alpine
     needs: build
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
@@ -67,10 +63,8 @@ jobs:
           cd dist
 
   deploy:
-    runs-on: node:alpine
     needs: predeploy
-    container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Installer les dépendances
