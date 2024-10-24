@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '20'  # Mise à jour vers Node.js 20
           cache: 'npm'
@@ -63,7 +63,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
       - name: Set up Node.js for predeploy
-        uses: actions/setup-node@v2  
+        uses: actions/setup-node@v4  
         with:
           node-version: '20'  # Mise à jour vers Node.js 20 pour le pré-déploiement.
       - name: Install Netlify CLI
