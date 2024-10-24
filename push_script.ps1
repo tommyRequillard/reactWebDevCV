@@ -17,7 +17,12 @@ git commit -m "$COMMIT_MESSAGE"
 
 # Pousser vers GitHub
 git checkout -b temp-github  # Créer une branche temporaire pour GitHub
-git rm --cached .gitlab-ci.yml  # Retirer le fichier .gitlab-ci.yml de l'index
+
+# Retirer le fichier .gitlab-ci.yml de l'index (s'il est suivi)
+if (Test-Path ".gitlab-ci.yml") {
+    git rm --cached .gitlab-ci.yml  # Retirer le fichier .gitlab-ci.yml de l'index
+}
+
 git commit -m "Retirer .gitlab-ci.yml pour le push vers GitHub"  # Commit des changements
 
 git push $GITHUB_REMOTE temp-github:master  # Pousser vers GitHub
@@ -34,9 +39,15 @@ git branch -D temp-github
 
 # Pousser vers GitLab
 git checkout -b temp-gitlab  # Créer une branche temporaire pour GitLab
-git rm --cached .github  # Retirer le répertoire .github de l'index
+
+# Retirer le répertoire .github de l'index (s'il est suivi)
+if (Test-Path ".github") {
+    git rm -r --cached .github  # Retirer le répertoire .github de l'index
+}
+
 git commit -m "Retirer .github pour le push vers GitLab"  # Commit des changements
 
+# Pousser vers GitLab
 git push $GITLAB_REMOTE temp-gitlab:master  # Pousser vers GitLab
 
 if ($LASTEXITCODE -eq 0) {
