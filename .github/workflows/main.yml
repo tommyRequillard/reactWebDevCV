@@ -12,7 +12,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Analyse SonarCloud
         uses: SonarSource/sonarcloud-github-action@master
         env:
@@ -23,7 +23,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Configurer Git
         run: |
           git config user.email "tommy.requillard@gmail.com"
@@ -33,11 +33,11 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Mise à jour vers Node.js 18
+          node-version: '20'  # Mise à jour vers Node.js 20
           cache: 'npm'
       - name: Install dependencies
         run: npm install
@@ -46,7 +46,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Upload dist directory as artifact  # Mise à jour vers la dernière version de l'action upload-artifact
-        uses: actions/upload-artifact@v3  # Utilisation de la version v3 de l'action upload-artifact
+        uses: actions/upload-artifact@v4  # Utilisation de la version v4 de l'action upload-artifact
         with:
           name: dist
           path: dist
@@ -56,11 +56,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Node.js for predeploy
         uses: actions/setup-node@v2  
         with:
-          node-version: '18'  # Mise à jour vers Node.js 18 pour le pré-déploiement.
+          node-version: '20'  # Mise à jour vers Node.js 20 pour le pré-déploiement.
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
       - name: Prepare for deployment
@@ -72,7 +72,7 @@ jobs:
     needs: predeploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Installer les dépendances
         run: |
           npm ci  
@@ -80,7 +80,7 @@ jobs:
       - name: Définir la variable d'environnement
         run: echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> $GITHUB_ENV
       - name: Télécharger l'artefact (dist)
-        uses: actions/download-artifact@v3  # Mise à jour vers la version v3 de download-artifact.
+        uses: actions/download-artifact@v4  # Mise à jour vers la version v4 de download-artifact.
         with:
           name: dist
           path: dist  
