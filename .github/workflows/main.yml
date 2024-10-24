@@ -2,9 +2,11 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [master]
+    branches:
+    - master
   pull_request:
-    branches: [master]
+    branches:
+    - master
 
 jobs:
   test:
@@ -48,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+      image: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install Netlify CLI
@@ -62,7 +64,7 @@ jobs:
     needs: predeploy
     runs-on: ubuntu-latest
     container:
-      image: node:alpine  # Utilisation de l'image node:alpine
+      image: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Installer les dépendances
@@ -82,6 +84,6 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
+        run:
           netlify link --id $NETLIFY_SITE_ID
           netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
