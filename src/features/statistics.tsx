@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
-import {projects} from "../components/portfolio/PortfolioCards.tsx"
+import {projects} from "../components/portfolio/frontend/PortfolioCards.tsx"
 
 const initialState = {
   numberOfProjects: 0,

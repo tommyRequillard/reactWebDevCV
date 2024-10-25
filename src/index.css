@@ -21,3 +21,37 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.blinking-cursor {
+    animation: blink 0.7s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-custom {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 127, 116, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(3, 118, 129, 0.5); /* Changez la couleur ici */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 53, 60, 0);
+    }
+}
+
+.pulse-custom {
+    animation: none;
+    box-shadow: #333;
+}
+
+.pulse-custom:hover {
+    animation: pulse-custom 1.5s infinite; /* Appliquer l'animation au hover */
+}

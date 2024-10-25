@@ -1,22 +1,22 @@
 import {Link} from "react-router-dom"
-import booki from "./../../assets/booki.png"
-import learnathome from "./../../assets/learnathome.png"
-import ohmyfood from "./../../assets/ohmyfood.png"
-import argentbank from "./../../assets/argentbank.png"
-import billedapp from "./../../assets/billedapp.png"
-import fisheye from "./../../assets/fisheye.png"
-import gameon from "./../../assets/gameon.png"
-import hrnet from "./../../assets/hrnet.png"
-import kasa from "./../../assets/kasa.png"
-import lespetitsplats from "./../../assets/lespetitsplats.png"
-import mygarden from "./../../assets/mygarden.png"
-import sportsee from "./../../assets/sportsee.png"
-import npmPackage from "./../../assets/npmPackage.png"
-import princepark from "./../../assets/princepark.png"
-import mydrym from "./../../assets/mydrym.png"
-import hussards from "./../../assets/hussards.png"
-import cvPortfolio from "./../../assets/cvPortfolio.png"
-import trello from "./../../assets/trello.png"
+import booki from "../../../assets/booki.png"
+import learnathome from "../../../assets/learnathome.png"
+import ohmyfood from "../../../assets/ohmyfood.png"
+import argentbank from "../../../assets/argentbank.png"
+import billedapp from "../../../assets/billedapp.png"
+import fisheye from "../../../assets/fisheye.png"
+import gameon from "../../../assets/gameon.png"
+import hrnet from "../../../assets/hrnet.png"
+import kasa from "../../../assets/kasa.png"
+import lespetitsplats from "../../../assets/lespetitsplats.png"
+import mygarden from "../../../assets/mygarden.png"
+import sportsee from "../../../assets/sportsee.png"
+import npmPackage from "../../../assets/npmPackage.png"
+import princepark from "../../../assets/princepark.png"
+import mydrym from "../../../assets/mydrym.png"
+import hussards from "../../../assets/hussards.png"
+import cvPortfolio from "../../../assets/cvPortfolio.png"
+import trello from "../../../assets/trello.png"
 
 export const projects = [
   {
@@ -171,10 +171,10 @@ const PortfolioCards = () => {
       {projects.map((project, index) => (
         <div
           key={index}
-          className="bg-white rounded-3xl shadow-2xl p-4 max-w-[400px]"
+          className="bg-white rounded-3xl shadow-2xl p-4 max-w-[400px] pulse-custom"
         >
           <Link to={project.link} target="_blank">
-            <div className="flex flex-col">
+            <div className="flex flex-col ">
               <div>
                 <img src={project.image} alt={project.name}/>
               </div>

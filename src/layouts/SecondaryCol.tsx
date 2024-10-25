@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import PortfolioCards from "../components/portfolio/PortfolioCards.tsx"
+import PortfolioCards from "../components/portfolio/frontend/PortfolioCards.tsx"
 import Articles from "../components/articles/Articles.tsx"
 
 const SecondaryCol = () => {
