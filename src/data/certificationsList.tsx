@@ -285,6 +285,22 @@ const certificationsList = [
     height: 600,
     description: "certificat en algo",
     src: "../../assets/certifAlgo.png",
+  },
+  {
+    id: 32,
+    title: "Gestion de projet",
+    width: 800,
+    height: 600,
+    description: "Gestion de projet",
+    src: "../../assets/BC01.png",
+  },
+  {
+    id: 33,
+    title: "Sécurité informatique",
+    width: 800,
+    height: 600,
+    description: "Cybersécurité",
+    src: "../../assets/BC06.png",
   }
 ]
 
