@@ -65,7 +65,7 @@ const EtatCivil = () => {
           </div>
           <div
             className="hidden  md:flex md:justify-end text-lg font-semibold leading-6 text-white">
-                        Devsecops
+                        DevSecOps
           </div>
         </div>
         <div className="hidden md:flex md:justify-end mt-1 md:mr-9 md:-my-16">

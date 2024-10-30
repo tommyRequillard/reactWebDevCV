@@ -11,7 +11,7 @@ const PortfolioCpnt = () => {
           <div className="bg-gray-300 rounded-3xl shadow-2xl p-4 max-w-[400px] pulse-custom">
             <div className="p-4">
               <h2 className="text-2xl font-bold text-gray-900">
-                Frontend
+                Dev
                 <span className="ml-2 blinking-cursor">_</span>
               </h2>
             </div>
