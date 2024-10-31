@@ -171,14 +171,14 @@ const PortfolioCards = () => {
       {projects.map((project, index) => (
         <div
           key={index}
-          className="bg-white rounded-3xl shadow-2xl p-4 max-w-[400px] pulse-custom"
+          className="bg-white rounded-3xl shadow-2xl p-4 max-w-[300px] pulse-custom"
         >
           <Link to={project.link} target="_blank">
             <div className="flex flex-col ">
               <div>
                 <img src={project.image} alt={project.name}/>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">
+              <h2 className="text-xl font-bold text-gray-900 sm:pr-12">
                 {project.name}
               </h2>
               <p>{project.description}</p>
