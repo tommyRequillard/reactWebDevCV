@@ -21,10 +21,11 @@ export default function AppRouter() {
       <Route index element={<Suspense fallback={<Loading />}><Home /></Suspense>} />
       <Route path="/portfolio" element={<Suspense fallback={<Loading />}><Portfolio /></Suspense>} />
         <Route path="/portfolio/frontend" element={<Suspense fallback={<Loading />}><Frontend /></Suspense>} />
-        <Route path="/portfolio/cybersecurity" element={<Suspense fallback={<Loading />}><Cybersecurity /></Suspense>} />
+        <Route path="/portfolio/stats" element={<Suspense fallback={<Loading />}><Stats /></Suspense>} />
+        <Route path="/portfolio/counter" element={<Suspense fallback={<Loading />}><Counter /></Suspense>} />
+      <Route path="/cybersecurity" element={<Suspense fallback={<Loading />}><Cybersecurity /></Suspense>} />
       <Route path="/documents" element={<Suspense fallback={<Loading />}><Documents /></Suspense>} />
-      <Route path="/counter" element={<Suspense fallback={<Loading />}><Counter /></Suspense>} />
-      <Route path="/stats" element={<Suspense fallback={<Loading />}><Stats /></Suspense>} />
+        <Route path="/documents/trello" element={<Suspense fallback={<Loading />}><Counter /></Suspense>} />
       <Route path="/skills" element={<Suspense fallback={<Loading />}><Skills /></Suspense>} />
       <Route path="*" element={<Suspense fallback={<Loading />}><Error404 /></Suspense>} />
     </Route>

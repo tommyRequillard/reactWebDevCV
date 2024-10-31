@@ -20,19 +20,19 @@ const TrelloArray = () => {
               setIsAuthorized(authorized)
             })
         },
-        appId: '68935172-55cd-476d-9c55-7a82aaf00fc4',
-        appName: 'publicAccessToken',
-        'frame-ancestors': 'self https://trello.com/b/pgKyUW30.html',
+        // appId: '68935172-55cd-476d-9c55-7a82aaf00fc4',
+        // appName: 'toDoPublic',
+        'frame-ancestors': 'self https://trello.com/b/kp9ZUMxf/todo.html',
       })
     }
   }, [])
 
   useEffect(() => {
     if (isAuthorized) {
-      const apiKey = "d7Rls2tfQfo7sXc2ad2cSxmwESYM7uo3"
-      const apiToken =
-                "ATATT3xFfGF05EPg7VpYOAehjNqTsFQ28ooDDCFbGhnpyOggSXRZJYcUBYDSjpnDn1WKHxOflZ5zlwp1e2GJ412aandJRFScgTdlzOhJC2vJGjq4gpDuZYdsUqO302VM-myHh69EuVToU26bt7d6bp4-3pNwyFqrmEE3eSnvqbBJxGjKvGGiF98=A5EA739A"
-      const boardId = "pgKyUW30"
+      // const apiKey = "d7Rls2tfQfo7sXc2ad2cSxmwESYM7uo3"
+      const apiToken =import.meta.env.VITE_TRELLO_API_TOKEN
+                
+      const boardId = "kp9ZUMxf"
 
       const apiUrl = `https://api.trello.com/1/boards/${boardId}?key=${apiKey}&token=${apiToken}`
 
@@ -50,9 +50,12 @@ const TrelloArray = () => {
   if (boardData) {
     return (
       <>
-        <div className="trello-iframe">
+      <div>
+        <h2 className="text-xl font-bold text-gray-900">Suggerez moi des choses à faire sur ce site dans le kanban ci-dessous, ouvrez un ticket, n"hésitez pas!</h2>
+      </div>
+        <div className="trello-iframe pt-6">
           <iframe
-            src="https://trello.com/b/pgKyUW30.html"
+            src="https://trello.com/b/kp9ZUMxf.html"
             className="w-full h-[650px]"
             title="Tableau Trello"
             allow="autoplay"

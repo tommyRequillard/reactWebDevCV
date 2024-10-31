@@ -3,12 +3,15 @@ import {Link, useLocation} from 'react-router-dom'
 import {Dialog, Transition} from '@headlessui/react'
 import {
   Bars3Icon,
-  ChartPieIcon,
+  // ChartPieIcon,
   DocumentDuplicateIcon,
-  PresentationChartLineIcon,
-  FolderIcon,
+  // PresentationChartLineIcon,
+  // FolderIcon,
   HomeIcon,
   XMarkIcon,
+  ShieldCheckIcon,
+  PhotoIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import MainArea from "./MainArea.tsx"
 import SecondaryCol from "./SecondaryCol.tsx"
@@ -17,10 +20,12 @@ import lion from "../assets/lion-face.png"
 
 const navigation = [
   {name: 'CV', href: '/', icon: HomeIcon, current: true, active: true},
-  {name: 'Portfolio', href: '/portfolio', icon: FolderIcon, current: false, active: false},
+  {name: 'Portfolio', href: '/portfolio', icon: PhotoIcon, current: false, active: false},
+  {name: 'Cybersecurity', href: '/cybersecurity', icon: ShieldCheckIcon, current: false, active: false},
   {name: 'Documents', href: '/documents', icon: DocumentDuplicateIcon, current: false, active: false},
-  {name: 'Counter', href: '/counter', icon: ChartPieIcon, current: false, active: false},
-  {name: 'Stats', href: '/stats', icon: PresentationChartLineIcon, current: false, active: false},
+  // {name: 'Counter', href: '/counter', icon: ChartPieIcon, current: false, active: false},
+  // {name: 'Stats', href: '/stats', icon: PresentationChartLineIcon, current: false, active: false},
+  {name: 'Skills', href: '/skills', icon: UserGroupIcon, current: false, active: false},
 ]
 
 function classNames(...classes: string[]) {
