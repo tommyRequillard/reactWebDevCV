@@ -13,7 +13,7 @@ const Frontend = lazy(() => import('../pages/Frontend'));
 const Cybersecurity = lazy(() => import('../pages/Cybersecurity'));
 const Counter = lazy(() => import('../pages/Counter'));
 const Stats = lazy(() => import('../pages/Stats'));
-const Skills = lazy(() => import('../pages/Skills'));
+const Skills = lazy(() => import('../pages/Skills.tsx'));
 
 export default function AppRouter() {
   const browserRoutes = createBrowserRouter(createRoutesFromElements(
