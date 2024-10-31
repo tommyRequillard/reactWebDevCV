@@ -1,6 +1,7 @@
 import FrontEndGallery from "./frontend/FrontEndGallery";
 import StatsRedux from "../StatsRedux";
 import RadarChartComponent from "../RadarChartComponent";
+import CounterRedux from "../CounterRedux";
 
 const PortfolioCpnt = () => {
   return (
@@ -15,9 +16,10 @@ const PortfolioCpnt = () => {
       </div>
       
     </div>
-    <div className="container flex flex-col mt-10">
+    <div className="container flex flex-col gap-6 mt-10">
     <StatsRedux/>
     <RadarChartComponent/>
+    <CounterRedux/>
     </div>
     </>
   );
