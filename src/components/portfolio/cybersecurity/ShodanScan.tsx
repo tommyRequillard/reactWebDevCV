@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const ShodanScan = () => {
@@ -7,7 +7,7 @@ const ShodanScan = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const API_KEY = 'hNmG92sMJLl863A0yBacLP03q6jgsiLZ'; 
+    const API_KEY = import.meta.env.VITE_SHODAN_API_KEY; 
 
     const handleScan = async () => {
         setLoading(true);

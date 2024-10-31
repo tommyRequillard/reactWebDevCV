@@ -13,6 +13,7 @@ const Frontend = lazy(() => import('../pages/Frontend'));
 const Cybersecurity = lazy(() => import('../pages/Cybersecurity'));
 const Counter = lazy(() => import('../pages/Counter'));
 const Stats = lazy(() => import('../pages/Stats'));
+const Skills = lazy(() => import('../pages/Skills'));
 
 export default function AppRouter() {
   const browserRoutes = createBrowserRouter(createRoutesFromElements(
@@ -24,6 +25,7 @@ export default function AppRouter() {
       <Route path="/documents" element={<Suspense fallback={<Loading />}><Documents /></Suspense>} />
       <Route path="/counter" element={<Suspense fallback={<Loading />}><Counter /></Suspense>} />
       <Route path="/stats" element={<Suspense fallback={<Loading />}><Stats /></Suspense>} />
+      <Route path="/skills" element={<Suspense fallback={<Loading />}><Skills /></Suspense>} />
       <Route path="*" element={<Suspense fallback={<Loading />}><Error404 /></Suspense>} />
     </Route>
   ));

@@ -25,7 +25,7 @@ export const projects = [
     image: booki,
     link: "https://tommyrequillard.github.io/booki/",
     description: "Projet OpenClassRooms : Transformez une maquette en site web avec Html & CSS",
-    skills: ["Html", "Css", "Responsive"],
+    stacks: ["Html", "Css", "Responsive"],
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const projects = [
     image: ohmyfood,
     link: "https://tommyrequillard.github.io/ohmyfood/",
     description: "Projet OpenClassRooms : Dynamisez une page web avec des animations CSS",
-    skills: ["Html", "Css", "Responsive", "Sass", "Animation"],
+    stacks: ["Html", "Css", "Responsive", "Sass", "Animation"],
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ export const projects = [
     image: gameon,
     link: "https://tommyrequillard.github.io/GameOn-website-FR/",
     description: "Projet OpenClassRooms : Créez une landing page avec Javascript",
-    skills: ["Html", "Css", "Responsive", "Javascript", "Algorithm"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "Algorithm"],
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const projects = [
     image: fisheye,
     link: "https://tommyrequillard.github.io/fishEyeV2/",
     description: "Projet OpenClassRooms : Créez un site accessible pour une plateforme de photographes",
-    skills: ["Html", "Css", "Responsive", "Javascript", "fetch", "Aria", "npm"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "fetch", "Aria", "npm"],
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ export const projects = [
     image: lespetitsplats,
     link: "https://tommyrequillard.github.io/les-petits-plats/",
     description: "Projet OpenClassRooms : Développez un algorithme de recherche en JavaScript",
-    skills: ["Html", "Css", "Responsive", "Javascript", "Bootstrap", "fetch", "npm"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "Bootstrap", "fetch", "npm"],
   },
   {
     id: 6,
@@ -65,7 +65,7 @@ export const projects = [
     image: billedapp,
     link: "https://tommyrequillard.github.io/bill-app---Billed-app-FR-Front/",
     description: "Projet OpenClassRooms : Débuggez et testez un SaaS RH",
-    skills: ["Html", "Css", "Responsive", "Javascript", "npm"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "npm"],
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ export const projects = [
     image: learnathome,
     link: "https://www.figma.com/file/AmFAvVlfMJ6kkU5jCiDopT/learn%40home?node-id=11%3A131&mode=dev",
     description: "Projet OpenClassRooms : Transformez une maquette en site web avec Html & CSS",
-    skills: ["figma", "User Stories", "trello", "Kanban"],
+    stacks: ["figma", "User Stories", "trello", "Kanban"],
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ export const projects = [
     image: kasa,
     link: "https://tommyrequillard.github.io/kasa/",
     description: "Projet OpenClassRooms : Développez une application Web avec React et React Router",
-    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "npm", "fetch"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "npm", "fetch"],
   },
   {
     id: 9,
@@ -89,7 +89,7 @@ export const projects = [
     image: sportsee,
     link: "https://tommyrequillard.github.io/sportsee/",
     description: "Projet OpenClassRooms : Développez un tableau de bord d'analytics avec React",
-    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "Recharts", "npm", "fetch"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "Recharts", "npm", "fetch"],
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ export const projects = [
     image: argentbank,
     link: "https://p10bankapi.netlify.app/",
     description: "Projet OpenClassRooms : Utilisez une API pour un compte utilisateur bancaire avec React",
-    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "API", "JWT", "React Redux", "npm", "fetch"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "API", "JWT", "React Redux", "npm", "fetch"],
   },
   {
     id: 11,
@@ -105,7 +105,7 @@ export const projects = [
     image: hrnet,
     link: "https://p14reactwealthhealth.netlify.app/",
     description: "Projet OpenClassRooms : Faites passer une librairie jQuery vers React",
-    skills: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "React Redux", "Jquery", "Tailwind", "npm", "fetch", "node"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "React", "React Router", "React Redux", "Jquery", "Tailwind", "npm", "fetch", "node"],
   },
   {
     id: 12,
@@ -113,7 +113,7 @@ export const projects = [
     image: mygarden,
     link: "https://web.archive.org/web/20240720165930/http://www.mygarden.flowers/",
     description: "Archive du site de mon ancienne société - latest version en php",
-    skills: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC", "fetch", "wordpress", "npm"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC", "fetch", "wordpress", "npm"],
   },
   {
     id: 13,
@@ -121,7 +121,7 @@ export const projects = [
     image: npmPackage,
     link: "https://www.npmjs.com/package/vite-react-mymodal",
     description: "Projet OpenClassRooms : A simple and customizable modal component for React.",
-    skills: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm"],
+    stacks: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm"],
   },
   {
     id: 14,
@@ -129,7 +129,7 @@ export const projects = [
     image: princepark,
     link: "https://web.archive.org/web/20190125130254/https://princepark.fr/",
     description: "Archive du Site prestashop de commerce de street-wear webMaster design par mes soins",
-    skills: ["php", "Responsive", "Prestashop", "Css", "Html"],
+    stacks: ["php", "Responsive", "Prestashop", "Css", "Html"],
   },
   {
     id: 15,
@@ -137,7 +137,7 @@ export const projects = [
     image: mydrym,
     link: "https://mydrym.netlify.app/",
     description: "Archive du Site Mydrym société de service informatique conçu en tant que CEO chef de projet informatique + charte graphique par mes soins",
-    skills: ["Html", "Css", "Responsive", "TypeScript", "Vue", "node", "npm"],
+    stacks: ["Html", "Css", "Responsive", "TypeScript", "Vue", "node", "npm"],
   },
   {
     id: 16,
@@ -145,7 +145,7 @@ export const projects = [
     image: hussards,
     link: "https://web.archive.org/web/20180813072840/https://teamescouade85.wordpress.com/",
     description: "Archive/Wayback Machine wordpress de l'équipe des Hussards fait par mes soins",
-    skills: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC", "fetch", "wordpress"],
+    stacks: ["Html", "Css", "Responsive", "Javascript", "Php", "MVC", "fetch", "wordpress"],
   },
   {
     id: 17,
@@ -153,7 +153,7 @@ export const projects = [
     image: trello,
     link: "https://trello.com/b/pgKyUW30/p10-learnhome",
     description: "Projet OpenClassRooms : Projet Agile avec un Kanban sur Trello fondé sur les User Stories et les diagrammes de cas d'usage",
-    skills: ["Méthode agile", "UI/UX", "User Story", "Diagramme de cas d'usage", "figma"],
+    stacks: ["Méthode agile", "UI/UX", "User Story", "Diagramme de cas d'usage", "figma"],
   },
   {
     id: 18,
@@ -161,7 +161,7 @@ export const projects = [
     image: cvPortfolio,
     link: "https://reactwebdevcv.netlify.app/",
     description: "Projet React que vous avez sous les yeux",
-    skills: ["Html", "Css", "Responsive", "TypeScript", "React", "React Router", "React Redux", "node", "npm"],
+    stacks: ["Html", "Css", "Responsive", "TypeScript", "React", "React Router", "React Redux", "node", "npm"],
   }
 ]
 

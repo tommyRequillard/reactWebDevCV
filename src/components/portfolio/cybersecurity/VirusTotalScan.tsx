@@ -8,6 +8,7 @@ const VirusTotalScan = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [showDetails, setShowDetails] = useState(false); // État pour gérer l'affichage des détails
+    const myApiKey = import.meta.env.VITE_VIRUS_TOTAL_API_KEY;
 
     const handleScan = async () => {
         setLoading(true);
@@ -20,7 +21,7 @@ const VirusTotalScan = () => {
                 method: 'POST',
                 url: 'https://www.virustotal.com/api/v3/urls',
                 headers: {
-                    'x-apikey': '368d836d2188fd6e080b74946fff0ce4e4d3d79b4dde937304f81ee8debc7eab',
+                    'x-apikey': myApiKey,
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 data: `url=${encodeURIComponent(cleanUrl)}`
@@ -35,7 +36,7 @@ const VirusTotalScan = () => {
                     method: 'GET',
                     url: `https://www.virustotal.com/api/v3/analyses/${scanId}`,
                     headers: {
-                        'x-apikey': '368d836d2188fd6e080b74946fff0ce4e4d3d79b4dde937304f81ee8debc7eab'
+                        'x-apikey': myApiKey
                     }
                 };
                 

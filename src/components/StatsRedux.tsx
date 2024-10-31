@@ -11,8 +11,8 @@ const StatsRedux = () => {
 
   return (
     <div className="w-full">
-      <div className="flex flex-col justify-center items-center pb-6">
-        <h1 className="text-6xl font-bold text-gray-900">StatsRedux</h1>
+      <div className="flex flex-col justify-center items-center pb-2">
+        <h1 className="text-6xl font-bold text-gray-900">Statistiques</h1>
         <h2>Nombre de projets : {numberOfProjects}</h2>
       </div>
     </div>

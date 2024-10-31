@@ -3,7 +3,7 @@ import {projects} from "../components/portfolio/frontend/PortfolioCards.tsx"
 
 const initialState = {
   numberOfProjects: 0,
-  skillsMostUsed: {},
+  stacksMostUsed: {},
 }
 
 const statisticsSlice = createSlice({
@@ -13,22 +13,22 @@ const statisticsSlice = createSlice({
     getNumberOfProjects: (state) => {
       state.numberOfProjects = projects.length
     },
-    getSkillsMostUsed: (state) => {
-      const skills = projects.map((project) => project.skills)
-      const skillsFlat = skills.flat()
-      const skillsMostUsed = skillsFlat.reduce((acc, skill) => {
-        if (acc[skill]) {
-          acc[skill]++
+    getStacksMostUsed: (state) => {
+      const stacks = projects.map((project) => project.stacks)
+      const stacksFlat = stacks.flat()
+      const stacksMostUsed = stacksFlat.reduce((acc, stack) => {
+        if (acc[stack]) {
+          acc[stack]++
         } else {
-          acc[skill] = 1
+          acc[stack] = 1
         }
         return acc
       }, {})
-      state.skillsMostUsed = skillsMostUsed
+      state.stacksMostUsed = stacksMostUsed
 
     }
   },
 })
 
-export const {getNumberOfProjects, getSkillsMostUsed} = statisticsSlice.actions
+export const {getNumberOfProjects, getStacksMostUsed} = statisticsSlice.actions
 export default statisticsSlice.reducer
