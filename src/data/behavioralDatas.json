@@ -1,229 +1,229 @@
 {
   "way":{
-    "contributions_individuelles": {
-      "efficacite": {
-        "engagement": {
+    "Contributions_individuelles": {
+      "Efficacite": {
+        "Engagement": {
           "note": 7,
-          "signification": "S'engage facilement dans sa mission et assume ses responsabilités."
+          "Signification": "S'engage facilement dans sa mission et assume ses responsabilités."
         },
-        "agir": {
+        "Agir": {
           "note": 9,
-          "signification": "Est pleinement orienté résultat et qualité pour répondre aux attentes."
+          "Signification": "Est pleinement orienté résultat et qualité pour répondre aux attentes."
         },
-        "focaliser_son_attention": {
+        "Focaliser son attention": {
           "note": 9,
-          "signification": "Est capable de maintenir un niveau très élevé de précision et méthode en dépit des contraintes."
+          "Signification": "Est capable de maintenir un niveau très élevé de précision et méthode en dépit des contraintes."
         },
-        "initiative": {
+        "Initiative": {
           "note": 7,
-          "signification": "A l'aise pour anticiper, saisir les opportunités et agir avec pro action pour améliorer la situation."
+          "Signification": "A l'aise pour anticiper, saisir les opportunités et agir avec pro action pour améliorer la situation."
         },
-        "evaluer": {
+        "Evaluer": {
           "note": 6,
-          "signification": "Plutôt disposé à détecter et analyser efficacement les situations."
+          "Signification": "Plutôt disposé à détecter et analyser efficacement les situations."
         }
       },
-      "organiser": {
-        "rapporter": {
+      "Organiser": {
+        "Rapporter": {
           "note": 10,
-          "signification": "Rend très spontanément compte de son activité."
+          "Signification": "Rend très spontanément compte de son activité."
         },
-        "fixer_des_buts": {
+        "Fixer des buts": {
           "note": 8,
-          "signification": "Tout à fait orienté vers la détermination d'objectifs nécessaires à l'exécution d'une stratégie."
+          "Signification": "Tout à fait orienté vers la détermination d'objectifs nécessaires à l'exécution d'une stratégie."
         },
-        "diriger": {
+        "Diriger": {
           "note": 5,
-          "signification": "En mesure de conseiller, orienter et fixer les limites d'une activité si la situation l'exige."
+          "Signification": "En mesure de conseiller, orienter et fixer les limites d'une activité si la situation l'exige."
         },
-        "deleguer": {
+        "Deleguer": {
           "note": 8,
-          "signification": "Tout à fait à l'aise pour confier la responsabilité d'une mission à la personne appropriée."
+          "Signification": "Tout à fait à l'aise pour confier la responsabilité d'une mission à la personne appropriée."
         },
-        "planifier": {
+        "Planifier": {
           "note": 7,
-          "signification": "Apprécie plutôt de programmer les ressources adéquates à la réalisation d'un objectif."
+          "Signification": "Apprécie plutôt de programmer les ressources adéquates à la réalisation d'un objectif."
         },
-        "se_reunir": {
+        "Se reunir": {
           "note": 7,
-          "signification": "Mobilise facilement les ressources adéquates en vue de la réalisation d'une entreprise commune."
+          "Signification": "Mobilise facilement les ressources adéquates en vue de la réalisation d'une entreprise commune."
         },
-        "gerer_la_dynamique_collective": {
+        "Gerer la dynamique collective": {
           "note": 6,
-          "signification": "Orchestre et valorise avec une relative aisance les contributions individuelles et collectives."
+          "Signification": "Orchestre et valorise avec une relative aisance les contributions individuelles et collectives."
         }
       }
     },
-    "contributions_organisationnelles": {
-      "s_imposer": {
-        "motiver": {
+    "Contributions_organisationnelles": {
+      "S_imposer": {
+        "Motiver": {
           "note": 7,
-          "signification": "Disposé à entraîner ou inciter autrui à agir conformément à ses attentes."
+          "Signification": "Disposé à entraîner ou inciter autrui à agir conformément à ses attentes."
         },
-        "resoudre_les_tensions": {
+        "Resoudre les tensions": {
           "note": 7,
-          "signification": "Parvient souvent à défendre son point de vue tout en prenant en compte les besoins d'autrui lors de situations conflictuelles."
+          "Signification": "Parvient souvent à défendre son point de vue tout en prenant en compte les besoins d'autrui lors de situations conflictuelles."
         },
-        "manifester_son_desaccord": {
+        "Manifester son desaccord": {
           "note": 7,
-          "signification": "A l'aise pour exprimer sa désapprobation de manière constructive."
+          "Signification": "A l'aise pour exprimer sa désapprobation de manière constructive."
         },
-        "responsabiliser_autrui": {
+        "Responsabiliser autrui": {
           "note": 7,
-          "signification": "Tendance à souhaiter développer l'autonomie et confier des responsabilités à autrui."
+          "Signification": "Tendance à souhaiter développer l'autonomie et confier des responsabilités à autrui."
         },
-        "superviser": {
+        "Superviser": {
           "note": 9,
-          "signification": "Assure un niveau très élevé de contrôle de la mise en œuvre et des résultats et propose des actions correctives."
+          "Signification": "Assure un niveau très élevé de contrôle de la mise en œuvre et des résultats et propose des actions correctives."
         },
-        "decider": {
+        "Decider": {
           "note": 6,
-          "signification": "Souvent à l'aise lorsqu'il s'agit de choisir entre plusieurs options et en assumer les conséquences."
+          "Signification": "Souvent à l'aise lorsqu'il s'agit de choisir entre plusieurs options et en assumer les conséquences."
         }
       },
-      "innover": {
-        "actualiser_ses_savoirs": {
+      "Innover": {
+        "Actualiser ses savoirs": {
           "note": 7,
-          "signification": "Maintient souvent un niveau élevé de connaissance pour répondre aux enjeux de son activité."
+          "Signification": "Maintient souvent un niveau élevé de connaissance pour répondre aux enjeux de son activité."
         },
-        "apprendre": {
+        "Apprendre": {
           "note": 10,
-          "signification": "Très fréquemment orienté vers la capitalisation de ses expériences."
+          "Signification": "Très fréquemment orienté vers la capitalisation de ses expériences."
         },
-        "rechercher": {
+        "Rechercher": {
           "note": 7,
-          "signification": "Souvent attiré par la recherche d'information en vue de construire une base de réflexion."
+          "Signification": "Souvent attiré par la recherche d'information en vue de construire une base de réflexion."
         },
-        "synthétiser": {
+        "Synthétiser": {
           "note": 9,
-          "signification": "Extrêmement disposé à intégrer et restituer une information de manière concise et cohérente."
+          "Signification": "Extrêmement disposé à intégrer et restituer une information de manière concise et cohérente."
         },
-        "conceptualiser": {
+        "Conceptualiser": {
           "note": 7,
-          "signification": "Disposé à manier des concepts et élaborer des stratégies dans des contextes diversifiés."
+          "Signification": "Disposé à manier des concepts et élaborer des stratégies dans des contextes diversifiés."
         },
-        "initier_ou_creer_la_rupture": {
+        "Initier ou creer la rupture": {
           "note": 6,
-          "signification": "(Tente d'apporter un éclairage sur les solutions aux enjeux et défis.)"
+          "Signification": "(Tente d'apporter un éclairage sur les solutions aux enjeux et défis.)"
         }
       },
-      "s_adapter": {
-            "composer_avec_la_pression_et_le_stress": { 
+      "S_adapter": {
+            "Composer avec la pression et le stress": { 
                 "note": 5, 
-                "signification": "Gère relativement bien ses émotions et capable de maintenir un niveau de performance en dépit de conditions difficiles." 
+                "Signification": "Gère relativement bien ses émotions et capable de maintenir un niveau de performance en dépit de conditions difficiles." 
             }, 
-            "se_conformer": { 
+            "Se conformer": { 
                 "note": 7, 
-                "signification": "A fortement tendance à se conformer aux principes, règlements et normes d'un cadre donné." 
+                "Signification": "A fortement tendance à se conformer aux principes, règlements et normes d'un cadre donné." 
             }, 
-            "s_ajuster": { 
+            "S ajuster": { 
                 "note": 7, 
-                "signification": "Disposé à oser agir dans des environnements changeants." 
+                "Signification": "Disposé à oser agir dans des environnements changeants." 
             }, 
-            "integrer_les_process_d_entreprise": { 
+            "Integrer les process d entreprise": { 
                 "note": 6, 
-                "signification": "Travaille en accord avec les méthodes, concepts et orientations de la structure." 
+                "Signification": "Travaille en accord avec les méthodes, concepts et orientations de la structure." 
             }, 
-            "vivre_le_changement": { 
+            "Vivre le changement": { 
                 "note": 8, 
-                "signification": "Accueille très favorablement les techniques et moyens à disposition pour accompagner d'ambitieuses transformations." 
+                "Signification": "Accueille très favorablement les techniques et moyens à disposition pour accompagner d'ambitieuses transformations." 
             }, 
-            "adherer_a_la_culture_d_entreprise": { 
+            "Adherer a la culture d entreprise": { 
                 "note": 5, 
-                "signification": "Généralement centré sur l'appropriation des valeurs de la structure et l'action en adéquation avec celle-ci." 
+                "Signification": "Généralement centré sur l'appropriation des valeurs de la structure et l'action en adéquation avec celle-ci." 
             }, 
-            "apprehender_une_situation": { 
+            "Apprehender une situation": { 
                 "note": 10, 
-                "signification": "Mobilise totalement ses ressources d'écoute et d'attention pour appréhender au mieux une situation." 
+                "Signification": "Mobilise totalement ses ressources d'écoute et d'attention pour appréhender au mieux une situation." 
             } 
           }
     },
-    "contributions_interpersonnelles": {
-      "ecouter": {   
-          "empathie":
+    "Contributions_interpersonnelles": {
+      "Ecouter": {   
+          "Empathie":
           {   
               "note":10,   
-              "signification":"Prête très souvent une oreille attentive et traite son interlocuteur de manière confiante et respectueuse."
+              "Signification":"Prête très souvent une oreille attentive et traite son interlocuteur de manière confiante et respectueuse."
           },   
-          "comprendre":
+          "Comprendre":
           {   
               "note":5,   
-              "signification":"Parvient la plupart du temps à accéder au sens et aux enjeux d'une situation."
+              "Signification":"Parvient la plupart du temps à accéder au sens et aux enjeux d'une situation."
           },   
-          "consideration":
+          "Consideration":
           {   
               "note":6,   
-              "signification":"Fait souvent preuve d'indulgence et de patience envers autrui."
+              "Signification":"Fait souvent preuve d'indulgence et de patience envers autrui."
           },   
-          "communiquer":
+          "Communiquer":
           {   
               "note":7,   
-              "signification":"Exprime ses attentes de manière claire et adaptée et parvient à susciter l'intérêt."
+              "Signification":"Exprime ses attentes de manière claire et adaptée et parvient à susciter l'intérêt."
           }
       },
-      "interagir": {   
-          "argumenter":
+      "Interagir": {   
+          "Argumenter":
           {   
               "note":8,   
-              "signification":"Grandes facilités pour argumenter afin de légitimer une position."
+              "Signification":"Grandes facilités pour argumenter afin de légitimer une position."
           },   
-          "solliciter":
+          "Solliciter":
           {   
               "note":8,   
-              "signification":"Très disposé à faire appel aux ressources adéquates lorsque cela est nécessaire."
+              "Signification":"Très disposé à faire appel aux ressources adéquates lorsque cela est nécessaire."
           },   
-          "esprit_d_equipe":
+          "Esprit d equipe":
           {   
               "note":5,   
-              "signification":"Œuvre généralement à la cohésion d'un groupe et veille à l'atteinte de buts communs à une équipe."
+              "Signification":"Œuvre généralement à la cohésion d'un groupe et veille à l'atteinte de buts communs à une équipe."
           },   
-          "soutenir":
+          "Soutenir":
           {   
               "note":7,   
-              "signification":"Se rend souvent disponible pour apporter son appui à autrui."
+              "Signification":"Se rend souvent disponible pour apporter son appui à autrui."
           },  
-          "collaborer":
+          "Collaborer":
           {  
               "note":5,  
-              "signification":"Généralement prêt à partager et mutualiser l'information en vue d'atteindre un objectif commun."
+              "Signification":"Généralement prêt à partager et mutualiser l'information en vue d'atteindre un objectif commun."
           }
       }
     },
-    "ressources_personnelles": {
-      "creativite": 
+    "Ressources_personnelles": {
+      "Creativite": 
         {  
             "note":7,  
-            "signification":"Recherche souvent à améliorer la performance par des approches ou des méthodes nouvelles."
+            "Signification":"Recherche souvent à améliorer la performance par des approches ou des méthodes nouvelles."
         },  
-      "optimisme":
+      "Optimisme":
         {  
             "note":6,  
-            "signification":"Capacité à s'adapter à une variété de situations, à adopter une attitude positive face aux changements."
+            "Signification":"Capacité à s'adapter à une variété de situations, à adopter une attitude positive face aux changements."
         },  
-      "tolerance_a_l_incertainte":
+      "Tolerance a l incertainte":
         {  
             "note":6,  
-            "signification":"Se montre plutôt à l'aise dans des environnements changeants et incertains."
+            "Signification":"Se montre plutôt à l'aise dans des environnements changeants et incertains."
         },  
-      "precision_et_methode":
+      "Precision et methode":
         {  
             "note":6,  
-            "signification":"En mesure d'orienter ses efforts vers la vérification de son propre travail et de celui des autres lorsque la situation le nécessite."
+            "Signification":"En mesure d'orienter ses efforts vers la vérification de son propre travail et de celui des autres lorsque la situation le nécessite."
         },  
-      "sensibilite_a_autrui":
+      "Sensibilite a autrui":
         {  
             "note":7,  
-            "signification":"Approche plutôt compréhensive et ouverte d'autrui, s'efforce de maintenir un climat harmonieux et constructif."
+            "Signification":"Approche plutôt compréhensive et ouverte d'autrui, s'efforce de maintenir un climat harmonieux et constructif."
         },  
-      "confiance_en_soi":
+      "Confiance en soi":
         {  
             "note":6,  
-            "signification":"Généralement conscient de ses compétences et potentialités, affirme ses opinions et prend des risques lorsque la situation l'exige."
+            "Signification":"Généralement conscient de ses compétences et potentialités, affirme ses opinions et prend des risques lorsque la situation l'exige."
         }
     }
   },
   "PerfSTART":{
-    "tendances relationnelles": {
+    "Tendances_relationnelles": {
       "Spontanéité" : {
         "note": 5.7
       },
@@ -243,7 +243,7 @@
         "note" : 4.8
       }
     },
-    "tendances managériales": {
+    "Tendances_managériales": {
       "Animation" : {
         "note": 5.5
       },

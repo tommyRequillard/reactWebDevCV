@@ -1,17 +1,9 @@
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import {Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend, ResponsiveContainer} from "recharts";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getStacksMostUsed } from "./../features/statistics";
 
-const formatDataForRadarChart = (stacksMostUsed) => {
+const formatDataForRadarChart = (stacksMostUsed: { [s: string]: unknown; } | ArrayLike<unknown>) => {
   // Convertir le tableau associatif en tableau d'objets
   const data = Object.entries(stacksMostUsed)
     .map(([stack, count]) => ({
@@ -27,9 +19,6 @@ const formatDataForRadarChart = (stacksMostUsed) => {
   return top8Stacks;
 };
 
-interface RadarChartComponentProps {
-  className: string;
-}
 
 const RadarChartComponent = () => {
   const dispatch = useDispatch();
