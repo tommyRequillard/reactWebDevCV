@@ -29,7 +29,6 @@ const CounterRedux = () => {
         </div>
       </div>
     </div>
-      
   )
 }
 

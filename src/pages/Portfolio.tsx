@@ -5,7 +5,7 @@ import PortfolioCpnt from "../components/portfolio/PortfolioCpnt.tsx"
 const Portfolio = () => {
   return (
     <>
-      <MainLayout/>
+      <MainLayout children={""}/>
       <MainArea>
         <PortfolioCpnt/>
       </MainArea>

@@ -5,7 +5,7 @@ import Cv from "../components/cv/Cv.tsx"
 function Home() {
   return (
     <>
-      <MainLayout/>
+      <MainLayout children={""}/>
       <MainArea>
         <Cv/>
       </MainArea>

@@ -5,7 +5,7 @@ import FrontEndGallery from "../components/portfolio/frontend/FrontEndGallery.ts
 const Frontend = () => {
   return (
     <>
-      <MainLayout/>
+      <MainLayout children={""}/>
       <MainArea>
         <FrontEndGallery/>
       </MainArea>

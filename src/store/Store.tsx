@@ -7,7 +7,7 @@ export const store = configureStore({
   reducer: {
     counter: counterReducer,
     statistics: statisticsReducer,
-    behavioralData: behavioralDataReducer, // Ajoutez le reducer pour les données comportementales
+    behavioralData: behavioralDataReducer, 
   }
 })
 

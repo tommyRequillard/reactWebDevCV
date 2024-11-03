@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 interface MainAreaProps {
-    children: string
+    children: ReactNode
 }
 
 const MainArea = ({children}: MainAreaProps) => {

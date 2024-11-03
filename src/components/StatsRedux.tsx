@@ -1,13 +1,14 @@
 import {useDispatch, useSelector} from "react-redux"
 import {useEffect} from "react"
 import {getNumberOfProjects} from "../features/statistics.tsx"
+import { RootState } from "../store/Store";
 
 const StatsRedux = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getNumberOfProjects())
   }, [dispatch])
-  const numberOfProjects = useSelector((state) => state.statistics.numberOfProjects)
+  const numberOfProjects = useSelector((state: RootState) => state.statistics.numberOfProjects)
 
   return (
     <div className="w-full">

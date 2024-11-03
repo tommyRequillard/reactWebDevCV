@@ -1,17 +1,8 @@
 import {Fragment, useState} from 'react'
 import {Link, useLocation} from 'react-router-dom'
 import {Dialog, Transition} from '@headlessui/react'
-import {
-  Bars3Icon,
-  // ChartPieIcon,
-  DocumentDuplicateIcon,
-  // PresentationChartLineIcon,
-  // FolderIcon,
-  HomeIcon,
-  XMarkIcon,
-  ShieldCheckIcon,
-  PhotoIcon,
-  UserGroupIcon,
+import {Bars3Icon, DocumentDuplicateIcon, HomeIcon, XMarkIcon, ShieldCheckIcon, PhotoIcon, UserGroupIcon,
+  // ChartPieIcon, PresentationChartLineIcon, FolderIcon,
 } from '@heroicons/react/24/outline'
 import MainArea from "./MainArea.tsx"
 import SecondaryCol from "./SecondaryCol.tsx"

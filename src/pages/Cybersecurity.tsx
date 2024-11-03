@@ -6,7 +6,7 @@ import CybersecurityG from "../components/portfolio/cybersecurity/CybersecurityG
 const Cybersecurity = () => {
   return (
     <>
-      <MainLayout/> 
+      <MainLayout children={""}/> 
         <MainArea>
           <CybersecurityG/>
         </MainArea>

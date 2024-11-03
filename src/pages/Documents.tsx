@@ -5,7 +5,7 @@ import DocumentCpnt from "../components/documents/DocumentCpnt.tsx"
 const Documents = () => {
   return (
     <>
-      <MainLayout/>
+      <MainLayout children={""}/>
       <MainArea>
         <DocumentCpnt/>
       </MainArea>
