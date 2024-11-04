@@ -1,4 +1,4 @@
-import TrelloArray from "./TrelloArray.tsx"
+import TrelloArray from "./TrelloArray.tsx.0"
 import DocumentGallery from "./DocumentGallery.tsx"
 
 const DocumentCpnt = () => {
