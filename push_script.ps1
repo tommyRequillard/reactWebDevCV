@@ -35,3 +35,4 @@ if ($LASTEXITCODE -eq 0) {
 }
 
 Add-Content -Path $LOG_FILE -Value ("{0} {1} - Fin du push" -f (Get-Date).ToShortDateString(), (Get-Date).ToLongTimeString())
+
