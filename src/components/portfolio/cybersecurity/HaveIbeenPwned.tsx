@@ -51,7 +51,7 @@ const HaveIBeenPwnedPasswordCheck = () => {
             />
             <button 
                 onClick={handleCheck} 
-                className="mt-2 bg-blue-500 text-white p-2 rounded"
+                className="mt-2 bg-blue-500 hover:bg-indigo-500 text-white p-2 rounded"
                 disabled={loading}
             >
                 {loading ? 'Vérification...' : 'Vérifier'}

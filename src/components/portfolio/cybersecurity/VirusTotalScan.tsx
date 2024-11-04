@@ -1,30 +1,49 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import axios from "axios";
+
+interface VirusTotalScanResult {
+    result: string; // "clean", "malicious", etc.
+    category: string; // Catégorie du résultat
+}
+
+interface VirusTotalReport {
+    data: {
+        attributes: {
+            results: Record<string, VirusTotalScanResult>;
+        };
+    };
+}
+
+interface VirusTotalScan {
+    err?: string;
+    data?: VirusTotalReport;
+    result?: number;
+}
 
 const VirusTotalScan = () => {
-    const [url, setUrl] = useState('');
-    const [status, setStatus] = useState('');
-    const [report, setReport] = useState(null);
+    const [url, setUrl] = useState("");
+    const [status, setStatus] = useState("");
+    const [report, setReport] = useState<VirusTotalReport | null>(null);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
+    const [error, setError] = useState<string | null>(null);
     const [showDetails, setShowDetails] = useState(false); // État pour gérer l'affichage des détails
     const myApiKey = import.meta.env.VITE_VIRUS_TOTAL_API_KEY;
 
     const handleScan = async () => {
         setLoading(true);
-        setError('');
+        setError(null);
         setReport(null);
 
         try {
-            const cleanUrl = url.replace(/^https?:\/\//, '');
+            const cleanUrl = url.replace(/^https?:\/\//, "");
             const scanOptions = {
-                method: 'POST',
-                url: 'https://www.virustotal.com/api/v3/urls',
+                method: "POST",
+                url: "https://www.virustotal.com/api/v3/urls",
                 headers: {
-                    'x-apikey': myApiKey,
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    "x-apikey": myApiKey,
+                    "Content-Type": "application/x-www-form-urlencoded",
                 },
-                data: `url=${encodeURIComponent(cleanUrl)}`
+                data: `url=${encodeURIComponent(cleanUrl)}`,
             };
 
             const scanResponse = await axios.request(scanOptions);
@@ -33,31 +52,43 @@ const VirusTotalScan = () => {
             let scanStatus;
             do {
                 const statusOptions = {
-                    method: 'GET',
+                    method: "GET",
                     url: `https://www.virustotal.com/api/v3/analyses/${scanId}`,
                     headers: {
-                        'x-apikey': myApiKey
-                    }
+                        "x-apikey": myApiKey,
+                    },
                 };
-                
+
                 const statusResponse = await axios.request(statusOptions);
                 scanStatus = statusResponse.data.data.attributes.status;
                 setStatus(scanStatus);
-                await new Promise(resolve => setTimeout(resolve, 2000));
-            } while (scanStatus !== 'completed');
+                await new Promise((resolve) => setTimeout(resolve, 2000));
+            } while (scanStatus !== "completed");
 
             const reportOptions = {
-                method: 'GET',
+                method: "GET",
                 url: `https://www.virustotal.com/api/v3/analyses/${scanId}`,
                 headers: {
-                    'x-apikey': '368d836d2188fd6e080b74946fff0ce4e4d3d79b4dde937304f81ee8debc7eab'
-                }
+                    "x-apikey": myApiKey,
+                },
             };
-            
-            const reportResponse = await axios.request(reportOptions);
+
+            const reportResponse =
+            await axios.request(reportOptions);
             setReport(reportResponse.data);
+
         } catch (err) {
-            setError('Erreur lors du scan : ' + err.message);
+            if (axios.isAxiosError(err)) {
+                console.error(err.response?.data);
+                setError(
+                    "Erreur lors du scan : " +
+                        (err.response?.data?.message || err.message)
+                );
+            } else if (err instanceof Error) {
+                setError("Erreur inconnue : " + err.message);
+            } else {
+                setError("Erreur inconnue");
+            }
         } finally {
             setLoading(false);
         }
@@ -67,18 +98,18 @@ const VirusTotalScan = () => {
     const calculatePercentages = () => {
         if (!report) return { clean: 0, malicious: 0 };
 
-        let totalEngines = Object.keys(report.data.attributes.results).length;
+        const totalEngines = Object.keys(report.data.attributes.results).length;
         let cleanCount = 0;
         let maliciousCount = 0;
 
-        for (let result of Object.values(report.data.attributes.results)) {
+        for (const result of Object.values(report.data.attributes.results)) {
             if (result.result === "clean") cleanCount++;
             else if (result.result === "malicious") maliciousCount++;
         }
 
         return {
-            clean: ((cleanCount / totalEngines) * 100).toFixed(2),
-            malicious: ((maliciousCount / totalEngines) * 100).toFixed(2)
+            clean: parseFloat(((cleanCount / totalEngines) * 100).toFixed(2)),
+            malicious: parseFloat(((maliciousCount / totalEngines) * 100).toFixed(2)),
         };
     };
 
@@ -91,23 +122,44 @@ const VirusTotalScan = () => {
         return (
             <div className="mt-4">
                 <h3 className="font-semibold">Résumé du Scan</h3>
-                <p>Pourcentage de sécurité : {clean}% clean, {malicious}% malicieux</p>
-                <button 
-                    onClick={() => setShowDetails(!showDetails)} 
-                    className="mt-2 bg-blue-500 text-white p-2 rounded"
+                    <p className={`${clean > 50 ? 'text-green-600' : 'text-red-600'} `}>
+                        Pourcentage de sécurité :
+                        <span className={`font-bold text-${clean > 50 ? 'green-600' : 'red-600'}`}>
+                            {' ' +clean}%
+                        </span>
+                        Clean
+                    </p>
+                <p className={`text-${malicious>0 ?'red-600':'green-600'}`}>
+                    Pourcentage malicieux :
+                    <span className={`font-bold text-${malicious>0 ?'red-600':'green-600'}`}>
+                        {' ' + malicious}%
+                    </span>
+                    Malicieux
+                </p>
+                <button
+                    onClick={() => setShowDetails(!showDetails)}
+                    className="mt-2 bg-blue-500 hover:bg-indigo-500 text-white p-2 rounded"
                 >
-                    {showDetails ? 'Masquer les Détails' : 'Afficher les Détails'}
+                    {showDetails
+                        ? "Masquer les Détails"
+                        : "Afficher les Détails"}
                 </button>
-                
+
                 {showDetails && (
                     <div className="mt-2 bg-gray-200 p-2 rounded">
                         <h4>Détails des résultats :</h4>
                         <ul>
-                            {Object.entries(report.data.attributes.results).map(([engine, result]) => (
-                                <li key={engine} className="border-b border-gray-300 py-1">
-                                    <strong>{engine}:</strong> {result.result} ({result.category})
-                                </li>
-                            ))}
+                            {Object.entries(report.data.attributes.results).map(
+                                ([engine, result]) => (
+                                    <li
+                                        key={engine}
+                                        className="border-b border-gray-300 py-1"
+                                    >
+                                        <strong>{engine}:</strong>{" "}
+                                        {result.result} ({result.category})
+                                    </li>
+                                )
+                            )}
                         </ul>
                     </div>
                 )}
@@ -117,21 +169,23 @@ const VirusTotalScan = () => {
 
     return (
         <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold">Analyse des URLs et des Fichiers</h3>
+            <h3 className="text-xl font-semibold">
+                Analyse des URLs et des Fichiers
+            </h3>
             <p>Vérification des URLs et fichiers pour détecter les menaces</p>
-            <input 
-                type="text" 
-                placeholder="Entrez l'URL à scanner" 
-                value={url} 
-                onChange={(e) => setUrl(e.target.value)} 
+            <input
+                type="text"
+                placeholder="Entrez l'URL à scanner"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
                 className="border p-2 rounded w-full mt-2"
             />
-            <button 
-                onClick={handleScan} 
-                className="mt-2 bg-blue-500 text-white p-2 rounded"
+            <button
+                onClick={handleScan}
+                className="mt-2 bg-blue-500 hover:bg-indigo-500 text-white p-2 rounded"
                 disabled={loading}
             >
-                {loading ? 'Scanning...' : 'Lancer le Scan'}
+                {loading ? "Scanning..." : "Lancer le Scan"}
             </button>
             {status && <p className="mt-2">Statut du scan : {status}</p>}
             {error && <p className="text-red-500">{error}</p>}

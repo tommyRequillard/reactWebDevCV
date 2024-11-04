@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+/** @type {import('@tailwindcss/forms').Config} */
 export default {
   content: [
     "./index.html",
@@ -8,7 +9,7 @@ export default {
     extend: {
       colors: {
         'dark': '#303030',
-        'darker': '#333333;',
+        'darker': '#333333', // Correction ici : retirez le point-virgule à la fin
         'gold': '#967C56',
         'cvblue': '#42f2f7',
         'cvblued': '#46acc2',
@@ -29,7 +30,7 @@ export default {
           '0%, 100%': {opacity: '1'},
           '50%': {opacity: '0'},
         },
-        'spin-custom': { // Définissez votre animation de rotation ici
+        'spin-custom': {
           '0%': {transform: 'rotate(0deg)'},
           '100%': {transform: 'rotate(360deg)'},
         },
@@ -47,5 +48,8 @@ export default {
       backgroundImage: {},
     },
   },
-  plugins: [],
+  plugins: [
+    // Ajoutez le plugin des formulaires ici
+    require('@tailwindcss/forms'), 
+  ],
 }

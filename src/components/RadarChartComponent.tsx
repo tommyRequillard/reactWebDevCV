@@ -1,15 +1,25 @@
-import {Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend, ResponsiveContainer} from "recharts";
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getStacksMostUsed } from "./../features/statistics";
 import { RootState } from "../store/Store";
 
-const formatDataForRadarChart = (stacksMostUsed: { [s: string]: unknown; } | ArrayLike<unknown>) => {
+const formatDataForRadarChart = (
+  stacksMostUsed: { [s: string]: unknown } | ArrayLike<unknown>
+) => {
   // Convertir le tableau associatif en tableau d'objets
   const data = Object.entries(stacksMostUsed)
     .map(([stack, count]) => {
       // Assurez-vous que count est un nombre
-      const countValue = typeof count === 'number' ? count : 0; // Par défaut à 0 si ce n'est pas un nombre
+      const countValue = typeof count === "number" ? count : 0; // Par défaut à 0 si ce n'est pas un nombre
       return {
         subject: stack,
         A: countValue, // Les données A correspondent au nombre d'occurrences de la compétence
@@ -22,7 +32,6 @@ const formatDataForRadarChart = (stacksMostUsed: { [s: string]: unknown; } | Arr
 
   return top8Stacks;
 };
-
 
 const RadarChartComponent = () => {
   const dispatch = useDispatch();
@@ -60,7 +69,9 @@ const RadarChartComponent = () => {
   return (
     <>
       <p className="text-center my-2">
-      Ce schéma illustre le nombre de projets réalisés en utilisant les technologies indiquées, en comparaison avec le total des projets réalisés.
+        Ce schéma illustre le nombre de projets réalisés en utilisant les
+        technologies indiquées, en comparaison avec le total des projets
+        réalisés.
       </p>
       <div className={`${radarChartClass} flex justify-center`}>
         <ResponsiveContainer
@@ -69,8 +80,8 @@ const RadarChartComponent = () => {
         >
           <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
             <PolarGrid
-              cx={50*100/100}
-              cy={50*100/100}
+              cx={(50 * 100) / 100}
+              cy={(50 * 100) / 100}
               gridType="circle"
               stroke="#967C56"
               fill="#333333"
@@ -84,7 +95,7 @@ const RadarChartComponent = () => {
               tick={{
                 fontSize: 14,
                 fill: "#333333",
-                style: { textShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)" }
+                style: { textShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)" },
               }}
             />
             <Radar

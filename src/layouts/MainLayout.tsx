@@ -1,8 +1,7 @@
 import {Fragment, useState} from 'react'
 import {Link, useLocation} from 'react-router-dom'
 import {Dialog, Transition} from '@headlessui/react'
-import {Bars3Icon, DocumentDuplicateIcon, HomeIcon, XMarkIcon, ShieldCheckIcon, PhotoIcon, UserGroupIcon,
-  // ChartPieIcon, PresentationChartLineIcon, FolderIcon,
+import {Bars3Icon, DocumentDuplicateIcon, HomeIcon, XMarkIcon, ShieldCheckIcon, PhotoIcon, UserGroupIcon, EnvelopeOpenIcon,
 } from '@heroicons/react/24/outline'
 import MainArea from "./MainArea.tsx"
 import SecondaryCol from "./SecondaryCol.tsx"
@@ -14,9 +13,8 @@ const navigation = [
   {name: 'Portfolio', href: '/portfolio', icon: PhotoIcon, current: false, active: false},
   {name: 'Cybersecurity', href: '/cybersecurity', icon: ShieldCheckIcon, current: false, active: false},
   {name: 'Documents', href: '/documents', icon: DocumentDuplicateIcon, current: false, active: false},
-  // {name: 'Counter', href: '/counter', icon: ChartPieIcon, current: false, active: false},
-  // {name: 'Stats', href: '/stats', icon: PresentationChartLineIcon, current: false, active: false},
   {name: 'Skills', href: '/skills', icon: UserGroupIcon, current: false, active: false},
+  {name: 'Contact', href: '/contact', icon: EnvelopeOpenIcon, current: false, active: false},
 ]
 
 function classNames(...classes: string[]) {

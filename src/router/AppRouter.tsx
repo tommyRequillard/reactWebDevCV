@@ -11,6 +11,7 @@ const Documents = lazy(() => import('../pages/Documents'));
 const Portfolio = lazy(() => import('../pages/Portfolio'));
 const Cybersecurity = lazy(() => import('../pages/Cybersecurity'));
 const Skills = lazy(() => import('../pages/Skills.tsx'));
+const Contact = lazy(() => import('../pages/Contact.tsx'));
 
 export default function AppRouter() {
   const browserRoutes = createBrowserRouter(createRoutesFromElements(
@@ -20,6 +21,7 @@ export default function AppRouter() {
       <Route path="/cybersecurity" element={<Suspense fallback={<Loading />}><Cybersecurity /></Suspense>} />
       <Route path="/documents" element={<Suspense fallback={<Loading />}><Documents /></Suspense>} />
       <Route path="/skills" element={<Suspense fallback={<Loading />}><Skills /></Suspense>} />
+      <Route path="/contact" element={<Suspense fallback={<Loading />}><Contact /></Suspense>} />
       <Route path="*" element={<Suspense fallback={<Loading />}><Error404 /></Suspense>} />
     </Route>
   ));

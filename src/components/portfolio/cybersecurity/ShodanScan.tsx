@@ -41,7 +41,7 @@ const ShodanScan = () => {
             
             <button 
                 onClick={handleScan} 
-                className="bg-blue-500 text-white p-2 rounded w-full"
+                className="bg-blue-500 hover:bg-indigo-500 text-white p-2 rounded w-full"
                 disabled={loading}
             >
                 {loading ? 'Analyse en cours...' : 'Analyser'}
