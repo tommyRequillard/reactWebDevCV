@@ -48,7 +48,7 @@ const VirusTotalScan = () => {
 
             const scanResponse = await axios.request(scanOptions);
             const scanId = scanResponse.data.data.id;
-
+            console.log("API Key:", myApiKey);
             let scanStatus;
             do {
                 const statusOptions = {
@@ -89,8 +89,8 @@ const VirusTotalScan = () => {
             } else {
                 setError("Erreur inconnue");
             }
-        } finally {
-            setLoading(false);
+        // } finally {
+        //     setLoading(false);
         }
     };
 
