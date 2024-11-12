@@ -1,6 +1,9 @@
 import {
   createBrowserRouter,
-  createRoutesFromElements, RouterProvider, Route, Outlet,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+  Outlet,
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loading from "../components/Loading.tsx";
@@ -14,7 +17,8 @@ const Skills = lazy(() => import('../pages/Skills.tsx'));
 const Contact = lazy(() => import('../pages/Contact.tsx'));
 
 export default function AppRouter() {
-  const browserRoutes = createBrowserRouter(createRoutesFromElements(
+  // Créer les routes
+  const routes = createRoutesFromElements(
     <Route path="/" element={<Outlet />}>
       <Route index element={<Suspense fallback={<Loading />}><Home /></Suspense>} />
       <Route path="/portfolio" element={<Suspense fallback={<Loading />}><Portfolio /></Suspense>} />
@@ -24,9 +28,20 @@ export default function AppRouter() {
       <Route path="/contact" element={<Suspense fallback={<Loading />}><Contact /></Suspense>} />
       <Route path="*" element={<Suspense fallback={<Loading />}><Error404 /></Suspense>} />
     </Route>
-  ));
+  );
+
+  // Créer le routeur avec les options futures
+  const browserRoutes = createBrowserRouter(routes, {
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionErrorRevalidation: true,
+    },
+  });
 
   return (
-    <RouterProvider router={browserRoutes} />
+    <RouterProvider router={browserRoutes} future={{ v7_startTransition: true }}/>
   );
 }

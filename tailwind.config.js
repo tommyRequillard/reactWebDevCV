@@ -5,6 +5,9 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  plugins: [
+    import('@tailwindcss/forms'), 
+  ],
   theme: {
     extend: {
       colors: {
@@ -47,9 +50,5 @@ export default {
       },
       backgroundImage: {},
     },
-  },
-  plugins: [
-    // Ajoutez le plugin des formulaires ici
-    require('@tailwindcss/forms'), 
-  ],
+  }
 }
