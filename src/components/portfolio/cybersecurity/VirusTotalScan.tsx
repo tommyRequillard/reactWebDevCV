@@ -30,18 +30,18 @@ const VirusTotalScan = () => {
 
         try {
             const cleanUrl = url.replace(/^https?:\/\//, "");
-            const scanResponse = await axios.post("http://localhost:3000/api/scan", { url: cleanUrl });
+            const scanResponse = await axios.post("/api/scan", { url: cleanUrl });
             const scanId = scanResponse.data.data.id;
 
             let scanStatus;
             do {
-                const statusResponse = await axios.get(`http://localhost:3000/api/report/${scanId}`);
+                const statusResponse = await axios.get(`/api/report/${scanId}`);
                 scanStatus = statusResponse.data.data.attributes.status;
                 setStatus(scanStatus);
                 await new Promise((resolve) => setTimeout(resolve, 2000));
             } while (scanStatus !== "completed");
 
-            const reportResponse = await axios.get(`http://localhost:3000/api/report/${scanId}`);
+            const reportResponse = await axios.get(`/api/report/${scanId}`);
             setReport(reportResponse.data);
 
         } catch (err) {
