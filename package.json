@@ -23,6 +23,7 @@
     "@reduxjs/toolkit": "^2.3.0",
     "@tailwindcss/forms": "^0.5.9",
     "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
@@ -39,6 +40,7 @@
     "yet-another-react-lightbox": "^3.21.6"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/react-router-dom": "^5.3.3",

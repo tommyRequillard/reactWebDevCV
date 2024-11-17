@@ -25,15 +25,15 @@ const HaveIBeenPwnedPasswordCheck = () => {
             // Vérifiez si le suffixe du mot de passe est présent dans la réponse
             const data = response.data;
             const lines = data.split('\n');
-            const found = lines.some(line => line.startsWith(suffix));
+            const found = lines.some((line: string) => line.startsWith(suffix));
 
             if (found) {
-                setResult('Ce mot de passe a été compromis !');
+                setResult("Ce mot de passe a été compromis !");
             } else {
-                setResult('Ce mot de passe n\'a pas été compromis.');
+                setResult("Ce mot de passe n\'a pas été compromis.");
             }
         } catch (err) {
-            setError('Erreur lors de la vérification : ' + err.message);
+            setError(`Erreur lors de la vérification : ${err.message}`);
         } finally {
             setLoading(false);
         }
