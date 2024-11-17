@@ -62,5 +62,5 @@ app.get('/api/report/:scanId', async (req, res) => {
 
 // Démarrer le serveur
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on https://dented-ripple-pink.glitch.me:${PORT}`);
 });
