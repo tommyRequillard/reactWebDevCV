@@ -7,11 +7,7 @@ interface VirusTotalScanResult {
 }
 
 interface VirusTotalReport {
-    data: {
-        attributes: {
-            results: Record<string, VirusTotalScanResult>;
-        };
-    };
+    results: Record<string, VirusTotalScanResult>;
 }
 
 const VirusTotalScan = () => {
@@ -21,7 +17,6 @@ const VirusTotalScan = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [showDetails, setShowDetails] = useState(false);
-    const myApiKey = import.meta.env.VITE_VIRUS_TOTAL_API_KEY;
 
     const handleScan = async () => {
         setLoading(true);
@@ -30,17 +25,8 @@ const VirusTotalScan = () => {
 
         try {
             const cleanUrl = url.replace(/^https?:\/\//, "");
-            const scanResponse = await axios.post("http://localhost:3000/api/scan", { url: cleanUrl });
-            const scanId = scanResponse.data.data.id;
-            let scanStatus;
-            do {
-                const statusResponse = await axios.get(`http://localhost:3000/api/report/${scanId}`);
-                scanStatus = statusResponse.data.data.attributes.status;
-                setStatus(scanStatus);
-                await new Promise((resolve) => setTimeout(resolve, 2000));
-            } while (scanStatus !== "completed");
-
-            const reportResponse = await axios.get(`http://localhost:3000/api/report/${scanId}`);
+            const reportResponse = await axios.post("https://vt-proxy.pages.dev/api/scan", { url: cleanUrl });
+            console.log(reportResponse)
             setReport(reportResponse.data);
 
         } catch (err) {
@@ -61,11 +47,11 @@ const VirusTotalScan = () => {
     const calculatePercentages = () => {
         if (!report) return { clean: 0, malicious: 0 };
 
-        const totalEngines = Object.keys(report.data.attributes.results).length;
+        const totalEngines = Object.keys(report.results).length;
         let cleanCount = 0;
         let maliciousCount = 0;
 
-        for (const result of Object.values(report.data.attributes.results)) {
+        for (const result of Object.values(report.results)) {
             if (result.result === "clean") cleanCount++;
             else if (result.result === "malicious") maliciousCount++;
         }
@@ -110,7 +96,7 @@ const VirusTotalScan = () => {
                     <div className="mt-2 bg-gray-200 p-2 rounded">
                         <h4>Détails des résultats :</h4>
                         <ul>
-                            {Object.entries(report.data.attributes.results).map(
+                            {Object.entries(report.results).map(
                                 ([engine, result]) => (
                                     <li key={engine} className="border-b border-gray-300 py-1">
                                         <strong>{engine}:</strong> {result.result} ({result.category})
