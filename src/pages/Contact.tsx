@@ -3,15 +3,13 @@ import MainArea from "../layouts/MainArea.tsx"
 import ContactForm from "../components/contact/ContactForm.tsx"
 
 
-const Cybersecurity = () => {
+export default function Contact() {
     return (
         <>
-        <MainLayout children={""}/> 
+            <MainLayout children={""} />
             <MainArea>
-            <ContactForm/>
+                <ContactForm />
             </MainArea>
         </>
     )
 }
-
-export default Cybersecurity

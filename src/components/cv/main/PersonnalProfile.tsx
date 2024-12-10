@@ -21,11 +21,11 @@ const PersonnalProfile = () => {
         </h2>
       </div>
       <p className="mx-2 mt-1 sm:py-6 text-gray-800">
-        Je prépare à la rentrée de novembre 2024 un Titre RNCP de Niveau 7
-        Cybersecurity Engineer au sein de DIGINAMIC. Très motivé, je recherche
-        activement une entreprise pour m'accueillir en contrat d'apprentissage
-        pour une durée de 19 mois. Rythme alternance : 5 mois de formation, puis
-        14 mois en entreprise
+        Actuellement à la recherche d'opportunités pour mettre à profit mes compétences 
+        techniques et mon expérience en cybersécurité, je suis motivé par l'idée de contribuer 
+        à la sécurité des systèmes d'information au sein d'une entreprise dynamique. 
+        Mon approche proactive orienté vers l'amelioration continu et ma curiosité intellectuelle 
+        me poussent à apprendre continuellement et à rester informé des dernières tendances du secteur.
       </p>
     </div>
   );
