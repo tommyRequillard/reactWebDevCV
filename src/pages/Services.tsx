@@ -1,4 +1,4 @@
-import InternetSites from "../components/sellingServices/internetSites";
+import InternetSites from "../components/sellingServices/InternetSites.tsx";
 import MainLayout from "../layouts/MainLayout";
 import MainArea from "../layouts/MainArea.tsx";
 
