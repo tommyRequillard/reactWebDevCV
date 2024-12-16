@@ -1,7 +1,7 @@
 import {Fragment, useState} from 'react'
 import {Link, useLocation} from 'react-router-dom'
 import {Dialog, Transition} from '@headlessui/react'
-import {Bars3Icon, DocumentDuplicateIcon, HomeIcon, XMarkIcon, ShieldCheckIcon, PhotoIcon, UserGroupIcon, EnvelopeOpenIcon,
+import {Bars3Icon, DocumentDuplicateIcon, HomeIcon, XMarkIcon, ShieldCheckIcon, PhotoIcon, UserGroupIcon, EnvelopeOpenIcon, BuildingStorefrontIcon 
 } from '@heroicons/react/24/outline'
 import MainArea from "./MainArea.tsx"
 import SecondaryCol from "./SecondaryCol.tsx"
@@ -10,6 +10,7 @@ import lion from "../assets/lion-face.png"
 
 const navigation = [
   {name: 'CV', href: '/', icon: HomeIcon, current: true, active: true},
+  {name: 'Services', href: '/services', icon: BuildingStorefrontIcon, current: false, active: false},
   {name: 'Portfolio', href: '/portfolio', icon: PhotoIcon, current: false, active: false},
   {name: 'Cybersecurity', href: '/cybersecurity', icon: ShieldCheckIcon, current: false, active: false},
   {name: 'Documents', href: '/documents', icon: DocumentDuplicateIcon, current: false, active: false},

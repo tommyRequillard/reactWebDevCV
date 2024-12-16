@@ -9,6 +9,7 @@ import { lazy, Suspense } from "react";
 import Loading from "../components/Loading.tsx";
 
 const Home = lazy(() => import('../pages/Home'));
+const Services = lazy(()=> import ('../pages/Services.tsx'));
 const Error404 = lazy(() => import('../pages/Error404'));
 const Documents = lazy(() => import('../pages/Documents'));
 const Portfolio = lazy(() => import('../pages/Portfolio'));
@@ -21,6 +22,7 @@ export default function AppRouter() {
   const routes = createRoutesFromElements(
     <Route path="/" element={<Outlet />}>
       <Route index element={<Suspense fallback={<Loading />}><Home /></Suspense>} />
+      <Route path="/Services" element={<Suspense fallback={<Loading />}><Services /></Suspense>} />
       <Route path="/portfolio" element={<Suspense fallback={<Loading />}><Portfolio /></Suspense>} />
       <Route path="/cybersecurity" element={<Suspense fallback={<Loading />}><Cybersecurity /></Suspense>} />
       <Route path="/documents" element={<Suspense fallback={<Loading />}><Documents /></Suspense>} />

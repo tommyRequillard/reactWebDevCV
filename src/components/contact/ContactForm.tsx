@@ -172,8 +172,8 @@ const ContactForm = () => {
                 </div>
             </div>
 
-            <div className="mt-6 flex items-center justify-end gap-x-6">
-                <button type="button" className="text-sm/6 font-semibold text-gray-900">
+            <div className="my-6 flex items-center justify-end gap-x-6">
+                <button type="button" className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50">
                     Cancel
                 </button>
                 <button
