@@ -1,24 +1,23 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const ShodanScan = () => {
+
+export default function ShodanScan(){
     const [ip, setIp] = useState('');
     const [results, setResults] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const API_KEY = import.meta.env.VITE_SHODAN_API_KEY; 
-
-    const handleScan = async () => {
+    const handleSearch = async () => {
         setLoading(true);
         setError('');
         setResults(null);
 
         try {
-            const response = await axios.get(`https://api.shodan.io/shodan/host/${ip}?key=${API_KEY}`);
+            const response = await axios.get(`https://internetdb.shodan.io/${ip}`);
             setResults(response.data);
         } catch (err) {
-            setError('Erreur lors de l\'analyse : ' + (err.response?.data?.error || err.message));
+            setError('Erreur lors de la recherche : ' + (err.response?.data?.error || err.message));
         } finally {
             setLoading(false);
         }
@@ -26,8 +25,8 @@ const ShodanScan = () => {
 
     return (
         <div className="p-4 bg-white rounded-lg shadow-md">
-            <h2 className="text-xl font-bold mb-2">Analyse des Dispositifs Connectés</h2>
-            <p className="mb-4">Recherche d'informations sur les dispositifs exposés</p>
+            <h2 className="text-xl font-bold mb-2">Enrichissement IP Shodan</h2>
+            <p className="mb-4">Obtenez des informations sur les ports ouverts et plus pour une adresse IP</p>
             
             <div className="mb-4">
                 <input 
@@ -40,11 +39,11 @@ const ShodanScan = () => {
             </div>
             
             <button 
-                onClick={handleScan} 
+                onClick={handleSearch} 
                 className="bg-blue-500 hover:bg-indigo-500 text-white p-2 rounded w-full"
                 disabled={loading}
             >
-                {loading ? 'Analyse en cours...' : 'Analyser'}
+                {loading ? 'Recherche en cours...' : 'Rechercher'}
             </button>
 
             {error && <p className="text-red-500 mt-4">{error}</p>}
@@ -53,32 +52,14 @@ const ShodanScan = () => {
                 <div className="mt-4">
                     <h3 className="font-semibold">Résultats pour {ip} :</h3>
                     <ul className="list-disc pl-5 mt-2">
-                        <li>Pays : {results.country_name || 'Non disponible'}</li>
-                        <li>Organisation : {results.org || 'Non disponible'}</li>
-                        <li>Système d'exploitation : {results.os || 'Non détecté'}</li>
-                        <li>Ports ouverts : {results.ports ? results.ports.join(', ') : 'Aucun détecté'}</li>
-                        <li>Ville : {results.city || 'Non disponible'}</li>
-                        <li>Latitude : {results.latitude || 'Non disponible'}</li>
-                        <li>Longitude : {results.longitude || 'Non disponible'}</li>
-                        <li>Dernière mise à jour : {results.last_update || 'Non disponible'}</li>
-                        <li>Noms d'hôte : {results.hostnames ? results.hostnames.join(', ') : 'Aucun détecté'}</li>
+                        <li>Ports ouverts : {results.ports.join(', ')}</li>
+                        <li>CPEs : {results.cpes.join(', ')}</li>
+                        <li>Noms d'hôte : {results.hostnames.join(', ')}</li>
+                        <li>Tags : {results.tags.join(', ')}</li>
+                        <li>Vulnérabilités : {results.vulns ? results.vulns.join(', ') : 'Aucune détectée'}</li>
                     </ul>
-                    {results.data && results.data.length > 0 && (
-                        <>
-                            <h4 className="font-semibold mt-4">Services détectés :</h4>
-                            <ul className="list-disc pl-5 mt-2">
-                                {results.data.map((service, index) => (
-                                    <li key={index}>
-                                        Port {service.port} : {service._shodan?.module || 'Inconnu'}
-                                    </li>
-                                ))}
-                            </ul>
-                        </>
-                    )}
                 </div>
             )}
         </div>
     );
 };
-
-export default ShodanScan;
