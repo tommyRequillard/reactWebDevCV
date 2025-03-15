@@ -8,6 +8,7 @@ const CounterRedux = () => {
 
   return (
     <div className="w-full">
+      
       <div className="flex flex-col justify-center items-center pb-6">
         <h1 className="text-6xl font-bold text-gray-900">Counter</h1>
         <div className="flex justify-center flex-col mx-2 mt-8 gap-2">
