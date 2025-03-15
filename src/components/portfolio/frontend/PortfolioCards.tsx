@@ -162,7 +162,16 @@ export const projects = [
     link: "https://reactwebdevcv.netlify.app/",
     description: "Projet React que vous avez sous les yeux",
     stacks: ["Html", "Css", "Responsive", "TypeScript", "React", "React Router", "React Redux", "node", "npm"],
+  },
+  {
+    id: 19,
+    name: "Configurateur 3d",
+    image: mygarden,
+    link: "https://mygarden.planethoster.world/configurateur/build%20public/",
+    description: "Chef de projet Unity cahier des charges, analyse fonctionnel des besoins et MAJ en mode agile",
+    stacks: ["Html", "Css", "Responsive", "TypeScript", "Unity", "node", "npm"],
   }
+  
 ]
 
 const PortfolioCards = () => {
