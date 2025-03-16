@@ -17,6 +17,8 @@ import mydrym from "../../../assets/mydrym.png"
 import hussards from "../../../assets/hussards.png"
 import cvPortfolio from "../../../assets/cvPortfolio.png"
 import trello from "../../../assets/trello.png"
+import rituelbienetre from "../../../assets/rituelbienetre.png"
+import csvmapper from "../../../assets/csvmapper.png"
 
 export const projects = [
   {
@@ -170,6 +172,22 @@ export const projects = [
     link: "https://mygarden.planethoster.world/configurateur/build%20public/",
     description: "Chef de projet Unity cahier des charges, analyse fonctionnel des besoins et MAJ en mode agile",
     stacks: ["Html", "Css", "Responsive", "TypeScript", "Unity", "node", "npm"],
+  },
+    {
+    id: 20,
+    name: "Rituels bien être",
+    image: rituelbienetre,
+    link: "https://rituelsbienetre.fr/",
+    description: "Dev from scratch",
+    stacks: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm", "Cloudflare"],
+  },
+  {
+    id: 21,
+    name: "Configurateur 3d",
+    image: csvmapper,
+    link: "https://tommyrequillard.github.io/MyCsvMapper/",
+    description: "Application de mapping de fichier en csv au format voulut",
+    stacks: ["Html", "Css", "Responsive", "TypeScript", "node", "npm"],
   }
   
 ]
