@@ -179,14 +179,14 @@ export const projects = [
     image: rituelbienetre,
     link: "https://rituelsbienetre.fr/",
     description: "Dev from scratch",
-    stacks: ["Html", "Css", "Responsive", "TypeScript", "React", "node", "npm", "Cloudflare"],
+    stacks: ["Html", "Css", "Responsive", "TypeScript", "React", "Tailwinds", "node", "npm", "Cloudflare"],
   },
   {
     id: 21,
-    name: "Configurateur 3d",
+    name: "CSV OFX mapper",
     image: csvmapper,
     link: "https://tommyrequillard.github.io/MyCsvMapper/",
-    description: "Application de mapping de fichier en csv au format voulut",
+    description: "Application de mapping de fichier en csv",
     stacks: ["Html", "Css", "Responsive", "TypeScript", "node", "npm"],
   }
   
