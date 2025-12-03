@@ -23,17 +23,15 @@ cache:
 # --- JOB 1 : TEST & SONAR ---
 test:
   stage: test
-  # On garde la version 5.0.1 qui inclut Java et évite l'erreur 403
   image: sonarsource/sonar-scanner-cli:5.0.1
   script:
-    # On force les identifiants directement dans la commande
-    # Cela contourne le fichier sonar-project.properties s'il est mal configuré
     - sonar-scanner 
       -Dsonar.organization=$MY_SONAR_ORG 
       -Dsonar.projectKey=$MY_SONAR_PROJECT_KEY 
       -Dsonar.sources=. 
       -Dsonar.host.url=https://sonarcloud.io 
       -Dsonar.token=$SONAR_TOKEN
+      -Dsonar.branch.name=$CI_COMMIT_REF_NAME
 
 # --- JOB 2 : BUILD (Correction de la variable React) ---
 build:
