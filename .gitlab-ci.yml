@@ -25,7 +25,7 @@ test:
     # On ajoute '-Dsonar.branch.name' car GitLab est souvent en mode 'Detached HEAD'.
     - sonar-scanner 
       -Dsonar.organization=tommy-requillard
-      -Dsonar.projectKey=tommy-requillard_reactWebDevCV
+      -Dsonar.projectKey=tommy-requillard_trmhtt-req
       -Dsonar.sources=. 
       -Dsonar.host.url=https://sonarcloud.io 
       -Dsonar.token=$SONAR_TOKEN
