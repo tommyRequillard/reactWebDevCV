@@ -5,7 +5,6 @@ stages:
   - predeploy
   - deploy
 
-# On fixe Node 20 pour être iso-prod avec GitHub Actions
 image: node:20
 
 cache:
@@ -16,13 +15,10 @@ cache:
 
 test:
   stage: test
-  # On utilise la version 5.0.1 qui est stable et inclut Java (évite les erreurs de téléchargement)
   image: sonarsource/sonar-scanner-cli:5.0.1
   script:
-    # TECHNIQUE DE MAITRISE : Surcharge des paramètres
-    # On force la clé du projet et l'organisation directement ici.
-    # Cela permet à GitLab d'avoir sa propre config sans toucher au fichier qui sert à GitHub.
-    # On ajoute '-Dsonar.branch.name' car GitLab est souvent en mode 'Detached HEAD'.
+    # On utilise la clé confirmée par votre URL : tommy-requillard_trmhtt-req
+    # On force la branche à 'master' pour éviter l'erreur "Default branch not found"
     - sonar-scanner 
       -Dsonar.organization=tommy-requillard
       -Dsonar.projectKey=tommy-requillard_trmhtt-req
@@ -41,12 +37,9 @@ build:
   stage: build
   script:
     - npm ci
-    # CORRECTION CRITIQUE REACT :
-    # GitHub utilise $GITHUB_ENV, mais ici on doit créer le fichier .env
-    # AVANT le build pour que Vite/React "cuise" la variable dans le JS.
+    # Création du fichier .env au bon moment (avant le build)
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" > .env
     - npm run build
-    - ls -la dist/
   artifacts:
     paths:
       - dist/
@@ -56,7 +49,6 @@ build:
 predeploy:
   stage: predeploy
   script:
-    # Optimisation : inutile de refaire npm ci ici, on copie juste le fichier config
     - cp netlify.toml dist/
   only:
     - master
@@ -67,9 +59,8 @@ deploy:
   before_script:
     - npm install -g netlify-cli
   script:
-    - ls -la dist/
     - netlify link --id $NETLIFY_SITE_ID
-    - netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
+    - netlify deploy --dir "dist" --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
   only:
     - master
   dependencies:
