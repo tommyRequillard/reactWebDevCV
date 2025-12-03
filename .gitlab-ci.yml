@@ -5,22 +5,31 @@ stages:
   - predeploy
   - deploy
 
-image: node:20 # On utilise Node 20 (LTS) pour la stabilité
+# On fixe Node 20 pour être iso-prod avec GitHub Actions
+image: node:20
 
 cache:
   paths:
     - "node_modules"
     - "dist"
+    - ".sonar/cache"
 
 test:
   stage: test
-  # CORRECTION MAJEURE : On revient à la version 5.0.1 qui fonctionnait "simplement"
-  # La version 'latest' (v7) est trop stricte et cause vos erreurs actuelles.
+  # On utilise la version 5.0.1 qui est stable et inclut Java (évite les erreurs de téléchargement)
   image: sonarsource/sonar-scanner-cli:5.0.1
   script:
-    # Avec la version 5, cette commande simple suffit.
-    # Elle va lire votre fichier sonar-project.properties à la racine.
-    - sonar-scanner
+    # TECHNIQUE DE MAITRISE : Surcharge des paramètres
+    # On force la clé du projet et l'organisation directement ici.
+    # Cela permet à GitLab d'avoir sa propre config sans toucher au fichier qui sert à GitHub.
+    # On ajoute '-Dsonar.branch.name' car GitLab est souvent en mode 'Detached HEAD'.
+    - sonar-scanner 
+      -Dsonar.organization=tommy-requillard
+      -Dsonar.projectKey=tommy-requillard_trmhtt-req
+      -Dsonar.sources=. 
+      -Dsonar.host.url=https://sonarcloud.io 
+      -Dsonar.token=$SONAR_TOKEN
+      -Dsonar.branch.name=$CI_COMMIT_REF_NAME
 
 setup:
   stage: setup
@@ -32,7 +41,9 @@ build:
   stage: build
   script:
     - npm ci
-    # CORRECTION CRITIQUE : La variable doit être créée ICI pour être prise en compte par React
+    # CORRECTION CRITIQUE REACT :
+    # GitHub utilise $GITHUB_ENV, mais ici on doit créer le fichier .env
+    # AVANT le build pour que Vite/React "cuise" la variable dans le JS.
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" > .env
     - npm run build
     - ls -la dist/
@@ -45,7 +56,7 @@ build:
 predeploy:
   stage: predeploy
   script:
-    # Pas besoin de refaire npm ci ici, c'est du temps perdu
+    # Optimisation : inutile de refaire npm ci ici, on copie juste le fichier config
     - cp netlify.toml dist/
   only:
     - master
@@ -55,7 +66,6 @@ deploy:
   image: node:20
   before_script:
     - npm install -g netlify-cli
-    # npm ci retiré car inutile au déploiement d'un dossier dist statique
   script:
     - ls -la dist/
     - netlify link --id $NETLIFY_SITE_ID
