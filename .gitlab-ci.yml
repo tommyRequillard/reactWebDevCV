@@ -15,16 +15,18 @@ cache:
 
 test:
   stage: test
-  image: sonarsource/sonar-scanner-cli:5.0.1
+  image: node:20
   script:
-    # On utilise la clé confirmée par votre URL : tommy-requillard_trmhtt-req
-    # On force la branche à 'master' pour éviter l'erreur "Default branch not found"
+    # 1. On installe le scanner via npm (puisqu'on est dans un environnement Node)
+    - npm install -g sonarqube-scanner
+    
+    # 2. On lance le scanner avec vos paramètres qui fonctionnent
     - sonar-scanner 
-      -Dsonar.organization=tommy-requillard
-      -Dsonar.projectKey=tommy-requillard_trmhtt-req
+      -Dsonar.organization=tommy-requillard 
+      -Dsonar.projectKey=tommy-requillard_trmhtt-req 
       -Dsonar.sources=. 
       -Dsonar.host.url=https://sonarcloud.io 
-      -Dsonar.token=$SONAR_TOKEN
+      -Dsonar.token=$SONAR_TOKEN 
       -Dsonar.branch.name=$CI_COMMIT_REF_NAME
 
 setup:
