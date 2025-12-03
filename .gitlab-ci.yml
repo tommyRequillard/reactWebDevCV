@@ -17,10 +17,7 @@ test:
   stage: test
   image: node:20
   script:
-    # 1. On installe le scanner via npm (puisqu'on est dans un environnement Node)
     - npm install -g sonarqube-scanner
-    
-    # 2. On lance le scanner avec vos paramètres qui fonctionnent
     - sonar-scanner 
       -Dsonar.organization=tommy-requillard 
       -Dsonar.projectKey=tommy-requillard_trmhtt-req 
@@ -28,6 +25,7 @@ test:
       -Dsonar.host.url=https://sonarcloud.io 
       -Dsonar.token=$SONAR_TOKEN 
       -Dsonar.branch.name=$CI_COMMIT_REF_NAME
+      -Dsonar.exclusions="**/*.png,**/*.jpg,**/*.svg"
 
 setup:
   stage: setup
