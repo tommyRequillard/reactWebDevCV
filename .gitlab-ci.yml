@@ -1,62 +1,63 @@
 stages:
   - test
-  - setup
   - build
-  - predeploy
   - deploy
 
-image: node:latest  # Use a stable version
+variables:
+  # REMPLACEZ CES DEUX VALEURS PAR CELLES TROUVÉES SUR SONARCLOUD :
+  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Cache pour Sonar
+  GIT_DEPTH: "0"  # Important pour que Sonar puisse analyser tout l'historique
+  # Si vous ne voulez pas les mettre ici, mettez-les dans les Variables CI/CD de GitLab
+  # Mais pour tester, mettez-les en dur ici :
+  MY_SONAR_ORG: "tommy-requillard_trmhtt-req" 
+  MY_SONAR_PROJECT_KEY: "tommy-requillard"
+
+image: node:20 # On s'aligne sur votre GitHub Action (Node 20)
 
 cache:
+  key: "${CI_COMMIT_REF_SLUG}"
   paths:
-    - "node_modules"
-    - "dist"
+    - node_modules/
+    - .sonar/cache
 
+# --- JOB 1 : TEST & SONAR ---
 test:
   stage: test
+  # On garde la version 5.0.1 qui inclut Java et évite l'erreur 403
   image: sonarsource/sonar-scanner-cli:5.0.1
   script:
-    - sonar-scanner -Dsonar.token=$SONAR_TOKEN
+    # On force les identifiants directement dans la commande
+    # Cela contourne le fichier sonar-project.properties s'il est mal configuré
+    - sonar-scanner 
+      -Dsonar.organization=$MY_SONAR_ORG 
+      -Dsonar.projectKey=$MY_SONAR_PROJECT_KEY 
+      -Dsonar.sources=. 
+      -Dsonar.host.url=https://sonarcloud.io 
+      -Dsonar.token=$SONAR_TOKEN
 
-setup:
-  stage: setup
-  script:
-    - git config user.email "tommy.requillard@gmail.com"
-    - git config user.name "tommy.requillard"
-
+# --- JOB 2 : BUILD (Correction de la variable React) ---
 build:
   stage: build
   script:
     - npm ci
+    # CRITIQUE : Dans GitHub Actions vous utilisez $GITHUB_ENV.
+    # Dans GitLab, pour React, il faut créer le fichier .env AVANT le build.
+    - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" > .env
     - npm run build
-    - ls -la dist/
+    - cp netlify.toml dist/
   artifacts:
     paths:
       - dist/
-  only:
-    - master
+    expire_in: 1 hour
 
-predeploy:
-  stage: predeploy
-  before_script:
-    - npm ci
-  script:
-    - cp netlify.toml dist/
-  only:
-    - master
-
+# --- JOB 3 : DEPLOY ---
 deploy:
   stage: deploy
-  image: node:latest
-  before_script:
-    - npm install -g netlify-cli
-    - npm ci
-    - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" >> ".env"
   script:
-    - ls -la dist/
+    - npm install -g netlify-cli
+    # Le dossier 'dist' est récupéré automatiquement grâce aux 'artifacts' de l'étape build
+    - ls -la dist/ 
     - netlify link --id $NETLIFY_SITE_ID
-    - netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
+    - netlify deploy --dir "dist" --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
   only:
     - master
-  dependencies:
-    - build
