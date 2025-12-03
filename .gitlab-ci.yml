@@ -14,9 +14,9 @@ cache:
 
 test:
   stage: test
-  image: sonarsource/sonar-scanner-cli:latest
+  image: sonarsource/sonar-scanner-cli:5.0.1
   script:
-    - sonar-scanner
+    - sonar-scanner -Dsonar.token=$SONAR_TOKEN
 
 setup:
   stage: setup
