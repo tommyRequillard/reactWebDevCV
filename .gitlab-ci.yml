@@ -10,7 +10,7 @@ variables:
   # Si vous ne voulez pas les mettre ici, mettez-les dans les Variables CI/CD de GitLab
   # Mais pour tester, mettez-les en dur ici :
   MY_SONAR_ORG: "tommy-requillard_trmhtt-req" 
-  MY_SONAR_PROJECT_KEY: "tommy-requillard"
+  MY_SONAR_PROJECT_KEY: "tommy-requillard_reactWebDevCV"
 
 image: node:20 # On s'aligne sur votre GitHub Action (Node 20)
 
