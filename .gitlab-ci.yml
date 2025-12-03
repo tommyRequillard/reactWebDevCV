@@ -1,61 +1,66 @@
 stages:
   - test
+  - setup
   - build
+  - predeploy
   - deploy
 
-variables:
-  # REMPLACEZ CES DEUX VALEURS PAR CELLES TROUVÉES SUR SONARCLOUD :
-  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Cache pour Sonar
-  GIT_DEPTH: "0"  # Important pour que Sonar puisse analyser tout l'historique
-  # Si vous ne voulez pas les mettre ici, mettez-les dans les Variables CI/CD de GitLab
-  # Mais pour tester, mettez-les en dur ici :
-  MY_SONAR_ORG: "tommy-requillard_trmhtt-req" 
-  MY_SONAR_PROJECT_KEY: "tommy-requillard_reactWebDevCV"
-
-image: node:20 # On s'aligne sur votre GitHub Action (Node 20)
+image: node:20 # On utilise Node 20 (LTS) pour la stabilité
 
 cache:
-  key: "${CI_COMMIT_REF_SLUG}"
   paths:
-    - node_modules/
-    - .sonar/cache
+    - "node_modules"
+    - "dist"
 
-# --- JOB 1 : TEST & SONAR ---
 test:
   stage: test
+  # CORRECTION MAJEURE : On revient à la version 5.0.1 qui fonctionnait "simplement"
+  # La version 'latest' (v7) est trop stricte et cause vos erreurs actuelles.
   image: sonarsource/sonar-scanner-cli:5.0.1
   script:
-    - sonar-scanner 
-      -Dsonar.organization=$MY_SONAR_ORG 
-      -Dsonar.projectKey=$MY_SONAR_PROJECT_KEY 
-      -Dsonar.sources=. 
-      -Dsonar.host.url=https://sonarcloud.io 
-      -Dsonar.token=$SONAR_TOKEN
-      -Dsonar.branch.name=$CI_COMMIT_REF_NAME
+    # Avec la version 5, cette commande simple suffit.
+    # Elle va lire votre fichier sonar-project.properties à la racine.
+    - sonar-scanner
 
-# --- JOB 2 : BUILD (Correction de la variable React) ---
+setup:
+  stage: setup
+  script:
+    - git config user.email "tommy.requillard@gmail.com"
+    - git config user.name "tommy.requillard"
+
 build:
   stage: build
   script:
     - npm ci
-    # CRITIQUE : Dans GitHub Actions vous utilisez $GITHUB_ENV.
-    # Dans GitLab, pour React, il faut créer le fichier .env AVANT le build.
+    # CORRECTION CRITIQUE : La variable doit être créée ICI pour être prise en compte par React
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" > .env
     - npm run build
-    - cp netlify.toml dist/
+    - ls -la dist/
   artifacts:
     paths:
       - dist/
-    expire_in: 1 hour
-
-# --- JOB 3 : DEPLOY ---
-deploy:
-  stage: deploy
-  script:
-    - npm install -g netlify-cli
-    # Le dossier 'dist' est récupéré automatiquement grâce aux 'artifacts' de l'étape build
-    - ls -la dist/ 
-    - netlify link --id $NETLIFY_SITE_ID
-    - netlify deploy --dir "dist" --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
   only:
     - master
+
+predeploy:
+  stage: predeploy
+  script:
+    # Pas besoin de refaire npm ci ici, c'est du temps perdu
+    - cp netlify.toml dist/
+  only:
+    - master
+
+deploy:
+  stage: deploy
+  image: node:20
+  before_script:
+    - npm install -g netlify-cli
+    # npm ci retiré car inutile au déploiement d'un dossier dist statique
+  script:
+    - ls -la dist/
+    - netlify link --id $NETLIFY_SITE_ID
+    - netlify deploy --dir "dist" --auth $NETLIFY_AUTH_TOKEN --prod
+  only:
+    - master
+  dependencies:
+    - build
