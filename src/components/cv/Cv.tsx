@@ -1,4 +1,4 @@
-import {RefObject, useRef, useState} from "react"
+import {useRef, useState} from "react"
 import {downloadPDF} from "../../services/pdfService.ts"
 import EtatCivil from "./header/EtatCivil.tsx"
 import Formations from "./Formations.tsx"
@@ -21,7 +21,7 @@ const Cv = () => {
     setIsGeneratingPDF(false)
   }
 
-  const pdfRef: RefObject<HTMLDivElement> = useRef(null)
+  const pdfRef = useRef<HTMLDivElement>(null);
 
   return (
     <div ref={pdfRef}>
