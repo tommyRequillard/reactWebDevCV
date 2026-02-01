@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
-export default defineConfig(({ mode }) => ({
-  plugins: [react()],
-  // Use '/' for dev, '/reactWebDevCV/' for GitHub Pages production
-  base: mode === 'production' ? '/reactWebDevCV/' : '/',
-}))
+export default defineConfig(({ mode }) => {
+  // On utilise '/' par défaut (Netlify & Dev)
+  // On utilise '/reactWebDevCV/' uniquement si on déploie spécifiquement pour GitHub
+  const isGitHubPages = process.env.DEPLOY_TARGET === 'gh-pages';
+
+  return {
+    plugins: [react()],
+    base: isGitHubPages ? '/reactWebDevCV/' : '/',
+  }
+})
