@@ -71,4 +71,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
+          # On déploie directement le dossier dist SANS demander à Netlify de re-build
           netlify deploy --dir "dist" --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
