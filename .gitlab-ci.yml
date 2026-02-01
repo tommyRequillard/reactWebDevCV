@@ -36,8 +36,9 @@ setup:
 build:
   stage: build
   script:
-    - npm ci
+    #- npm ci
     # Création du fichier .env au bon moment (avant le build)
+    - npm install --legacy-peer-deps
     - echo "REACT_APP_BASE_URL=https://reactwebdevcv.netlify.app/.netlify/functions/api" > .env
     - npm run build
   artifacts:
