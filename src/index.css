@@ -1,11 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* lightbox-custom.css */
+@theme {
+    /* Couleurs personnalisées du CV - Configuration originale */
+    --color-dark: #303030;
+    --color-darker: #333333;
+    --color-gold: #967C56;
+    --color-cvblue: #42f2f7;
+    --color-cvblued: #46acc2;
+    --color-cvcyan: #498c8a;
+    --color-cvpurple: #f3e0ec;
+    --color-greylight: #cccccc;
+    --color-greylighter: #f3f4f6;
+    --color-cvbluetitle: #6275f0;
+}
+
 .yarlb-button {
-    background-color: #333; /* Couleur de fond gris foncé */
-    color: #fff; /* Couleur du texte en blanc */
+    background-color: #333;
+    /* Couleur de fond gris foncé */
+    color: #fff;
+    /* Couleur du texte en blanc */
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -37,10 +50,13 @@
         transform: scale(1);
         box-shadow: 0 0 0 rgba(0, 127, 116, 0.5);
     }
+
     50% {
         transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(3, 118, 129, 0.5); /* Changez la couleur ici */
+        box-shadow: 0 0 20px rgba(3, 118, 129, 0.5);
+        /* Changez la couleur ici */
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 0 0 rgba(0, 53, 60, 0);
@@ -53,5 +69,6 @@
 }
 
 .pulse-custom:hover {
-    animation: pulse-custom 1.5s infinite; /* Appliquer l'animation au hover */
+    animation: pulse-custom 1.5s infinite;
+    /* Appliquer l'animation au hover */
 }

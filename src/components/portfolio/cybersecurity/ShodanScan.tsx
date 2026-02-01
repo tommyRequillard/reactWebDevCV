@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+interface ShodanResult {
+    ports: number[];
+    cpes: string[];
+    hostnames: string[];
+    tags: string[];
+    vulns?: string[];
+}
 
 export default function ShodanScan(){
     const [ip, setIp] = useState('');
-    const [results, setResults] = useState(null);
+    const [results, setResults] = useState<ShodanResult | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
@@ -17,7 +24,13 @@ export default function ShodanScan(){
             const response = await axios.get(`https://internetdb.shodan.io/${ip}`);
             setResults(response.data);
         } catch (err) {
-            setError('Erreur lors de la recherche : ' + (err.response?.data?.error || err.message));
+            if (axios.isAxiosError(err)) {
+                setError('Erreur lors de la recherche : ' + (err.response?.data?.error || err.message));
+            } else if (err instanceof Error) {
+                setError('Erreur lors de la recherche : ' + err.message);
+            } else {
+                setError('Erreur inconnue lors de la recherche');
+            }
         } finally {
             setLoading(false);
         }

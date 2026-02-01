@@ -12,7 +12,6 @@ interface VirusTotalReport {
 
 const VirusTotalScan = () => {
     const [url, setUrl] = useState("");
-    const [status, setStatus] = useState("");
     const [report, setReport] = useState<VirusTotalReport | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -128,7 +127,6 @@ const VirusTotalScan = () => {
             >
                 {loading ? "Scanning..." : "Lancer le Scan"}
             </button>
-            {status && <p className="mt-2">Statut du scan : {status}</p>}
             {error && <p className="text-red-500">{error}</p>}
             {renderReportSummary()}
         </div>

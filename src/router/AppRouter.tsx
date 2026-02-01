@@ -44,6 +44,6 @@ export default function AppRouter() {
   });
 
   return (
-    <RouterProvider router={browserRoutes} future={{ v7_startTransition: true }}/>
+    <RouterProvider router={browserRoutes} />
   );
 }

@@ -125,7 +125,7 @@ export default function InternetSites() {
                                         'text-4xl font-semibold tracking-tight',
                                     )}
                                 >
-                                    {typeof tier.price === 'string' ? tier.price : tier.price[frequency.value]}
+                                    {typeof tier.price === 'string' ? tier.price : tier.price[frequency.value as keyof typeof tier.price]}
                                 </span>
                                 {typeof tier.price !== 'string' ? (
                                     <span

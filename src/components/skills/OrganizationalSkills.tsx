@@ -2,14 +2,28 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend, 
 import { useEffect, useState } from "react";
 import BehavioralData from '../../data/behavioralDatas.json'; 
 
-const formatDataForRadarChart = (data: { [s: string]: unknown; } | ArrayLike<unknown>) => {
+interface SkillDetails {
+  note: number;
+}
+
+interface RadarChartData {
+  subject: string;
+  A: number;
+}
+
+const formatDataForRadarChart = (data: Record<string, SkillDetails>): RadarChartData[] => {
     return Object.entries(data).map(([skill, details]) => ({
         subject: skill,
         A: details.note,
     }));
 };
 
-const OrganizationalRadarChartComponent = ({ data, title }) => (
+interface RadarChartComponentProps {
+  data: RadarChartData[];
+  title: string;
+}
+
+const OrganizationalRadarChartComponent = ({ data, title }: RadarChartComponentProps) => (
     <ResponsiveContainer width="100%" height={300}>
         <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
             <PolarGrid stroke="#967C56" fill="#333333" fillOpacity={0.8} />

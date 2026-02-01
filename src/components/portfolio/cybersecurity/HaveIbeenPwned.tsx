@@ -5,7 +5,7 @@ import CryptoJS from 'crypto-js'; // Importation de la bibliothèque crypto-js
 const HaveIBeenPwnedPasswordCheck = () => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const [result, setResult] = useState(null);
+    const [result, setResult] = useState<string | null>(null);
     const [error, setError] = useState('');
 
     const handleCheck = async () => {
@@ -33,7 +33,11 @@ const HaveIBeenPwnedPasswordCheck = () => {
                 setResult("Ce mot de passe n\'a pas été compromis.");
             }
         } catch (err) {
-            setError(`Erreur lors de la vérification : ${err.message}`);
+            if (err instanceof Error) {
+                setError(`Erreur lors de la vérification : ${err.message}`);
+            } else {
+                setError('Erreur inconnue lors de la vérification');
+            }
         } finally {
             setLoading(false);
         }
