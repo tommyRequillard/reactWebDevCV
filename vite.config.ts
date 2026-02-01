@@ -1,13 +1,14 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  // On utilise '/' par défaut (Netlify & Dev)
-  // On utilise '/reactWebDevCV/' uniquement si on déploie spécifiquement pour GitHub
-  const isGitHubPages = process.env.DEPLOY_TARGET === 'gh-pages';
+  // Charge les variables d'environnement (dont DEPLOY_TARGET du workflow)
+  const env = loadEnv(mode, process.cwd(), '');
 
   return {
     plugins: [react()],
-    base: isGitHubPages ? '/reactWebDevCV/' : '/',
+    // Si DEPLOY_TARGET est 'gh-pages', on met le préfixe du repo, sinon racine '/'
+    base: env.DEPLOY_TARGET === 'gh-pages' ? '/reactWebDevCV/' : '/',
   }
 })

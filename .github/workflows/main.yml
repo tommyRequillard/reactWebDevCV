@@ -6,6 +6,7 @@ on:
   pull_request:
     branches:
       - master
+
 jobs:
   test:
     runs-on: ubuntu-24.04
@@ -16,61 +17,56 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  setup:
+
+  build:
     needs: test
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - name: Configurer Git
-        run: |
-          git config user.email "tommy.requillard@gmail.com"
-          git config user.name "tommy.requillard"
-  build:
-    needs: setup
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
+      
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
+
       - name: Install dependencies
+        # Correction ici : nom complet indispensable
         run: npm install --legacy-peer-deps
-      - name: Create dist directory
-        run: mkdir -p dist
+
       - name: Build
-        # ICI : On force le DEPLOY_TARGET à netlify pour que Vite utilise la base '/'
+        # On passe la variable pour le base '/' de Vite
         run: npm run build
         env:
           DEPLOY_TARGET: netlify
+
       - name: Upload dist directory as artifact
         uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
-  predeploy:
+
+  deploy:
     needs: build
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v4
-      - name: Prepare for deployment
-        # On s'assure que le netlify.toml est bien dans le dossier final
-        run: cp netlify.toml dist/ || true 
-  deploy:
-    needs: predeploy
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - name: Installer Netlify CLI
+      
+      - name: Install Netlify CLI
         run: npm install -g netlify-cli
-      - name: Télécharger l'artefact (dist)
+
+      - name: Download artifact (dist)
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist/
-      - name: Déployer sur Netlify
+
+      - name: Prepare Netlify Config
+        # On s'assure que le netlify.toml est présent dans le dossier dist avant envoi
+        run: cp netlify.toml dist/ || true
+
+      - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
