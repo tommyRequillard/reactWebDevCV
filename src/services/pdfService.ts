@@ -13,9 +13,9 @@ export const downloadPDF = async (element: HTMLElement) => {
       },
       // On ignore les feuilles de style externes qui bloquent (CORS)
       // Cela évite l'erreur "SecurityError: Failed to read cssRules"
-      filter: (node) => {
+      filter: (_node) => {
          // Si tu veux ignorer des éléments spécifiques, tu peux le faire ici
-         return true; 
+          return true; 
       }
     });
 
