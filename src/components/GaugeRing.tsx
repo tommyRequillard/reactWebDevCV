@@ -1,80 +1,75 @@
-export const GaugeRing = ({
-  value,
-  size = "small",
-  showValue = true,
-}: {
-    value: number;
-    size: "small" | "medium" | "large";
-    showValue: boolean;
-}) => {
-  const circumference = 332 //2 * Math.PI * 53; // 2 * pi * radius
-  const valueInCircumference = (value / 100) * circumference
-  const strokeDasharray = `${circumference} ${circumference}`
-  const initialOffset = circumference
-  const strokeDashoffset = initialOffset - valueInCircumference
+import React from 'react';
 
+interface GaugeRingProps {
+  value: number;
+  size?: 'small' | 'medium' | 'large';
+  showValue?: boolean;
+}
+
+export const GaugeRing: React.FC<GaugeRingProps> = ({ 
+  value, 
+  size = 'medium', 
+  showValue = true 
+}) => {
+  // Configuration des tailles
   const sizes = {
-    small: {
-      width: "36",
-      height: "36",
-      textSize: "text-xs",
-    },
-    medium: {
-      width: "72",
-      height: "72",
-      textSize: "text-lg",
-    },
-    large: {
-      width: "144",
-      height: "144",
-      textSize: "text-3xl",
-    },
-  }
+    small: { width: 60, stroke: 6, fontSize: 'text-xs' },
+    medium: { width: 100, stroke: 8, fontSize: 'text-lg' },
+    large: { width: 140, stroke: 10, fontSize: 'text-2xl' },
+  };
+
+  const { width, stroke, fontSize } = sizes[size];
+  
+  // Calculs géométriques pour le cercle
+  const center = width / 2;
+  const radius = (width / 2) - stroke;
+  const circumference = 2 * Math.PI * radius;
+  
+  // Le calcul de l'offset qui remplit le cercle
+  // On s'assure que la valeur est entre 0 et 100
+  const safeValue = Math.min(Math.max(value, 0), 100);
+  const strokeDashoffset = circumference - (safeValue / 100) * circumference;
 
   return (
-    <div className="flex flex-col items-center justify-center relative">
-      <svg
-        fill="none"
-        shapeRendering="crispEdges"
-        height={sizes[size].height}
-        width={sizes[size].width}
-        viewBox="0 0 120 120"
-        strokeWidth="2"
-        className="transform -rotate-90"
+    <div className="relative flex items-center justify-center">
+      <svg 
+        width={width} 
+        height={width} 
+        viewBox={`0 0 ${width} ${width}`}
+        className="transform -rotate-90" // On tourne pour commencer en haut à midi
       >
+        {/* Cercle de fond (gris) */}
         <circle
-          className="text-[#333]"
-          strokeWidth="12"
-          stroke="currentColor"
+          cx={center}
+          cy={center}
+          r={radius}
           fill="transparent"
-          shapeRendering="geometricPrecision"
-          r="53"
-          cx="60"
-          cy="60"
+          stroke="#e5e7eb" // Couleur grise explicite (Gray-200) pour le PDF
+          strokeWidth={stroke}
         />
+        
+        {/* Cercle de progression (Bleu ou couleur dynamique) */}
         <circle
-          className="text-[hsla(131,41%,46%,1)] animate-gauge_fill"
-          strokeWidth="12"
-          strokeDasharray={strokeDasharray}
-          strokeDashoffset={initialOffset}
-          shapeRendering="geometricPrecision"
-          strokeLinecap="round"
-          stroke="currentColor"
+          cx={center}
+          cy={center}
+          r={radius}
           fill="transparent"
-          r="53"
-          cx="60"
-          cy="60"
-          style={{
-            strokeDashoffset: strokeDashoffset,
-            transition: "stroke-dasharray 1s ease 0s,stroke 1s ease 0s",
-          }}
+          stroke="#3b82f6" // Couleur bleue explicite (Blue-500) pour le PDF
+          strokeWidth={stroke}
+          strokeDasharray={circumference}
+          strokeDashoffset={strokeDashoffset}
+          strokeLinecap="round"
+          // Pas de transition CSS ici pour éviter le bug du PDF vide !
+          style={{ transition: 'none' }} 
         />
       </svg>
-      {showValue ? (
-        <div className="absolute flex opacity-1 animate-gauge_fadeIn">
-          <p className={`text-darker ${sizes[size].textSize}`}>{value}%</p>
+
+      {/* Texte au centre */}
+      {showValue && (
+        <div className={`absolute font-bold text-gray-700 ${fontSize}`}>
+          {safeValue}%
         </div>
-      ) : true}
+      )}
     </div>
-  )
-}
+  );
+};

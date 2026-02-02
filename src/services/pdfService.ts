@@ -1,32 +1,50 @@
-import html2canvas from "html2canvas"
-import jsPDF from "jspdf"
+import { toPng } from 'html-to-image';
+import { jsPDF } from 'jspdf';
 
-export async function downloadPDF(): Promise<void> {
-  const pdf = new jsPDF("p", "mm", "a4")
+export const downloadPDF = async (element: HTMLElement) => {
+  try {
+    // 1. Génération de l'image haute qualité
+    const imgData = await toPng(element, { 
+      quality: 0.95,
+      cacheBust: true,
+      // Ces options aident à réduire les erreurs CORS/Styles
+      style: {
+        transform: 'scale(1)', // Force l'échelle
+      },
+      // On ignore les feuilles de style externes qui bloquent (CORS)
+      // Cela évite l'erreur "SecurityError: Failed to read cssRules"
+      filter: (node) => {
+         // Si tu veux ignorer des éléments spécifiques, tu peux le faire ici
+         return true; 
+      }
+    });
 
-  // Get references to the top and bottom content elements
-  const topContent = document.getElementById("topContent")
-  const bottomContent = document.getElementById("bottomContent")
+    // 2. Initialisation du PDF A4
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm
+    const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm
+    
+    const imgProps = pdf.getImageProperties(imgData);
+    const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-  if (!topContent || !bottomContent) {
-    console.error("Top or bottom content elements not found.")
-    return
+    let heightLeft = imgHeight;
+    let position = 0;
+
+    // 3. Première page
+    pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+    heightLeft -= pdfHeight;
+
+    // 4. Boucle pour créer les pages suivantes si le contenu dépasse
+    while (heightLeft >= 0) {
+      position = heightLeft - imgHeight; // On décale l'image vers le haut
+      pdf.addPage();
+      pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+      heightLeft -= pdfHeight;
+    }
+
+    pdf.save('cv-tommy-requillard.pdf');
+
+  } catch (error) {
+    console.error("Erreur lors de la génération du PDF :", error);
   }
-
-  // Create a canvas for the top content
-  const canvas1 = await html2canvas(topContent)
-
-  // Add the top content to the first page
-  pdf.addImage(canvas1.toDataURL("image/jpeg"), "JPEG", 0, 0, 210, 297) // A4 portrait
-
-  // Add a new page for the second part of the content
-  pdf.addPage()
-
-  // Create a canvas for the bottom content
-  const canvas2 = await html2canvas(bottomContent)
-
-  // Add the bottom content to the second page
-  pdf.addImage(canvas2.toDataURL("image/jpeg"), "JPEG", 0, 0, 210, 297)
-
-  pdf.save("download.pdf")
-}
+};

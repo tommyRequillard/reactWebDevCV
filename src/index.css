@@ -12,7 +12,24 @@
     --color-greylight: #cccccc;
     --color-greylighter: #f3f4f6;
     --color-cvbluetitle: #6275f0;
+
+    /* 1. Animation de rotation pour le conteneur entier (le cercle tourne) */
+    --animate-spin-slow: spin 3s linear infinite;
+
+  /* 2. Animation de pulsation pour les points (Opacité SEULEMENT pour ne pas casser le cercle) */
+    --animate-pulse-opacity: pulse-opacity 1.5s ease-in-out infinite;
+
+    @keyframes dot-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.8); }
+    }
+
+    @keyframes pulse-opacity {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+    }
 }
+
 
 .yarlb-button {
     background-color: #333;
