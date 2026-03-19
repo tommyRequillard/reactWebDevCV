@@ -1,10 +1,13 @@
-import { toPng } from 'html-to-image';
-import { jsPDF } from 'jspdf';
-
 export const downloadPDF = async (element: HTMLElement) => {
   try {
+    // Lazy-load libs PDF (~360 kB) uniquement au moment du téléchargement
+    const [{ toPng }, { jsPDF }] = await Promise.all([
+      import('html-to-image'),
+      import('jspdf'),
+    ]);
+
     // 1. Génération de l'image haute qualité
-    const imgData = await toPng(element, { 
+    const imgData = await toPng(element, {
       quality: 0.95,
       cacheBust: true,
       // Ces options aident à réduire les erreurs CORS/Styles

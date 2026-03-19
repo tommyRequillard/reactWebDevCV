@@ -1,10 +1,10 @@
-import AttractionsIcon from '@mui/icons-material/Attractions'
+import { SparklesIcon } from '@heroicons/react/24/outline'
 
 const SoftSkills = () => {
   return (
     <div className="py-4">
       <div className="flex items-center mb-5">
-        <AttractionsIcon className="text-2xl"/>
+        <SparklesIcon className="w-6 h-6"/>
         <h2 className="text-xl font-semibold leading-7 ml-3">Softs Skills</h2>
       </div>
       <div className="flex w-full flex-col items-centermb-2">

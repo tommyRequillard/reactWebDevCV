@@ -10,7 +10,12 @@ const ContactForm = () => {
 
         if (form.current) { // Vérifiez que form.current n'est pas null
             try {
-                const result = await emailjs.sendForm('service_m2c11gk', 'template_cmrjzzh', form.current, 'PoaTzQR3kscnRdBMv');
+                const result = await emailjs.sendForm(
+                    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                    form.current,
+                    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+                );
                 console.log('SUCCESS!', result.text);
                 setSuccessMessage('Message envoyé avec succès!'); // Afficher le message de succès
                 form.current.reset(); // Ici, form.current est un HTMLFormElement

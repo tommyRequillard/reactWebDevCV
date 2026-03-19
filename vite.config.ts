@@ -10,5 +10,10 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     // Si DEPLOY_TARGET est 'gh-pages', on met le préfixe du repo, sinon racine '/'
     base: env.DEPLOY_TARGET === 'gh-pages' ? '/reactWebDevCV/' : '/',
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: './src/test/setup.ts',
+    },
   }
 })

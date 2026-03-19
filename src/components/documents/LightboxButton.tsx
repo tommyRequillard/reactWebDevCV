@@ -1,14 +1,14 @@
-import Box from "@mui/material/Box"
-import Button, {ButtonProps} from "@mui/material/Button"
-
-export type LightboxButtonProps = Pick<ButtonProps, "onClick">;
+export type LightboxButtonProps = { onClick?: () => void };
 
 export default function LightboxButton({onClick}: LightboxButtonProps) {
   return (
-    <Box sx={{mb: 2}}>
-      <Button variant="contained" onClick={onClick}>
-                Visualisez les documents
-      </Button>
-    </Box>
+    <div className="mb-2">
+      <button
+        onClick={onClick}
+        className="bg-cvblue hover:bg-cvblued text-white font-medium py-2 px-4 rounded shadow"
+      >
+        Visualisez les documents
+      </button>
+    </div>
   )
 }
