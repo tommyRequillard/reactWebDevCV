@@ -169,7 +169,7 @@ export const projects = [
     id: 19,
     name: "Configurateur 3d",
     image: mygarden,
-    link: "https://mygarden.planethoster.world/configurateur/build%20public/",
+    link: "https://dev-lab.go.yj.fr/n0c-storage/www/configurateur/build%20public/index.html",
     description: "Chef de projet Unity cahier des charges, analyse fonctionnel des besoins et MAJ en mode agile",
     stacks: ["Html", "Css", "Responsive", "TypeScript", "Unity", "node", "npm"],
   },
