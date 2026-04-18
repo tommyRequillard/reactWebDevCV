@@ -1,0 +1,32 @@
+{
+  "page": {
+    "title": "Services",
+    "subtitle": "Offerings & pricing"
+  },
+  "billing": {
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "perMonth": "/ month",
+    "perYear": "/ year",
+    "discount": "-{{percent}}%"
+  },
+  "cta": {
+    "contact": "Contact us",
+    "choose": "Choose this plan"
+  },
+  "tiers": {
+    "basic": {
+      "name": "Essential",
+      "tagline": "Get started simply"
+    },
+    "pro": {
+      "name": "Professional",
+      "tagline": "Grow faster",
+      "badge": "Popular"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "tagline": "Custom-made"
+    }
+  }
+}

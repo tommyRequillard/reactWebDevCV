@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./glass.css";
+@import "./animations.css";
+@import "./fonts.css";
+
+/* Base reset + canvas ambiance */
+html,
+body,
+#root {
+  min-height: 100%;
+  background: var(--grad-canvas);
+  color: var(--text-primary);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-neon-cyan-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-neon-cyan-400) 35%, transparent);
+  color: var(--text-primary);
+}
+
+/* Lightbox — harmonize with glass */
+.yarlb-button,
+.yarlb-close-button {
+  background-color: var(--glass-bg-solid);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  padding: 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+.yarlb-button:hover,
+.yarlb-close-button:hover {
+  border-color: var(--glass-border-hi);
+}

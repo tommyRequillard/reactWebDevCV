@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import ErrorBoundary from '../components/ErrorBoundary'
+import { ErrorBoundary } from '@app/ErrorBoundary'
 
 const ThrowError = ({ shouldThrow }: { shouldThrow: boolean }) => {
   if (shouldThrow) throw new Error('Test error')
@@ -13,7 +13,7 @@ describe('ErrorBoundary', () => {
     render(
       <ErrorBoundary>
         <ThrowError shouldThrow={false} />
-      </ErrorBoundary>
+      </ErrorBoundary>,
     )
     expect(screen.getByText('ok')).toBeInTheDocument()
   })
@@ -22,8 +22,8 @@ describe('ErrorBoundary', () => {
     const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
     render(
       <ErrorBoundary>
-        <ThrowError shouldThrow={true} />
-      </ErrorBoundary>
+        <ThrowError shouldThrow />
+      </ErrorBoundary>,
     )
     expect(screen.getByText('Une erreur est survenue')).toBeInTheDocument()
     expect(screen.getByText('Test error')).toBeInTheDocument()
@@ -34,8 +34,8 @@ describe('ErrorBoundary', () => {
     const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
     render(
       <ErrorBoundary fallback={<div>custom fallback</div>}>
-        <ThrowError shouldThrow={true} />
-      </ErrorBoundary>
+        <ThrowError shouldThrow />
+      </ErrorBoundary>,
     )
     expect(screen.getByText('custom fallback')).toBeInTheDocument()
     spy.mockRestore()
@@ -46,8 +46,8 @@ describe('ErrorBoundary', () => {
     const user = userEvent.setup()
     render(
       <ErrorBoundary>
-        <ThrowError shouldThrow={true} />
-      </ErrorBoundary>
+        <ThrowError shouldThrow />
+      </ErrorBoundary>,
     )
     await user.click(screen.getByText('Réessayer'))
     spy.mockRestore()

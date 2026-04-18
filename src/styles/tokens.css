@@ -1,0 +1,220 @@
+/* =========================================================================
+   Design tokens — single source of truth
+   Tailwind 4 reads @theme directly from CSS; no tailwind.config.js needed.
+   Semantic tokens switch via [data-theme] on <html>.
+   ========================================================================= */
+
+@theme {
+  /* === Neon brand palette === */
+  --color-neon-cyan-50: #ecfeff;
+  --color-neon-cyan-100: #cffafe;
+  --color-neon-cyan-200: #a5f3fc;
+  --color-neon-cyan-300: #67e8f9;
+  --color-neon-cyan-400: #22d3ee;
+  --color-neon-cyan-500: #06b6d4;
+  --color-neon-cyan-600: #0891b2;
+  --color-neon-cyan-700: #0e7490;
+
+  --color-neon-purple-300: #d8b4fe;
+  --color-neon-purple-400: #c084fc;
+  --color-neon-purple-500: #a855f7;
+  --color-neon-purple-600: #9333ea;
+  --color-neon-purple-700: #7e22ce;
+
+  --color-neon-pink-400: #f472b6;
+  --color-neon-lime-400: #a3e635;
+  --color-neon-amber-400: #fbbf24;
+  --color-neon-red-400: #fb7185;
+
+  /* === Dark canvases === */
+  --color-bg-dark-0: #05060a;
+  --color-bg-dark-1: #0a0c14;
+  --color-bg-dark-2: #111322;
+  --color-bg-dark-3: #1a1d2e;
+  --color-bg-dark-4: #262a3f;
+
+  /* === Light canvases === */
+  --color-bg-light-0: #f8fafc;
+  --color-bg-light-1: #f1f5f9;
+  --color-bg-light-2: #e2e8f0;
+  --color-bg-light-3: #cbd5e1;
+
+  /* === Radius === */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 9999px;
+
+  /* === Typography families === */
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "JetBrains Mono", Menlo, monospace;
+  --font-display: "Geist", var(--font-sans);
+
+  /* Fluid text scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 1.6vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.6rem + 2vw, 3rem);
+  --text-hero: clamp(2.75rem, 1.8rem + 3vw, 4.5rem);
+
+  /* === Reusable animations (Tailwind utilities: animate-*) === */
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-pulse-opacity: pulse-opacity 1.5s ease-in-out infinite;
+  --animate-blob-drift: blob-drift 18s ease-in-out infinite;
+  --animate-glow-breathe: glow-breathe 3s ease-in-out infinite;
+}
+
+/* =========================================================================
+   Semantic tokens — switch on data-theme
+   ========================================================================= */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-canvas: var(--color-bg-dark-0);
+  --bg-surface: var(--color-bg-dark-1);
+  --bg-elevated: var(--color-bg-dark-2);
+  --bg-sunken: var(--color-bg-dark-0);
+
+  /* Glass */
+  --glass-bg: color-mix(in srgb, var(--color-bg-dark-2) 55%, transparent);
+  --glass-bg-solid: color-mix(in srgb, var(--color-bg-dark-2) 92%, transparent);
+  --glass-border: color-mix(in srgb, var(--color-neon-cyan-400) 18%, transparent);
+  --glass-border-hi: color-mix(in srgb, var(--color-neon-cyan-400) 38%, transparent);
+  --glass-blur: 20px;
+  --glass-saturate: 180%;
+
+  /* Text */
+  --text-primary: #f5f7fb;
+  --text-secondary: #c2c8d6;
+  --text-muted: #8b91a7;
+  --text-faint: #656a7d;
+  --text-on-neon: #0a0c14;
+
+  /* Lines */
+  --line-subtle: color-mix(in srgb, #ffffff 8%, transparent);
+  --line-strong: color-mix(in srgb, #ffffff 16%, transparent);
+
+  /* Shadows + glow */
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-elevated: 0 18px 48px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --glow-cyan: 0 0 32px
+    color-mix(in srgb, var(--color-neon-cyan-400) 45%, transparent);
+  --glow-purple: 0 0 32px
+    color-mix(in srgb, var(--color-neon-purple-500) 45%, transparent);
+  --glow-neon: 0 0 32px
+    color-mix(in srgb, var(--color-neon-cyan-400) 28%, transparent),
+    0 0 54px color-mix(in srgb, var(--color-neon-purple-500) 28%, transparent);
+
+  /* Gradients */
+  --grad-neon: linear-gradient(
+    135deg,
+    var(--color-neon-cyan-400),
+    var(--color-neon-purple-500)
+  );
+  --grad-neon-soft: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-neon-cyan-400) 30%, transparent),
+    color-mix(in srgb, var(--color-neon-purple-500) 30%, transparent)
+  );
+  --grad-canvas: radial-gradient(
+      at 18% 8%,
+      color-mix(in srgb, var(--color-neon-cyan-500) 24%, transparent) 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      at 82% 92%,
+      color-mix(in srgb, var(--color-neon-purple-500) 22%, transparent) 0%,
+      transparent 50%
+    ),
+    var(--color-bg-dark-0);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-canvas: var(--color-bg-light-0);
+  --bg-surface: #ffffff;
+  --bg-elevated: var(--color-bg-light-1);
+  --bg-sunken: var(--color-bg-light-2);
+
+  --glass-bg: color-mix(in srgb, #ffffff 60%, transparent);
+  --glass-bg-solid: color-mix(in srgb, #ffffff 94%, transparent);
+  --glass-border: color-mix(in srgb, var(--color-neon-cyan-600) 22%, transparent);
+  --glass-border-hi: color-mix(in srgb, var(--color-neon-cyan-600) 44%, transparent);
+  --glass-blur: 16px;
+  --glass-saturate: 150%;
+
+  --text-primary: #0a0c14;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-on-neon: #0a0c14;
+
+  --line-subtle: color-mix(in srgb, #0a0c14 8%, transparent);
+  --line-strong: color-mix(in srgb, #0a0c14 18%, transparent);
+
+  --shadow-glass: 0 8px 24px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  --shadow-elevated: 0 20px 48px rgba(15, 23, 42, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  --glow-cyan: 0 0 24px
+    color-mix(in srgb, var(--color-neon-cyan-500) 30%, transparent);
+  --glow-purple: 0 0 24px
+    color-mix(in srgb, var(--color-neon-purple-500) 30%, transparent);
+  --glow-neon: 0 0 24px
+    color-mix(in srgb, var(--color-neon-cyan-500) 20%, transparent),
+    0 0 48px color-mix(in srgb, var(--color-neon-purple-500) 20%, transparent);
+
+  --grad-neon: linear-gradient(
+    135deg,
+    var(--color-neon-cyan-500),
+    var(--color-neon-purple-500)
+  );
+  --grad-neon-soft: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-neon-cyan-400) 22%, transparent),
+    color-mix(in srgb, var(--color-neon-purple-500) 22%, transparent)
+  );
+  --grad-canvas: radial-gradient(
+      at 20% 10%,
+      color-mix(in srgb, var(--color-neon-cyan-300) 18%, transparent) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 85% 88%,
+      color-mix(in srgb, var(--color-neon-purple-300) 20%, transparent) 0%,
+      transparent 55%
+    ),
+    var(--color-bg-light-0);
+}
+
+/* Mobile : réduire le blur pour préserver les perfs */
+@media (max-width: 768px) {
+  :root,
+  [data-theme="dark"],
+  [data-theme="light"] {
+    --glass-blur: 10px;
+  }
+}
+
+/* Respecter les préférences utilisateur */
+@media (prefers-reduced-transparency: reduce) {
+  :root,
+  [data-theme="dark"],
+  [data-theme="light"] {
+    --glass-blur: 0px;
+    --glass-bg: var(--bg-elevated);
+  }
+}

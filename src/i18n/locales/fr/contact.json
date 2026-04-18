@@ -1,0 +1,28 @@
+{
+  "page": {
+    "title": "Contact",
+    "subtitle": "Parlons de votre projet"
+  },
+  "form": {
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "email": "E-mail",
+    "emailPlaceholder": "vous@exemple.com",
+    "subject": "Sujet",
+    "subjectPlaceholder": "Objet de votre message",
+    "message": "Message",
+    "messagePlaceholder": "Décrivez votre projet…",
+    "submit": "Envoyer le message",
+    "sending": "Envoi en cours…"
+  },
+  "validation": {
+    "required": "Ce champ est requis",
+    "email": "Adresse e-mail invalide",
+    "minLength": "Minimum {{min}} caractères",
+    "maxLength": "Maximum {{max}} caractères"
+  },
+  "feedback": {
+    "success": "Message envoyé, merci !",
+    "error": "L'envoi a échoué, réessayez plus tard"
+  }
+}

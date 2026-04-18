@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5175/)",
+      "Bash(curl -s http://localhost:5175/src/app/main.tsx -o /dev/null -w \"main.tsx: %{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:5175/src/features/portfolio/PortfolioPage.tsx -o /dev/null -w \"PortfolioPage.tsx: %{http_code}\\\\n\")"
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
+
+import commonFr from './locales/fr/common.json'
+import cvFr from './locales/fr/cv.json'
+import portfolioFr from './locales/fr/portfolio.json'
+import cybersecurityFr from './locales/fr/cybersecurity.json'
+import documentsFr from './locales/fr/documents.json'
+import skillsFr from './locales/fr/skills.json'
+import contactFr from './locales/fr/contact.json'
+import servicesFr from './locales/fr/services.json'
+
+import commonEn from './locales/en/common.json'
+import cvEn from './locales/en/cv.json'
+import portfolioEn from './locales/en/portfolio.json'
+import cybersecurityEn from './locales/en/cybersecurity.json'
+import documentsEn from './locales/en/documents.json'
+import skillsEn from './locales/en/skills.json'
+import contactEn from './locales/en/contact.json'
+import servicesEn from './locales/en/services.json'
+
+export const NAMESPACES = [
+  'common',
+  'cv',
+  'portfolio',
+  'cybersecurity',
+  'documents',
+  'skills',
+  'contact',
+  'services',
+] as const
+
+export type Namespace = (typeof NAMESPACES)[number]
+
+const resources = {
+  fr: {
+    common: commonFr,
+    cv: cvFr,
+    portfolio: portfolioFr,
+    cybersecurity: cybersecurityFr,
+    documents: documentsFr,
+    skills: skillsFr,
+    contact: contactFr,
+    services: servicesFr,
+  },
+  en: {
+    common: commonEn,
+    cv: cvEn,
+    portfolio: portfolioEn,
+    cybersecurity: cybersecurityEn,
+    documents: documentsEn,
+    skills: skillsEn,
+    contact: contactEn,
+    services: servicesEn,
+  },
+} as const
+
+void i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'fr',
+    supportedLngs: ['fr', 'en'],
+    ns: NAMESPACES as unknown as string[],
+    defaultNS: 'common',
+    interpolation: { escapeValue: false },
+    detection: {
+      order: ['localStorage', 'navigator', 'htmlTag'],
+      lookupLocalStorage: 'cv.lang',
+      caches: ['localStorage'],
+    },
+  })
+
+export default i18n

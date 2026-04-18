@@ -1,0 +1,30 @@
+{
+  "page": {
+    "title": "Resume",
+    "subtitle": "Professional profile"
+  },
+  "sections": {
+    "profile": "Profile",
+    "experiences": "Professional experience",
+    "formations": "Education",
+    "softSkills": "Soft skills",
+    "languages": "Languages",
+    "interests": "Interests",
+    "programming": "Programming languages",
+    "libraries": "Libraries & frameworks",
+    "tools": "Tools & software",
+    "skills": "Technical skills"
+  },
+  "header": {
+    "role": "Full-Stack Developer",
+    "location": "France",
+    "availability": "Available",
+    "download": "Download resume"
+  },
+  "language": {
+    "native": "Native",
+    "fluent": "Fluent",
+    "intermediate": "Intermediate",
+    "notions": "Basic"
+  }
+}

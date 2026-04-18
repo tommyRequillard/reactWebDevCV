@@ -1,0 +1,32 @@
+{
+  "page": {
+    "title": "Services",
+    "subtitle": "Prestations & tarifs"
+  },
+  "billing": {
+    "monthly": "Mensuel",
+    "annual": "Annuel",
+    "perMonth": "/ mois",
+    "perYear": "/ an",
+    "discount": "-{{percent}}%"
+  },
+  "cta": {
+    "contact": "Nous contacter",
+    "choose": "Choisir cette offre"
+  },
+  "tiers": {
+    "basic": {
+      "name": "Essentiel",
+      "tagline": "Démarrer simplement"
+    },
+    "pro": {
+      "name": "Professionnel",
+      "tagline": "Pour grandir vite",
+      "badge": "Populaire"
+    },
+    "enterprise": {
+      "name": "Entreprise",
+      "tagline": "Sur mesure"
+    }
+  }
+}

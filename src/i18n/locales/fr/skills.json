@@ -1,0 +1,16 @@
+{
+  "page": {
+    "title": "Compétences",
+    "subtitle": "Technique & comportemental"
+  },
+  "tabs": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps & Outils",
+    "behavioral": "Soft skills"
+  },
+  "radar": {
+    "axis": "Compétence",
+    "empty": "Aucune donnée"
+  }
+}

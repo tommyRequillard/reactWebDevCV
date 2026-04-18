@@ -1,0 +1,28 @@
+{
+  "page": {
+    "title": "Portfolio",
+    "subtitle": "Une sélection de projets"
+  },
+  "stats": {
+    "projectCount": "{{count}} projets",
+    "stackCount": "{{count}} technologies",
+    "mostUsed": "Stack la plus utilisée"
+  },
+  "radar": {
+    "title": "Stacks les plus utilisés",
+    "subtitle": "Nombre de projets par technologie"
+  },
+  "filters": {
+    "all": "Tous",
+    "placeholder": "Filtrer par technologie"
+  },
+  "project": {
+    "viewCode": "Voir le code",
+    "viewLive": "Voir en ligne",
+    "viewDemo": "Démo",
+    "stacks": "Stack utilisée"
+  },
+  "secondary": {
+    "articles": "Articles & veille"
+  }
+}

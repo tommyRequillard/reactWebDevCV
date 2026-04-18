@@ -1,0 +1,55 @@
+{
+  "app": {
+    "name": "Tommy Requillard",
+    "tagline": "Développeur Full-Stack & Cybersécurité"
+  },
+  "nav": {
+    "cv": "CV",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "cybersecurity": "Cybersécurité",
+    "documents": "Documents",
+    "skills": "Compétences",
+    "contact": "Contact",
+    "open": "Ouvrir le menu",
+    "close": "Fermer le menu"
+  },
+  "theme": {
+    "switchToLight": "Passer en thème clair",
+    "switchToDark": "Passer en thème sombre"
+  },
+  "language": {
+    "switch": "Changer de langue",
+    "fr": "Français",
+    "en": "Anglais"
+  },
+  "actions": {
+    "download": "Télécharger",
+    "downloadPdf": "Télécharger le CV (PDF)",
+    "send": "Envoyer",
+    "submit": "Valider",
+    "close": "Fermer",
+    "retry": "Réessayer",
+    "loading": "Chargement…",
+    "viewMore": "Voir plus",
+    "viewLess": "Voir moins",
+    "scan": "Analyser",
+    "openLink": "Ouvrir le lien",
+    "back": "Retour"
+  },
+  "state": {
+    "empty": "Aucun résultat",
+    "error": "Une erreur est survenue",
+    "loading": "Chargement en cours…",
+    "success": "Opération réussie"
+  },
+  "errors": {
+    "network": "Problème de connexion réseau",
+    "unknown": "Erreur inconnue",
+    "notFound": "Page introuvable",
+    "backHome": "Retour à l'accueil"
+  },
+  "footer": {
+    "copyright": "© {{year}} Tommy Requillard"
+  }
+}

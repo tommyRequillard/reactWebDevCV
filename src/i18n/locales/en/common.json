@@ -1,0 +1,55 @@
+{
+  "app": {
+    "name": "Tommy Requillard",
+    "tagline": "Full-Stack Developer & Cybersecurity"
+  },
+  "nav": {
+    "cv": "Resume",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "cybersecurity": "Cybersecurity",
+    "documents": "Documents",
+    "skills": "Skills",
+    "contact": "Contact",
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "theme": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "language": {
+    "switch": "Change language",
+    "fr": "French",
+    "en": "English"
+  },
+  "actions": {
+    "download": "Download",
+    "downloadPdf": "Download resume (PDF)",
+    "send": "Send",
+    "submit": "Submit",
+    "close": "Close",
+    "retry": "Retry",
+    "loading": "Loading…",
+    "viewMore": "View more",
+    "viewLess": "View less",
+    "scan": "Scan",
+    "openLink": "Open link",
+    "back": "Back"
+  },
+  "state": {
+    "empty": "No result",
+    "error": "An error occurred",
+    "loading": "Loading…",
+    "success": "Operation successful"
+  },
+  "errors": {
+    "network": "Network connection issue",
+    "unknown": "Unknown error",
+    "notFound": "Page not found",
+    "backHome": "Back to home"
+  },
+  "footer": {
+    "copyright": "© {{year}} Tommy Requillard"
+  }
+}

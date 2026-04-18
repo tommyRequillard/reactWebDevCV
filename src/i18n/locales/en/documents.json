@@ -1,0 +1,17 @@
+{
+  "page": {
+    "title": "Documents",
+    "subtitle": "Certifications & tracking"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "empty": "No certification",
+    "viewImage": "View image"
+  },
+  "trello": {
+    "title": "Trello board",
+    "empty": "No card",
+    "loading": "Loading board…",
+    "error": "Unable to load Trello"
+  }
+}

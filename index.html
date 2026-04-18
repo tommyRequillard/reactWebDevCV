@@ -1,21 +1,35 @@
 <!doctype html>
-<html lang="en" class="w-full">
+<html lang="fr" class="w-full">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="description" content="Cv Portfolio d'un developpeur Front-end avec React">
+    <meta name="description" content="CV Portfolio de Tommy Requillard, développeur front-end React / DevSecOps"/>
     <link rel="icon" type="image/svg+xml" href="/lion-face.ico"/>
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-            crossorigin="anonymous"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Cv Portfolio</title>
+    <meta name="theme-color" content="#05060a" media="(prefers-color-scheme: dark)"/>
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)"/>
+    <title>Tommy Requillard — CV Portfolio</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('cv.theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefersDark ? 'dark' : 'dark');
+          document.documentElement.dataset.theme = theme;
+          var lang = localStorage.getItem('cv.lang');
+          if (lang) document.documentElement.setAttribute('lang', lang);
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+    <style>
+      html { background: #05060a; }
+      html[data-theme="light"] { background: #f8fafc; }
+      body { margin: 0; }
+    </style>
 </head>
 <body>
-    
 <div id="root"></div>
-<div></div>
-<script type="module" src="/src/main.tsx"></script>
+<script type="module" src="/src/app/main.tsx"></script>
 </body>
 </html>

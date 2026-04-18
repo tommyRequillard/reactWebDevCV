@@ -1,0 +1,16 @@
+{
+  "page": {
+    "title": "Skills",
+    "subtitle": "Technical & behavioral"
+  },
+  "tabs": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps & Tools",
+    "behavioral": "Soft skills"
+  },
+  "radar": {
+    "axis": "Skill",
+    "empty": "No data"
+  }
+}

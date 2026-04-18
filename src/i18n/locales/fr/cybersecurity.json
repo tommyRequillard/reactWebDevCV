@@ -1,0 +1,39 @@
+{
+  "page": {
+    "title": "Cybersécurité",
+    "subtitle": "Outils d'analyse et de veille"
+  },
+  "virusTotal": {
+    "title": "VirusTotal · URL",
+    "description": "Vérifier la réputation d'une URL",
+    "placeholder": "https://exemple.com",
+    "scan": "Analyser l'URL",
+    "positives": "Détections : {{count}}/{{total}}",
+    "reputation": "Réputation",
+    "lastAnalysis": "Dernière analyse"
+  },
+  "shodan": {
+    "title": "Shodan · IP",
+    "description": "Informations publiques sur une adresse IP",
+    "placeholder": "8.8.8.8",
+    "lookup": "Consulter",
+    "org": "Organisation",
+    "country": "Pays",
+    "ports": "Ports ouverts",
+    "hostnames": "Hostnames"
+  },
+  "hibp": {
+    "title": "Have I Been Pwned",
+    "description": "Un mot de passe a-t-il fuité ?",
+    "placeholder": "Saisir un mot de passe…",
+    "check": "Vérifier",
+    "leaked": "Mot de passe compromis : {{count}} fuites",
+    "safe": "Aucune fuite connue"
+  },
+  "errors": {
+    "invalidUrl": "URL invalide",
+    "invalidIp": "Adresse IP invalide",
+    "apiKeyMissing": "Clé API manquante",
+    "quota": "Quota atteint, réessayez plus tard"
+  }
+}

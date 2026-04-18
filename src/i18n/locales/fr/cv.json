@@ -1,0 +1,30 @@
+{
+  "page": {
+    "title": "Curriculum Vitæ",
+    "subtitle": "Profil professionnel"
+  },
+  "sections": {
+    "profile": "Profil",
+    "experiences": "Expériences professionnelles",
+    "formations": "Formations",
+    "softSkills": "Soft skills",
+    "languages": "Langues",
+    "interests": "Centres d'intérêt",
+    "programming": "Langages de programmation",
+    "libraries": "Librairies & frameworks",
+    "tools": "Outils & logiciels",
+    "skills": "Compétences techniques"
+  },
+  "header": {
+    "role": "Développeur Full-Stack",
+    "location": "France",
+    "availability": "Disponible",
+    "download": "Télécharger le CV"
+  },
+  "language": {
+    "native": "Langue maternelle",
+    "fluent": "Courant",
+    "intermediate": "Intermédiaire",
+    "notions": "Notions"
+  }
+}

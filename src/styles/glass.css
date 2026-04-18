@@ -1,0 +1,105 @@
+/* =========================================================================
+   Glass utilities
+   Used directly via className OR consumed by <GlassCard/> primitive.
+   ========================================================================= */
+
+.glass-surface {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass);
+  border-radius: var(--radius-xl);
+}
+
+.glass-surface--elevated {
+  background: color-mix(in srgb, var(--bg-elevated) 80%, transparent);
+  box-shadow: var(--shadow-elevated);
+}
+
+.glass-surface--solid {
+  background: var(--glass-bg-solid);
+}
+
+.glass-surface--no-blur {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: var(--bg-surface);
+}
+
+.glass-surface--interactive {
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.glass-surface--interactive:hover {
+  border-color: var(--glass-border-hi);
+  transform: translateY(-2px);
+}
+
+.glass-glow-cyan {
+  box-shadow: var(--shadow-glass), var(--glow-cyan);
+}
+.glass-glow-purple {
+  box-shadow: var(--shadow-glass), var(--glow-purple);
+}
+.glass-glow-neon {
+  box-shadow: var(--shadow-glass), var(--glow-neon);
+}
+
+/* Neon gradient text */
+.text-gradient-neon {
+  background: var(--grad-neon);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Neon border wrapper */
+.neon-border {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+}
+
+.neon-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--grad-neon);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Print — neutralize glass on PDF export */
+@media print {
+  .glass-surface,
+  .glass-surface--elevated,
+  .glass-surface--solid,
+  .glass-surface--interactive {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #ffffff !important;
+    color: #0a0c14 !important;
+    box-shadow: none !important;
+    border-color: #e2e8f0 !important;
+  }
+}
+
+/* Flag consumed by usePdfExport when capturing the CV */
+[data-pdf-capturing="true"] .glass-surface,
+[data-pdf-capturing="true"] .glass-surface--elevated,
+[data-pdf-capturing="true"] .glass-surface--solid,
+[data-pdf-capturing="true"] .glass-surface--interactive {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
