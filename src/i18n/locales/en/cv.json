@@ -3,6 +3,24 @@
     "title": "Resume",
     "subtitle": "Professional profile"
   },
+  "story": {
+    "headline": "From the field to code, from code to security",
+    "subtitle": "Three chapters of a multidisciplinary journey — entrepreneur, developer, hotliner — augmented by AI and automation.",
+    "chapters": {
+      "builder": {
+        "title": "The Builder",
+        "body": "Twenty years building, selling, integrating. From logistics agent to CEO of a patent-holding company, I've learned to turn an idea into a shipped product. Web, ERP, e-commerce, sales fieldwork: versatility as a method."
+      },
+      "bridge": {
+        "title": "The Bridge",
+        "body": "A deep technical reconversion: Full-Stack, BIG DATA, information security. Today hotliner and developer at ALOA — Python, Linux, WINDEV, PHP, SQL, IDS, Proxmox — at the heart of complex client infrastructures (EBP, SAGE, RDS, SaaS)."
+      },
+      "vision": {
+        "title": "The Vision",
+        "body": "AI-assisted vibe coding — Claude Code, Antigravity, Gemini — orchestrated with N8N and Supabase to automate what can be, and focus humans on what matters: decision, design, security. DevSecOps as the heading."
+      }
+    }
+  },
   "sections": {
     "profile": "Profile",
     "experiences": "Professional experience",

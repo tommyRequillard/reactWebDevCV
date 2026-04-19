@@ -11,6 +11,7 @@ import { fadeInUp } from '@shared/motion/variants'
 
 import { CvHeader } from './components/CvHeader'
 import { CvSidebar } from './components/CvSidebar'
+import { StoryHero } from './components/StoryHero'
 import { PersonalProfileSection } from './components/PersonalProfileSection'
 import { ExperiencesSection } from './components/ExperiencesSection'
 import { SoftSkillsSection } from './components/SoftSkillsSection'
@@ -62,6 +63,8 @@ export function CvPage() {
           {tc('actions.downloadPdf')}
         </NeonButton>
       </header>
+
+      <StoryHero />
 
       <div ref={targetRef} id="cv-document">
         <GlassCard variant="no-blur" padding="none" radius="2xl" className="overflow-hidden">

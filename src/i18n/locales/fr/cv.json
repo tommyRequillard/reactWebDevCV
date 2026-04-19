@@ -3,6 +3,24 @@
     "title": "Curriculum Vitæ",
     "subtitle": "Profil professionnel"
   },
+  "story": {
+    "headline": "Du terrain au code, du code à la sécurité",
+    "subtitle": "Trois chapitres d'un parcours pluridisciplinaire — entrepreneur, développeur, hotliner — augmenté par l'IA et l'automatisation.",
+    "chapters": {
+      "builder": {
+        "title": "Le Constructeur",
+        "body": "Vingt ans à monter, vendre, intégrer. De l'agent logistique au directeur général d'une société à brevet, j'ai appris à transformer une idée en produit livré. Web, ERP, e-commerce, terrain commercial : la polyvalence comme méthode."
+      },
+      "bridge": {
+        "title": "Le Pont",
+        "body": "Reconversion technique en profondeur : Full-Stack, BIG DATA, sécurité informatique. Aujourd'hui hotliner et développeur chez ALOA — Python, Linux, WINDEV, PHP, SQL, IDS, Proxmox — au cœur d'infrastructures clients complexes (EBP, SAGE, RDS, SaaS)."
+      },
+      "vision": {
+        "title": "La Vision",
+        "body": "Vibe coding assisté par IA — Claude Code, Antigravity, Gemini — orchestré avec N8N et Supabase pour automatiser ce qui peut l'être et concentrer l'humain sur l'essentiel : la décision, le design, la sécurité. DevSecOps comme cap."
+      }
+    }
+  },
   "sections": {
     "profile": "Profil",
     "experiences": "Expériences professionnelles",

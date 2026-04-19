@@ -8,6 +8,13 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    period: 'Depuis janvier 2025',
+    role: 'Hotliner, Développeur, Formateur',
+    company: 'ALOA INFORMATIQUE',
+    description:
+      "Hotline sur logiciels de gestion EBP & SAGE : analyse d'infrastructure, propositions commerciales, mise en œuvre, installation locale, RDS ou SaaS, assistance utilisateurs, détection & réponse, formation, mises à jour, gouvernance des installations sur serveurs en infrastructures complexes. Programmation Python, Linux, WINDEV, PHP, SQL, WordPress, Jenkins, IDS (systèmes de détection d'intrusion), Proxmox, automatisation. Vibe coding assisté par IA (Claude Code, Antigravity, Gemini) et orchestration de workflows (N8N, Supabase).",
+  },
+  {
     period: '2017 – juin 2023',
     role: 'Directeur général',
     company: 'SAS MYDRYM MYGARDEN',

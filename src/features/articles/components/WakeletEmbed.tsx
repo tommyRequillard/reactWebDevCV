@@ -8,7 +8,7 @@ export function WakeletEmbed() {
       <div className="h-full min-h-[60vh] overflow-hidden rounded-xl border border-[color:var(--glass-border)]">
         <iframe
           title="Wakelet — Articles & veille"
-          src="https://wakelet.com/embed/wakes/5a5d1df8-78ee-40c8-8cc7-1b5b9a53fa12"
+          src="https://wakelet.com/@CyberMenaces4188"
           className="h-full min-h-[60vh] w-full"
           loading="lazy"
           referrerPolicy="no-referrer"

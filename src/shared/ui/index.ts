@@ -51,3 +51,6 @@ export { Stars } from './Stars'
 export type { StarsProps } from './Stars'
 
 export { AchievementToast } from './AchievementToast'
+
+export { Timeline } from './Timeline'
+export type { TimelineItem, TimelineProps } from './Timeline'
