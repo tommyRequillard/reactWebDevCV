@@ -6,6 +6,7 @@ import { GlassCard } from '@shared/ui/GlassCard'
 import { NeonButton } from '@shared/ui/NeonButton'
 import { GradientText } from '@shared/ui/GradientText'
 import { useToast } from '@shared/ui/Toast'
+import { ScrollReveal } from '@shared/ui/ScrollReveal'
 import { fadeInUp } from '@shared/motion/variants'
 
 import { CvHeader } from './components/CvHeader'
@@ -67,16 +68,32 @@ export function CvPage() {
           <div className="flex flex-col md:flex-row">
             <CvSidebar />
             <div className="flex flex-1 flex-col px-6">
-              <PersonalProfileSection />
-              <ExperiencesSection />
-              <SoftSkillsSection />
+              <ScrollReveal>
+                <PersonalProfileSection />
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <ExperiencesSection />
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <SoftSkillsSection />
+              </ScrollReveal>
             </div>
           </div>
-          <FormationsSection />
-          <LibrairiesSection />
-          <ToolsSection />
-          <InterestsSection />
-          <ForeignLanguagesSection />
+          <ScrollReveal>
+            <FormationsSection />
+          </ScrollReveal>
+          <ScrollReveal delay={0.05}>
+            <LibrairiesSection />
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <ToolsSection />
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <InterestsSection />
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <ForeignLanguagesSection />
+          </ScrollReveal>
         </GlassCard>
       </div>
     </motion.section>

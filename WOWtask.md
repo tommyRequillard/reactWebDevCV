@@ -1,0 +1,25 @@
+- `[x]` **Tâche 1 : Mise en place du store Gamification (Zustand)**
+  - `[x]` Créer le test pour le store Zustand
+  - `[x]` Créer `src/stores/gamificationStore.ts`
+  - `[x]` Faire passer les tests et commit
+- `[x]` **Tâche 2 : Composant de Notification (Achievement Toast)**
+  - `[x]` Créer le test pour le composant Toast
+  - `[x]` Créer `AchievementToast.tsx` avec framer-motion
+  - `[x]` Faire passer les tests et commit
+- `[x]` **Tâche 3 : Composant Terminal (Easter Egg)**
+  - `[x]` Écrire le test d'ouverture via raccourci
+  - `[x]` Implémenter `<TerminalEmulator />`
+  - `[x]` Gérer l'historique et les commandes (whoami, help)
+  - `[x]` Faire passer les tests et commit
+- `[x]` **Tâche 4 : Composant ScrollReveal (Framer Motion)**
+  - `[x]` Implémenter le wrapper `<ScrollReveal />`
+  - `[x]` Intégrer `<ScrollReveal />` dans la page CV
+- `[ ]` **Tâche 5 : Section Témoignages (Preuve Sociale)**
+  - `[ ]` Créer `<Testimonials />`
+  - `[ ]` Intégrer les recommandations LinkedIn de Vincent Gautier et Maxime CERJAK
+- `[ ]` **Tâche 6 : Animations de Transitions de Pages**
+  - `[ ]` Modifier `src/app/router/routes.tsx` et `AppShell`
+  - `[ ]` Ajouter `<AnimatePresence>` et `<motion.div>` sur les pages
+- `[ ]` **Tâche 7 : Custom Cursor (Effet Magnétique)**
+  - `[ ]` Créer `<CustomCursor />`
+  - `[ ]` L'intégrer au niveau global (RootLayout)
