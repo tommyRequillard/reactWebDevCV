@@ -17,7 +17,7 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { to: '/', labelKey: 'nav.cv', icon: HomeIcon, end: true },
+  { to: '/cv', labelKey: 'nav.cv', icon: HomeIcon, end: true },
   { to: '/services', labelKey: 'nav.services', icon: BuildingStorefrontIcon },
   { to: '/portfolio', labelKey: 'nav.portfolio', icon: PhotoIcon },
   { to: '/cybersecurity', labelKey: 'nav.cybersecurity', icon: ShieldCheckIcon },

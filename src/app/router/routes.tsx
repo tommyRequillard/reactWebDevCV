@@ -1,6 +1,7 @@
 import type { RouteObject } from 'react-router-dom'
 import { RootLayout } from '@layouts/RootLayout'
 import { AppShell } from '@layouts/AppShell'
+import { LandingPage } from '@features/landing/LandingPage'
 import { CvPage } from '@features/cv/CvPage'
 import { ServicesPage } from '@features/services/ServicesPage'
 import { PortfolioPage } from '@features/portfolio/PortfolioPage'
@@ -14,10 +15,15 @@ export const routes: RouteObject[] = [
   {
     element: <RootLayout />,
     children: [
+      { index: true, element: <LandingPage />, handle: { titleKey: 'nav.cv', titleNs: 'common' } },
       {
         element: <AppShell />,
         children: [
-          { index: true, element: <CvPage />, handle: { titleKey: 'nav.cv', titleNs: 'common' } },
+          {
+            path: 'cv',
+            element: <CvPage />,
+            handle: { titleKey: 'nav.cv', titleNs: 'common' },
+          },
           {
             path: 'services',
             element: <ServicesPage />,
