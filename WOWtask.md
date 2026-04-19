@@ -14,9 +14,9 @@
 - `[x]` **Tâche 4 : Composant ScrollReveal (Framer Motion)**
   - `[x]` Implémenter le wrapper `<ScrollReveal />`
   - `[x]` Intégrer `<ScrollReveal />` dans la page CV
-- `[ ]` **Tâche 5 : Section Témoignages (Preuve Sociale)**
-  - `[ ]` Créer `<Testimonials />`
-  - `[ ]` Intégrer les recommandations LinkedIn de Vincent Gautier et Maxime CERJAK
+- `[x]` **Tâche 5 : Section Témoignages (Preuve Sociale)**
+  - `[x]` Créer `<Testimonials />`
+  - `[x]` Intégrer les recommandations LinkedIn de Vincent Gautier et Maxime CERJAK
 - `[ ]` **Tâche 6 : Animations de Transitions de Pages**
   - `[ ]` Modifier `src/app/router/routes.tsx` et `AppShell`
   - `[ ]` Ajouter `<AnimatePresence>` et `<motion.div>` sur les pages

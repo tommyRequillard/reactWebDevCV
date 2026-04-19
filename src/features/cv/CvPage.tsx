@@ -19,6 +19,7 @@ import { LibrairiesSection } from './components/LibrairiesSection'
 import { ToolsSection } from './components/ToolsSection'
 import { InterestsSection } from './components/InterestsSection'
 import { ForeignLanguagesSection } from './components/ForeignLanguagesSection'
+import { TestimonialsSection } from './components/TestimonialsSection'
 import { usePdfExport } from './hooks/usePdfExport'
 
 export function CvPage() {
@@ -93,6 +94,9 @@ export function CvPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
             <ForeignLanguagesSection />
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <TestimonialsSection />
           </ScrollReveal>
         </GlassCard>
       </div>
