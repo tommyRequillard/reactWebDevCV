@@ -7,11 +7,13 @@ import lion from '@assets/lion-face.png'
 import { cn } from '@shared/lib/cn'
 import { NAV_ITEMS } from './navigation'
 import { useUIStore } from '@stores/uiStore'
+import { useGamificationStore } from '@stores/gamificationStore'
 
 export function MobileSidebar() {
   const { t } = useTranslation('common')
   const open = useUIStore((s) => s.mobileNavOpen)
   const close = useUIStore((s) => s.closeMobileNav)
+  const openTerminal = useGamificationStore((s) => s.openTerminal)
 
   return (
     <Transition show={open} as={Fragment}>
@@ -48,7 +50,15 @@ export function MobileSidebar() {
                 <XMarkIcon className="h-5 w-5" />
               </button>
 
-              <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  openTerminal()
+                  close()
+                }}
+                title="Ouvrir le terminal"
+                className="group flex items-center gap-3 rounded-xl text-left transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-neon-cyan-400)]"
+              >
                 <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[image:var(--grad-neon-soft)] p-2 ring-1 ring-[color:var(--glass-border-hi)]">
                   <img src={lion} alt="" className="h-full w-auto" />
                 </div>
@@ -58,7 +68,7 @@ export function MobileSidebar() {
                   </p>
                   <p className="text-xs text-[color:var(--text-muted)]">{t('app.tagline')}</p>
                 </div>
-              </div>
+              </button>
 
               <nav className="flex flex-1 flex-col">
                 <ul className="flex flex-col gap-1">

@@ -11,6 +11,7 @@ describe('TerminalEmulator', () => {
       visitedPages: [],
       hasFoundTerminal: false,
       pendingAchievement: null,
+      isTerminalOpen: false,
     })
   })
 
@@ -23,10 +24,10 @@ describe('TerminalEmulator', () => {
     expect(screen.queryByTestId('terminal-overlay')).toBeNull()
   })
 
-  it('should open when Ctrl+\\ is pressed', async () => {
+  it('should open when Ctrl+ù is pressed', async () => {
     render(<TerminalEmulator />)
     await act(async () => {
-      window.dispatchEvent(new KeyboardEvent('keydown', { key: '\\', ctrlKey: true }))
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ù', ctrlKey: true }))
     })
     expect(screen.getByTestId('terminal-overlay')).toBeTruthy()
   })
@@ -34,23 +35,23 @@ describe('TerminalEmulator', () => {
   it('should unlock the Hacker achievement on first open', async () => {
     render(<TerminalEmulator />)
     await act(async () => {
-      window.dispatchEvent(new KeyboardEvent('keydown', { key: '\\', ctrlKey: true }))
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ù', ctrlKey: true }))
     })
     expect(useGamificationStore.getState().hasFoundTerminal).toBe(true)
     expect(useGamificationStore.getState().achievements).toContain('Le Hacker')
   })
 
-  it('should toggle off when Ctrl+\\ is pressed again', async () => {
+  it('should toggle off when Ctrl+ù is pressed again', async () => {
     render(<TerminalEmulator />)
     // Open
     await act(async () => {
-      window.dispatchEvent(new KeyboardEvent('keydown', { key: '\\', ctrlKey: true }))
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ù', ctrlKey: true }))
     })
     expect(screen.getByTestId('terminal-overlay')).toBeTruthy()
 
     // Toggle off with same shortcut
     await act(async () => {
-      window.dispatchEvent(new KeyboardEvent('keydown', { key: '\\', ctrlKey: true }))
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ù', ctrlKey: true }))
     })
     // The component sets isOpen to false — AnimatePresence exit runs
     // We verify the state changed (close was called) by checking no error thrown
@@ -59,7 +60,7 @@ describe('TerminalEmulator', () => {
   it('should display welcome message', async () => {
     render(<TerminalEmulator />)
     await act(async () => {
-      window.dispatchEvent(new KeyboardEvent('keydown', { key: '\\', ctrlKey: true }))
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ù', ctrlKey: true }))
     })
     expect(screen.getByText(/Bienvenue/i)).toBeTruthy()
   })

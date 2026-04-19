@@ -8,6 +8,7 @@ describe('gamificationStore', () => {
       visitedPages: [],
       hasFoundTerminal: false,
       pendingAchievement: null,
+      isTerminalOpen: false,
     })
   })
 

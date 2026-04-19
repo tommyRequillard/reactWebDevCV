@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useGamificationStore } from '@stores/gamificationStore'
 
@@ -41,45 +41,47 @@ Cloud     → AWS, GCP, Azure fundamentals`,
 }
 
 export function TerminalEmulator() {
-  const [isOpen, setIsOpen] = useState(false)
+  const isOpen = useGamificationStore((s) => s.isTerminalOpen)
+  const openTerminal = useGamificationStore((s) => s.openTerminal)
+  const closeTerminalAction = useGamificationStore((s) => s.closeTerminal)
   const [lines, setLines] = useState<TerminalLine[]>([])
   const [currentInput, setCurrentInput] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
-  const unlockTerminal = useGamificationStore((s) => s.unlockTerminal)
 
-  const openTerminal = useCallback(() => {
-    setIsOpen(true)
-    setLines([{ type: 'output', text: WELCOME_MSG }])
-    unlockTerminal()
-  }, [unlockTerminal])
-
-  const closeTerminal = useCallback(() => {
-    setIsOpen(false)
+  const closeTerminal = () => {
+    closeTerminalAction()
     setLines([])
     setCurrentInput('')
-  }, [])
+  }
+
+  useEffect(() => {
+    if (isOpen) {
+      setLines([{ type: 'output', text: WELCOME_MSG }])
+    }
+  }, [isOpen])
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.key === '\\') {
+      if (e.ctrlKey && (e.key === 'ù' || e.key === '%')) {
         e.preventDefault()
-        setIsOpen((prev) => {
-          if (!prev) {
-            openTerminal()
-            return true
-          }
-          closeTerminal()
-          return false
-        })
+        if (useGamificationStore.getState().isTerminalOpen) {
+          closeTerminalAction()
+          setLines([])
+          setCurrentInput('')
+        } else {
+          openTerminal()
+        }
       }
-      if (e.key === 'Escape' && isOpen) {
-        closeTerminal()
+      if (e.key === 'Escape' && useGamificationStore.getState().isTerminalOpen) {
+        closeTerminalAction()
+        setLines([])
+        setCurrentInput('')
       }
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [isOpen, openTerminal, closeTerminal])
+  }, [openTerminal, closeTerminalAction])
 
   useEffect(() => {
     if (isOpen) {
@@ -163,7 +165,7 @@ export function TerminalEmulator() {
                 <span className="h-3 w-3 rounded-full bg-green-500" />
               </div>
               <span className="ml-3 text-xs text-white/40">visitor@tommy-requillard — bash</span>
-              <span className="ml-auto text-[10px] text-white/20">Ctrl+\ pour fermer</span>
+              <span className="ml-auto text-[10px] text-white/20">Ctrl+ù pour fermer</span>
             </div>
 
             {/* Output area */}

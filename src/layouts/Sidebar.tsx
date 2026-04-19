@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import lion from '@assets/lion-face.png'
 import { cn } from '@shared/lib/cn'
 import { NAV_ITEMS } from './navigation'
+import { useGamificationStore } from '@stores/gamificationStore'
 
 export interface SidebarProps {
   className?: string
@@ -11,6 +12,7 @@ export interface SidebarProps {
 
 export function Sidebar({ className }: SidebarProps) {
   const { t } = useTranslation('common')
+  const openTerminal = useGamificationStore((s) => s.openTerminal)
 
   return (
     <aside
@@ -19,8 +21,13 @@ export function Sidebar({ className }: SidebarProps) {
         className,
       )}
     >
-      <div className="flex items-center gap-3">
-        <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[image:var(--grad-neon-soft)] p-2 ring-1 ring-[color:var(--glass-border-hi)]">
+      <button
+        type="button"
+        onClick={openTerminal}
+        title="Ouvrir le terminal (Ctrl+ù)"
+        className="group flex items-center gap-3 rounded-xl text-left transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-neon-cyan-400)]"
+      >
+        <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[image:var(--grad-neon-soft)] p-2 ring-1 ring-[color:var(--glass-border-hi)] transition-shadow group-hover:shadow-[0_0_20px_var(--color-neon-cyan-400)/30]">
           <img src={lion} alt="" className="h-full w-auto" />
         </div>
         <div>
@@ -29,7 +36,7 @@ export function Sidebar({ className }: SidebarProps) {
           </p>
           <p className="text-xs text-[color:var(--text-muted)]">{t('app.tagline')}</p>
         </div>
-      </div>
+      </button>
 
       <nav aria-label="Navigation principale" className="flex flex-1 flex-col">
         <ul className="flex flex-col gap-1">

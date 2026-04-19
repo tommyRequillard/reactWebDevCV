@@ -7,8 +7,11 @@ interface GamificationState {
   visitedPages: string[]
   hasFoundTerminal: boolean
   pendingAchievement: string | null
+  isTerminalOpen: boolean
 
   unlockTerminal: () => void
+  openTerminal: () => void
+  closeTerminal: () => void
   trackPage: (path: string) => void
   dismissAchievement: () => void
 }
@@ -18,6 +21,7 @@ export const useGamificationStore = create<GamificationState>((set, get) => ({
   visitedPages: [],
   hasFoundTerminal: false,
   pendingAchievement: null,
+  isTerminalOpen: false,
 
   unlockTerminal: () => {
     const { achievements, hasFoundTerminal } = get()
@@ -28,6 +32,13 @@ export const useGamificationStore = create<GamificationState>((set, get) => ({
       pendingAchievement: 'Le Hacker',
     })
   },
+
+  openTerminal: () => {
+    get().unlockTerminal()
+    set({ isTerminalOpen: true })
+  },
+
+  closeTerminal: () => set({ isTerminalOpen: false }),
 
   trackPage: (path: string) => {
     const { visitedPages, achievements } = get()
