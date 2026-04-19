@@ -49,3 +49,5 @@ export type { GaugeSegmentedProps } from './GaugeSegmented'
 
 export { Stars } from './Stars'
 export type { StarsProps } from './Stars'
+
+export { AchievementToast } from './AchievementToast'
