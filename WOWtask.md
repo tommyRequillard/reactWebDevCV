@@ -20,6 +20,6 @@
 - `[x]` **Tâche 6 : Animations de Transitions de Pages**
   - `[x]` Modifier `src/app/router/routes.tsx` et `AppShell`
   - `[x]` Ajouter `<AnimatePresence>` et `<motion.div>` sur les pages
-- `[ ]` **Tâche 7 : Custom Cursor (Effet Magnétique)**
-  - `[ ]` Créer `<CustomCursor />`
-  - `[ ]` L'intégrer au niveau global (RootLayout)
+- `[x]` **Tâche 7 : Custom Cursor (Effet Magnétique)**
+  - `[x]` Créer `<CustomCursor />`
+  - `[x]` L'intégrer au niveau global (RootLayout)
