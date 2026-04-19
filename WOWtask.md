@@ -17,9 +17,9 @@
 - `[x]` **Tâche 5 : Section Témoignages (Preuve Sociale)**
   - `[x]` Créer `<Testimonials />`
   - `[x]` Intégrer les recommandations LinkedIn de Vincent Gautier et Maxime CERJAK
-- `[ ]` **Tâche 6 : Animations de Transitions de Pages**
-  - `[ ]` Modifier `src/app/router/routes.tsx` et `AppShell`
-  - `[ ]` Ajouter `<AnimatePresence>` et `<motion.div>` sur les pages
+- `[x]` **Tâche 6 : Animations de Transitions de Pages**
+  - `[x]` Modifier `src/app/router/routes.tsx` et `AppShell`
+  - `[x]` Ajouter `<AnimatePresence>` et `<motion.div>` sur les pages
 - `[ ]` **Tâche 7 : Custom Cursor (Effet Magnétique)**
   - `[ ]` Créer `<CustomCursor />`
   - `[ ]` L'intégrer au niveau global (RootLayout)
