@@ -5,9 +5,10 @@
    ============================================================ */
 
 .landing-root {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
   background: var(--bg-canvas, #05060a);
   color: var(--text-primary, #f5f7fb);
   font-family: var(--font-sans);
@@ -86,7 +87,6 @@
   grid-template-rows: auto 1fr auto;
   padding: 28px clamp(20px, 4vw, 56px);
   gap: 24px;
-  overflow-y: auto;
 }
 
 /* Topbar */
