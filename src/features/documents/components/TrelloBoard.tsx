@@ -12,8 +12,8 @@ export function TrelloBoard() {
         <iframe
           src="https://trello.com/b/kp9ZUMxf.html"
           title={t('trello.title')}
-          className="h-[650px] w-full"
-          loading="lazy"
+          className="w-full"
+          style={{ minHeight: '650px', border: 'none' }}
           allow="autoplay"
         />
       </div>
