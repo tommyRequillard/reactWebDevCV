@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Analyse SonarCloud
-        uses: SonarSource/sonarqube-scan-action@v5.3.1
+        uses: SonarSource/sonarqube-scan-action@v6.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -31,8 +31,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        # Correction ici : nom complet indispensable
-        run: npm install --legacy-peer-deps
+        run: npm ci
 
       - name: Build
         # On passe la variable pour le base '/' de Vite
