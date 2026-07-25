@@ -8,7 +8,9 @@
       "Bash(curl -s http://localhost:5175/src/features/portfolio/PortfolioPage.tsx -o /dev/null -w \"PortfolioPage.tsx: %{http_code}\\\\n\")",
       "Bash(npx vitest *)",
       "Bash(npx tsc *)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(npm audit *)",
+      "Bash(npm view *)"
     ]
   }
 }
