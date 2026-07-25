@@ -58,7 +58,17 @@
   },
   "speedTest": {
     "title": "Test de Vitesse",
-    "description": "Mesurez le débit descendant, montant et la latence de votre connexion."
+    "description": "Mesurez le débit descendant, montant et la latence de votre connexion.",
+    "start": "Lancer le test",
+    "ping": "Latence",
+    "jitter": "Gigue",
+    "download": "Téléchargement",
+    "upload": "Envoi",
+    "phase": {
+      "ping": "Mesure de la latence…",
+      "download": "Test de téléchargement…",
+      "upload": "Test d'envoi…"
+    }
   },
   "secureNote": {
     "title": "Note Sécurisée · E2EE",

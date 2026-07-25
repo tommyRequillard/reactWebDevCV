@@ -58,7 +58,17 @@
   },
   "speedTest": {
     "title": "Speed Test",
-    "description": "Measure your connection's download, upload speed and latency."
+    "description": "Measure your connection's download, upload speed and latency.",
+    "start": "Start test",
+    "ping": "Ping",
+    "jitter": "Jitter",
+    "download": "Download",
+    "upload": "Upload",
+    "phase": {
+      "ping": "Measuring latency…",
+      "download": "Testing download…",
+      "upload": "Testing upload…"
+    }
   },
   "secureNote": {
     "title": "Secure Note · E2EE",
