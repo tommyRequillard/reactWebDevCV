@@ -27,7 +27,10 @@ export const onRequestGet: PagesFunction = async ({ params }) => {
   }
 
   const upstream = await fetch(`https://rdap.org/domain/${encodeURIComponent(domain)}`, {
-    headers: { Accept: 'application/rdap+json' },
+    headers: {
+      Accept: 'application/rdap+json',
+      'User-Agent': 'tools-proxy-whois/1.0 (+https://tools-proxy.pages.dev)',
+    },
   })
   if (!upstream.ok) {
     return json({ message: 'not_found' }, upstream.status)

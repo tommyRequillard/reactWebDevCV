@@ -10,7 +10,10 @@
       "Bash(npx tsc *)",
       "Bash(npx vite *)",
       "Bash(npm audit *)",
-      "Bash(npm view *)"
+      "Bash(npm view *)",
+      "Read(//e/dev/vt-proxy/**)",
+      "Bash(where wrangler *)",
+      "Bash(npx wrangler *)"
     ]
   }
 }

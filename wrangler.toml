@@ -1,0 +1,15 @@
+name = "tools-proxy"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-07-25"
+
+[[kv_namespaces]]
+binding = "TOOLS_NOTES_KV"
+id = "d0ebf13262554bd08a39a49ad0dc985e"
+
+[[kv_namespaces]]
+binding = "TOOLS_FILES_META_KV"
+id = "ec7dcc1116f343828819c3aadf3e47a2"
+
+[[r2_buckets]]
+binding = "TOOLS_FILES_R2"
+bucket_name = "tools-files"
