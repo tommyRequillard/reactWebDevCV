@@ -4,10 +4,12 @@
     "tagline": "Full-Stack Developer & Cybersecurity"
   },
   "nav": {
+    "landing": "Terminal",
     "cv": "Resume",
     "services": "Services",
     "portfolio": "Portfolio",
     "cybersecurity": "Cybersecurity",
+    "tools": "Tools",
     "documents": "Documents",
     "skills": "Skills",
     "contact": "Contact",

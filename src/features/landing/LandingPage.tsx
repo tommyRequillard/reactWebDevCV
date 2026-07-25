@@ -100,6 +100,19 @@ const GATES: Gate[] = [
   },
   {
     index: '// 07',
+    path: '/tools',
+    route: '/tools',
+    accent: 'purple',
+    label: 'Outils',
+    meta: 'toolbox.bin',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4l-3-3-3 3Z" />
+      </svg>
+    ),
+  },
+  {
+    index: '// 08',
     path: '/contact',
     route: '/contact',
     accent: 'red',

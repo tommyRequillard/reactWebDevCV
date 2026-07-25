@@ -1,0 +1,210 @@
+{
+  "page": {
+    "title": "Outils",
+    "subtitle": "Utilitaires sécurité, réseau et développement"
+  },
+  "tabs": {
+    "secureShare": "Sécurité & Partage",
+    "network": "Réseau",
+    "dev": "Dev & Utilitaires",
+    "display": "Écran"
+  },
+  "errors": {
+    "backendUnavailable": "Ce service nécessite un backend qui n'est pas encore configuré."
+  },
+  "secureNote": {
+    "title": "Note Sécurisée · E2EE",
+    "description": "Colle ton texte, log, ou script ici…",
+    "placeholder": "Colle ton texte, log, ou script ici…",
+    "expirationLabel": "Expiration",
+    "expiration1h": "1 heure",
+    "expiration1d": "1 jour",
+    "expiration7d": "7 jours",
+    "burnAfterRead": "Supprimer après lecture",
+    "create": "Sauvegarder",
+    "linkCreated": "Lien créé, valable jusqu'à expiration",
+    "copyLink": "Copier le lien",
+    "copied": "Lien copié dans le presse-papier !",
+    "errors": {
+      "empty": "Le contenu ne peut pas être vide"
+    }
+  },
+  "secureNoteReveal": {
+    "title": "Note reçue",
+    "loading": "Déchiffrement…",
+    "notFound": "Note expirée ou déjà consultée",
+    "missingKey": "Clé de déchiffrement manquante dans le lien",
+    "decryptError": "Impossible de déchiffrer cette note",
+    "burnedNotice": "Cette note a été supprimée après lecture"
+  },
+  "fileDrop": {
+    "title": "File Drop Privé · E2EE",
+    "description": "Glisse un fichier ici ou clique pour choisir !",
+    "dropzoneLabel": "Glisse un fichier ici ou clique pour choisir !",
+    "noteOptional": "Ajouter une note (facultatif)",
+    "upload": "Uploader",
+    "uploading": "Envoi en cours…",
+    "maxSizeHint": "Taille max : 100 Mo. Les fichiers expirent après 7 jours.",
+    "errors": {
+      "tooLarge": "Fichier trop volumineux (max 100 Mo)",
+      "empty": "Sélectionne un fichier"
+    },
+    "linkCreated": "Lien créé, valable 7 jours"
+  },
+  "fileDropReveal": {
+    "title": "Fichier reçu",
+    "loading": "Déchiffrement…",
+    "notFound": "Fichier expiré ou déjà téléchargé",
+    "missingKey": "Clé de déchiffrement manquante dans le lien",
+    "decryptError": "Impossible de déchiffrer ce fichier",
+    "download": "Télécharger"
+  },
+  "hashCalculator": {
+    "title": "Calculateur de Hash (SHA)",
+    "description": "Glisse tes fichiers ici ou clique pour choisir !",
+    "dropzoneLabel": "Glisse tes fichiers ici ou clique pour choisir !",
+    "algorithm": "Algorithme",
+    "computing": "Calcul en cours…",
+    "copy": "Copier"
+  },
+  "passwordGenerator": {
+    "title": "Générateur de mot de passe",
+    "description": "Cliquez sur 'Générer' (Cliquer pour copier)",
+    "length": "Longueur",
+    "uppercase": "Majuscules (A-Z)",
+    "lowercase": "Minuscules (a-z)",
+    "numbers": "Chiffres (0-9)",
+    "symbols": "Symboles (!@#...)",
+    "generate": "Générer",
+    "copied": "Mot de passe copié !",
+    "errors": {
+      "noCharset": "Sélectionne au moins un type de caractère"
+    }
+  },
+  "dnsLookup": {
+    "title": "DNS Lookup",
+    "description": "Interroger les enregistrements DNS d'un domaine",
+    "domainPlaceholder": "Domaine (ex: google.com)",
+    "recordType": "Type",
+    "lookup": "Consulter",
+    "noResults": "Aucun enregistrement trouvé",
+    "columns": {
+      "name": "Nom",
+      "type": "Type",
+      "ttl": "TTL",
+      "data": "Valeur"
+    },
+    "errors": {
+      "invalidDomain": "Domaine invalide"
+    }
+  },
+  "whois": {
+    "title": "WHOIS",
+    "description": "Informations d'enregistrement d'un domaine",
+    "domainPlaceholder": "Domaine (ex: google.com)",
+    "lookup": "Consulter",
+    "fields": {
+      "domain": "Domaine",
+      "status": "Statut",
+      "nameservers": "Serveurs DNS",
+      "creationDate": "Date de création",
+      "expirationDate": "Date d'expiration"
+    },
+    "errors": {
+      "invalidDomain": "Domaine invalide",
+      "notFound": "Domaine introuvable"
+    }
+  },
+  "subnetCalculator": {
+    "title": "Calculateur de Sous-Réseau",
+    "description": "Adresse IP au format CIDR",
+    "placeholder": "192.168.1.1/24",
+    "calculate": "Calculer",
+    "results": {
+      "networkAddress": "Adresse Réseau",
+      "broadcastAddress": "Broadcast",
+      "hostCount": "Nombre d'hôtes",
+      "usableRange": "Plage Utilisable",
+      "subnetMask": "Masque de sous-réseau"
+    },
+    "errors": {
+      "invalidCidr": "Format invalide, attendu ex: 192.168.1.1/24"
+    }
+  },
+  "unitConverter": {
+    "title": "Convertisseur d'unités",
+    "storageTitle": "Stockage (Données/Mémoire)",
+    "speedTitle": "Vitesse (Réseau vs Téléchargement)",
+    "binaryToggle": "Base 1024 (binaire)",
+    "value": "Valeur",
+    "from": "De",
+    "to": "Vers"
+  },
+  "base64": {
+    "title": "Encodeur/Décodeur Base64",
+    "inputPlaceholder": "Texte à encoder/décoder…",
+    "encode": "Encoder (Text → B64)",
+    "decode": "Décoder (B64 → Text)",
+    "outputPlaceholder": "Résultat…",
+    "errors": {
+      "invalidBase64": "Base64 invalide"
+    }
+  },
+  "textDiff": {
+    "title": "Comparateur de Texte (Diff)",
+    "original": "Original",
+    "originalPlaceholder": "Texte original…",
+    "modified": "Modifié",
+    "modifiedPlaceholder": "Texte modifié…",
+    "compare": "Comparer",
+    "noDifferences": "Aucune différence"
+  },
+  "qrGenerator": {
+    "title": "Générateur de QR Code",
+    "textPlaceholder": "URL ou Texte (ex: https://etixel.com)",
+    "size": "Taille",
+    "sizeSmall": "Petit (128px)",
+    "sizeMedium": "Moyen (256px)",
+    "sizeLarge": "Grand (512px)",
+    "generate": "Générer",
+    "placeholder": "Le QR Code apparaîtra ici",
+    "downloadPng": "Télécharger PNG",
+    "downloadSvg": "Télécharger SVG"
+  },
+  "screenTester": {
+    "title": "Testeur d'Écran Pro",
+    "description": "Analysez votre moniteur en profondeur :",
+    "deadPixel": "🔴 Pixels Morts : Couleurs unies & CMYK",
+    "colorimetry": "🌈 Colorimétrie : Banding & Dégradés",
+    "geometry": "📐 Géométrie : Grilles & Alignement",
+    "sharpness": "👁️ Netteté : Textes & Focus",
+    "gamma": "🌑 Gamma : Noirs & Blancs",
+    "launch": "Lancer la Suite de Tests"
+  },
+  "screenTest": {
+    "exit": "Quitter",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "stepOf": "Étape {{current}} / {{total}}",
+    "deadPixel": {
+      "title": "Pixels Morts",
+      "instructions": "Observez attentivement l'écran pour repérer un pixel qui ne change pas de couleur."
+    },
+    "colorimetry": {
+      "title": "Colorimétrie",
+      "instructions": "Vérifiez la fluidité du dégradé, sans bandes visibles."
+    },
+    "geometry": {
+      "title": "Géométrie",
+      "instructions": "Contrôlez l'alignement de la grille jusque dans les coins de l'écran."
+    },
+    "sharpness": {
+      "title": "Netteté",
+      "instructions": "Le texte doit rester net et lisible sur toute la surface."
+    },
+    "gamma": {
+      "title": "Gamma",
+      "instructions": "Les blocs doivent rester distinguables du noir pur au blanc pur."
+    }
+  }
+}

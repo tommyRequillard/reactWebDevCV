@@ -1,0 +1,210 @@
+{
+  "page": {
+    "title": "Tools",
+    "subtitle": "Security, network and developer utilities"
+  },
+  "tabs": {
+    "secureShare": "Security & Sharing",
+    "network": "Network",
+    "dev": "Dev & Utilities",
+    "display": "Display"
+  },
+  "errors": {
+    "backendUnavailable": "This service needs a backend that hasn't been configured yet."
+  },
+  "secureNote": {
+    "title": "Secure Note · E2EE",
+    "description": "Paste your text, log, or script here…",
+    "placeholder": "Paste your text, log, or script here…",
+    "expirationLabel": "Expiration",
+    "expiration1h": "1 hour",
+    "expiration1d": "1 day",
+    "expiration7d": "7 days",
+    "burnAfterRead": "Delete after reading",
+    "create": "Save",
+    "linkCreated": "Link created, valid until expiration",
+    "copyLink": "Copy link",
+    "copied": "Link copied!",
+    "errors": {
+      "empty": "Content cannot be empty"
+    }
+  },
+  "secureNoteReveal": {
+    "title": "Received note",
+    "loading": "Decrypting…",
+    "notFound": "Note expired or already viewed",
+    "missingKey": "Decryption key missing from the link",
+    "decryptError": "Unable to decrypt this note",
+    "burnedNotice": "This note was deleted after reading"
+  },
+  "fileDrop": {
+    "title": "Private File Drop · E2EE",
+    "description": "Drop a file here or click to choose!",
+    "dropzoneLabel": "Drop a file here or click to choose!",
+    "noteOptional": "Add a note (optional)",
+    "upload": "Upload",
+    "uploading": "Uploading…",
+    "maxSizeHint": "Max size: 100 MB. Files expire after 7 days.",
+    "errors": {
+      "tooLarge": "File too large (max 100 MB)",
+      "empty": "Select a file"
+    },
+    "linkCreated": "Link created, valid for 7 days"
+  },
+  "fileDropReveal": {
+    "title": "Received file",
+    "loading": "Decrypting…",
+    "notFound": "File expired or already downloaded",
+    "missingKey": "Decryption key missing from the link",
+    "decryptError": "Unable to decrypt this file",
+    "download": "Download"
+  },
+  "hashCalculator": {
+    "title": "Hash Calculator (SHA)",
+    "description": "Drop your files here or click to choose!",
+    "dropzoneLabel": "Drop your files here or click to choose!",
+    "algorithm": "Algorithm",
+    "computing": "Computing…",
+    "copy": "Copy"
+  },
+  "passwordGenerator": {
+    "title": "Password Generator",
+    "description": "Click 'Generate' (click to copy)",
+    "length": "Length",
+    "uppercase": "Uppercase (A-Z)",
+    "lowercase": "Lowercase (a-z)",
+    "numbers": "Numbers (0-9)",
+    "symbols": "Symbols (!@#...)",
+    "generate": "Generate",
+    "copied": "Password copied!",
+    "errors": {
+      "noCharset": "Select at least one character type"
+    }
+  },
+  "dnsLookup": {
+    "title": "DNS Lookup",
+    "description": "Query DNS records for a domain",
+    "domainPlaceholder": "Domain (e.g. google.com)",
+    "recordType": "Type",
+    "lookup": "Lookup",
+    "noResults": "No records found",
+    "columns": {
+      "name": "Name",
+      "type": "Type",
+      "ttl": "TTL",
+      "data": "Value"
+    },
+    "errors": {
+      "invalidDomain": "Invalid domain"
+    }
+  },
+  "whois": {
+    "title": "WHOIS",
+    "description": "Registration information for a domain",
+    "domainPlaceholder": "Domain (e.g. google.com)",
+    "lookup": "Lookup",
+    "fields": {
+      "domain": "Domain",
+      "status": "Status",
+      "nameservers": "Nameservers",
+      "creationDate": "Creation date",
+      "expirationDate": "Expiration date"
+    },
+    "errors": {
+      "invalidDomain": "Invalid domain",
+      "notFound": "Domain not found"
+    }
+  },
+  "subnetCalculator": {
+    "title": "Subnet Calculator",
+    "description": "CIDR-formatted IP address",
+    "placeholder": "192.168.1.1/24",
+    "calculate": "Calculate",
+    "results": {
+      "networkAddress": "Network Address",
+      "broadcastAddress": "Broadcast",
+      "hostCount": "Host count",
+      "usableRange": "Usable range",
+      "subnetMask": "Subnet mask"
+    },
+    "errors": {
+      "invalidCidr": "Invalid format, expected e.g. 192.168.1.1/24"
+    }
+  },
+  "unitConverter": {
+    "title": "Unit Converter",
+    "storageTitle": "Storage (Data/Memory)",
+    "speedTitle": "Speed (Network vs Download)",
+    "binaryToggle": "Base 1024 (binary)",
+    "value": "Value",
+    "from": "From",
+    "to": "To"
+  },
+  "base64": {
+    "title": "Base64 Encoder/Decoder",
+    "inputPlaceholder": "Text to encode/decode…",
+    "encode": "Encode (Text → B64)",
+    "decode": "Decode (B64 → Text)",
+    "outputPlaceholder": "Result…",
+    "errors": {
+      "invalidBase64": "Invalid Base64"
+    }
+  },
+  "textDiff": {
+    "title": "Text Comparator (Diff)",
+    "original": "Original",
+    "originalPlaceholder": "Original text…",
+    "modified": "Modified",
+    "modifiedPlaceholder": "Modified text…",
+    "compare": "Compare",
+    "noDifferences": "No differences"
+  },
+  "qrGenerator": {
+    "title": "QR Code Generator",
+    "textPlaceholder": "URL or text (e.g. https://etixel.com)",
+    "size": "Size",
+    "sizeSmall": "Small (128px)",
+    "sizeMedium": "Medium (256px)",
+    "sizeLarge": "Large (512px)",
+    "generate": "Generate",
+    "placeholder": "The QR Code will appear here",
+    "downloadPng": "Download PNG",
+    "downloadSvg": "Download SVG"
+  },
+  "screenTester": {
+    "title": "Pro Screen Tester",
+    "description": "Analyze your monitor in depth:",
+    "deadPixel": "🔴 Dead Pixels: Solid colors & CMYK",
+    "colorimetry": "🌈 Colorimetry: Banding & gradients",
+    "geometry": "📐 Geometry: Grids & alignment",
+    "sharpness": "👁️ Sharpness: Text & focus",
+    "gamma": "🌑 Gamma: Blacks & whites",
+    "launch": "Launch Test Suite"
+  },
+  "screenTest": {
+    "exit": "Exit",
+    "next": "Next",
+    "previous": "Previous",
+    "stepOf": "Step {{current}} / {{total}}",
+    "deadPixel": {
+      "title": "Dead Pixels",
+      "instructions": "Carefully watch the screen to spot a pixel that doesn't change color."
+    },
+    "colorimetry": {
+      "title": "Colorimetry",
+      "instructions": "Check the gradient smoothness, with no visible banding."
+    },
+    "geometry": {
+      "title": "Geometry",
+      "instructions": "Check the grid alignment all the way to the screen corners."
+    },
+    "sharpness": {
+      "title": "Sharpness",
+      "instructions": "Text should stay sharp and legible across the whole surface."
+    },
+    "gamma": {
+      "title": "Gamma",
+      "instructions": "Blocks should stay distinguishable from pure black to pure white."
+    }
+  }
+}

@@ -1,9 +1,11 @@
 import type { ComponentType, SVGProps } from 'react'
 import {
   HomeIcon,
+  CommandLineIcon,
   BuildingStorefrontIcon,
   PhotoIcon,
   ShieldCheckIcon,
+  WrenchScrewdriverIcon,
   DocumentDuplicateIcon,
   UserGroupIcon,
   EnvelopeOpenIcon,
@@ -17,10 +19,12 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { to: '/cv', labelKey: 'nav.cv', icon: HomeIcon, end: true },
+  { to: '/', labelKey: 'nav.landing', icon: CommandLineIcon, end: true },
+  { to: '/cv', labelKey: 'nav.cv', icon: HomeIcon },
   { to: '/services', labelKey: 'nav.services', icon: BuildingStorefrontIcon },
   { to: '/portfolio', labelKey: 'nav.portfolio', icon: PhotoIcon },
   { to: '/cybersecurity', labelKey: 'nav.cybersecurity', icon: ShieldCheckIcon },
+  { to: '/tools', labelKey: 'nav.tools', icon: WrenchScrewdriverIcon },
   { to: '/documents', labelKey: 'nav.documents', icon: DocumentDuplicateIcon },
   { to: '/skills', labelKey: 'nav.skills', icon: UserGroupIcon },
   { to: '/contact', labelKey: 'nav.contact', icon: EnvelopeOpenIcon },

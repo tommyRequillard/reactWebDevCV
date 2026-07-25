@@ -15,6 +15,7 @@ export default [
       '.storybook/**',
       'public/**',
       'e2e/**',
+      'functions/**',
       '**/*.config.js',
       '**/*.config.cjs',
       '**/*.config.ts',
