@@ -52,7 +52,7 @@ describe('gamificationStore', () => {
 
   it('should unlock "L\'Explorateur" when all pages visited', () => {
     const { trackPage } = useGamificationStore.getState()
-    const allPages = ['/', '/services', '/portfolio', '/cybersecurity', '/documents', '/skills', '/contact']
+    const allPages = ['/', '/services', '/portfolio', '/tools', '/documents', '/skills', '/contact']
     allPages.forEach((page) => trackPage(page))
     const state = useGamificationStore.getState()
     expect(state.achievements).toContain("L'Explorateur")

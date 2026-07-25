@@ -58,20 +58,6 @@ const GATES: Gate[] = [
   },
   {
     index: '// 04',
-    path: '/cyber',
-    route: '/cybersecurity',
-    accent: 'lime',
-    label: 'Cybersécurité',
-    meta: 'shield.init',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6l-8-3Z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    index: '// 05',
     path: '/docs',
     route: '/documents',
     accent: 'amber',
@@ -85,7 +71,7 @@ const GATES: Gate[] = [
     ),
   },
   {
-    index: '// 06',
+    index: '// 05',
     path: '/skills',
     route: '/skills',
     accent: 'cyan',
@@ -99,7 +85,7 @@ const GATES: Gate[] = [
     ),
   },
   {
-    index: '// 07',
+    index: '// 06',
     path: '/tools',
     route: '/tools',
     accent: 'purple',
@@ -112,7 +98,7 @@ const GATES: Gate[] = [
     ),
   },
   {
-    index: '// 08',
+    index: '// 07',
     path: '/contact',
     route: '/contact',
     accent: 'red',

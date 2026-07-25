@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 const routes = [
   { path: '/services', name: /services/i },
   { path: '/portfolio', name: /portfolio/i },
-  { path: '/cybersecurity', name: /cyber/i },
+  { path: '/tools', name: /outils|tools/i },
   { path: '/documents', name: /documents|certif/i },
   { path: '/skills', name: /skills|compétences/i },
   { path: '/contact', name: /contact/i },

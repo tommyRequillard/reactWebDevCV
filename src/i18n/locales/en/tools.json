@@ -7,10 +7,58 @@
     "secureShare": "Security & Sharing",
     "network": "Network",
     "dev": "Dev & Utilities",
-    "display": "Display"
+    "display": "Display",
+    "cybersecurity": "Cybersecurity"
   },
   "errors": {
-    "backendUnavailable": "This service needs a backend that hasn't been configured yet."
+    "backendUnavailable": "This service needs a backend that hasn't been configured yet.",
+    "invalidUrl": "Invalid URL",
+    "invalidIp": "Invalid IP address",
+    "apiKeyMissing": "Missing API key",
+    "quota": "Quota reached, try again later"
+  },
+  "cyberWatch": {
+    "title": "Cybersecurity watch",
+    "subtitle": "Wakelet selection · threats & countermeasures",
+    "open": "Open"
+  },
+  "pipelines": {
+    "title": "CI/CD Pipelines",
+    "subtitle": "CI/CD pipeline · build & tests"
+  },
+  "laboratory": {
+    "title": "Laboratory"
+  },
+  "virusTotal": {
+    "title": "VirusTotal · URL",
+    "description": "Check the reputation of a URL",
+    "placeholder": "https://example.com",
+    "scan": "Scan URL",
+    "positives": "Detections: {{count}}/{{total}}",
+    "reputation": "Reputation",
+    "lastAnalysis": "Last analysis"
+  },
+  "shodan": {
+    "title": "Shodan · IP",
+    "description": "Public information about an IP address",
+    "placeholder": "8.8.8.8",
+    "lookup": "Lookup",
+    "org": "Organization",
+    "country": "Country",
+    "ports": "Open ports",
+    "hostnames": "Hostnames"
+  },
+  "hibp": {
+    "title": "Have I Been Pwned",
+    "description": "Has this password been leaked?",
+    "placeholder": "Enter a password…",
+    "check": "Check",
+    "leaked": "Password compromised: {{count}} leaks",
+    "safe": "No known leaks"
+  },
+  "speedTest": {
+    "title": "Speed Test",
+    "description": "Measure your connection's download, upload speed and latency."
   },
   "secureNote": {
     "title": "Secure Note · E2EE",
@@ -161,7 +209,7 @@
   },
   "qrGenerator": {
     "title": "QR Code Generator",
-    "textPlaceholder": "URL or text (e.g. https://etixel.com)",
+    "textPlaceholder": "URL or text to encode…",
     "size": "Size",
     "sizeSmall": "Small (128px)",
     "sizeMedium": "Medium (256px)",

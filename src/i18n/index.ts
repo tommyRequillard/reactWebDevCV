@@ -5,7 +5,6 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import commonFr from './locales/fr/common.json'
 import cvFr from './locales/fr/cv.json'
 import portfolioFr from './locales/fr/portfolio.json'
-import cybersecurityFr from './locales/fr/cybersecurity.json'
 import documentsFr from './locales/fr/documents.json'
 import skillsFr from './locales/fr/skills.json'
 import contactFr from './locales/fr/contact.json'
@@ -15,7 +14,6 @@ import toolsFr from './locales/fr/tools.json'
 import commonEn from './locales/en/common.json'
 import cvEn from './locales/en/cv.json'
 import portfolioEn from './locales/en/portfolio.json'
-import cybersecurityEn from './locales/en/cybersecurity.json'
 import documentsEn from './locales/en/documents.json'
 import skillsEn from './locales/en/skills.json'
 import contactEn from './locales/en/contact.json'
@@ -26,7 +24,6 @@ export const NAMESPACES = [
   'common',
   'cv',
   'portfolio',
-  'cybersecurity',
   'documents',
   'skills',
   'contact',
@@ -41,7 +38,6 @@ const resources = {
     common: commonFr,
     cv: cvFr,
     portfolio: portfolioFr,
-    cybersecurity: cybersecurityFr,
     documents: documentsFr,
     skills: skillsFr,
     contact: contactFr,
@@ -52,7 +48,6 @@ const resources = {
     common: commonEn,
     cv: cvEn,
     portfolio: portfolioEn,
-    cybersecurity: cybersecurityEn,
     documents: documentsEn,
     skills: skillsEn,
     contact: contactEn,

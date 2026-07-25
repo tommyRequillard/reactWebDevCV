@@ -1,11 +1,10 @@
-import type { RouteObject } from 'react-router-dom'
+import { Navigate, type RouteObject } from 'react-router-dom'
 import { RootLayout } from '@layouts/RootLayout'
 import { AppShell } from '@layouts/AppShell'
 import { LandingPage } from '@features/landing/LandingPage'
 import { CvPage } from '@features/cv/CvPage'
 import { ServicesPage } from '@features/services/ServicesPage'
 import { PortfolioPage } from '@features/portfolio/PortfolioPage'
-import { CybersecurityPage } from '@features/cybersecurity/CybersecurityPage'
 import { ToolsPage } from '@features/tools/ToolsPage'
 import { ScreenTestPage } from '@features/tools/screen-test/ScreenTestPage'
 import { SecureNoteResultPage } from '@features/tools/secure-note/components/SecureNoteResultPage'
@@ -45,8 +44,7 @@ export const routes: RouteObject[] = [
           },
           {
             path: 'cybersecurity',
-            element: <CybersecurityPage />,
-            handle: { titleKey: 'nav.cybersecurity', titleNs: 'common' },
+            element: <Navigate to="/tools?tab=cybersecurity" replace />,
           },
           {
             path: 'tools',

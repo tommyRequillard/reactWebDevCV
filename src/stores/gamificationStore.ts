@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-const ALL_PAGES = ['/', '/services', '/portfolio', '/cybersecurity', '/documents', '/skills', '/contact']
+const ALL_PAGES = ['/', '/services', '/portfolio', '/tools', '/documents', '/skills', '/contact']
 
 interface GamificationState {
   achievements: string[]

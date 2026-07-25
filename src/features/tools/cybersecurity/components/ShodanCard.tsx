@@ -8,7 +8,7 @@ import { Badge } from '@shared/ui/Badge'
 import { useShodanLookup } from '../hooks/useShodanLookup'
 
 export function ShodanCard() {
-  const { t } = useTranslation('cybersecurity')
+  const { t } = useTranslation('tools')
   const [ip, setIp] = useState('')
   const { data, loading, error, lookup } = useShodanLookup()
 

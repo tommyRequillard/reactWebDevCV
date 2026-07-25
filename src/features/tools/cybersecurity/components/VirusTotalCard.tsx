@@ -8,7 +8,7 @@ import { Badge } from '@shared/ui/Badge'
 import { useVirusTotalScan } from '../hooks/useVirusTotalScan'
 
 export function VirusTotalCard() {
-  const { t } = useTranslation('cybersecurity')
+  const { t } = useTranslation('tools')
   const [url, setUrl] = useState('')
   const [showDetails, setShowDetails] = useState(false)
   const { report, stats, loading, error, scan } = useVirusTotalScan()

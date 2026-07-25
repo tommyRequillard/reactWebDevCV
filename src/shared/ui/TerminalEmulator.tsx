@@ -16,6 +16,7 @@ const COMMANDS: Record<string, string> = {
   skills     → Compétences principales
   contact    → Informations de contact
   projects   → Projets notables
+  toolbox    → Boîte à outils PowerShell (admin Windows)
   clear      → Effacer l'écran
   exit       → Fermer le terminal`,
 
@@ -38,6 +39,79 @@ Cloud     → AWS, GCP, Azure fundamentals`,
   projects: `▸ CV Portfolio (ce site !)  → React + Vite + TS
 ▸ RecruitLAFF               → App cartographie SI
 ▸ Pipelines DevSecOps        → CI/CD sécurisées`,
+
+  toolbox: `🛠️ Boîte à outils PowerShell (Terminal admin, à exécuter en tant qu'administrateur)
+Sélectionnez une ligne pour la copier-coller dans PowerShell.
+──────────────────────────────────────────────────────────
+
+🛠️ Maintenance & Nettoyage
+
+# Nettoyage disque avancé (débloque toutes les options cachées)
+cleanmgr /sageset:65535; cleanmgr /sagerun:65535
+
+# Nettoyage des composants (WinSxS) — allège le dossier Windows
+dism /online /Cleanup-Image /StartComponentCleanup
+
+# Optimisation SSD (force le TRIM sur le disque système C:)
+Optimize-Volume -DriveLetter C -ReTrim -Verbose
+
+# Vider les journaux d'événements (nettoyage complet, irréversible)
+Wevtutil el | Foreach-Object {wevtutil cl "$_"}
+
+# Vider la corbeille
+Clear-RecycleBin -Force
+
+🚑 Réparation & Diagnostic
+
+# Créer un point de restauration système immédiat
+Checkpoint-Computer -Description "Toolbox Manual Point" -RestorePointType "MODIFY_SETTINGS"
+
+# Réparation système (scan + restauration des fichiers corrompus, long)
+sfc /scannow; DISM /Online /Cleanup-Image /RestoreHealth
+
+# Reset Windows Update (vide le cache, corrige les erreurs de MAJ)
+Stop-Service wuauserv,cryptSvc,bits,msiserver; Remove-Item "$env:windir\\SoftwareDistribution" -Recurse -Force; Start-Service wuauserv,cryptSvc,bits,msiserver
+
+# Reset réseau complet (DNS, Winsock, pile TCP/IP — redémarrage conseillé après)
+ipconfig /flushdns; ipconfig /release; ipconfig /renew; netsh winsock reset; netsh int ip reset
+
+# Liste des derniers correctifs (hotfix) installés
+Get-HotFix | Sort-Object InstalledOn -Descending
+
+💻 Infos & Réseau
+
+# Scan des appareils sur le réseau local (IP + MAC + hostname)
+Write-Host "Analyse en cours..."; arp -a | Select-String '\\d{1,3}(\\.\\d{1,3}){3}' | ForEach-Object { $parts = $_.Line.Trim() -split '\\s+'; if ($parts[0] -as [ipaddress]) { $ip = $parts[0]; $mac = $parts[1]; try { $hostn = [System.Net.Dns]::GetHostEntry($ip).HostName } catch { $hostn = '' }; [PSCustomObject]@{ IP=$ip; MAC=$mac; Hostname=$hostn } } } | Format-Table -AutoSize
+
+# Infos PC (clé de produit OEM + numéro de série)
+Write-Host "Clé Windows : $((Get-WmiObject -query 'select * from SoftwareLicensingService').OA3xOriginalProductKey)"; Write-Host "Numéro de Série : $((Get-WmiObject win32_bios).SerialNumber)"
+
+# Statut d'activation Windows
+Get-CimInstance -ClassName SoftwareLicensingProduct -Filter "PartialProductKey IS NOT NULL" | Select-Object Name, LicenseStatus
+
+# Rapport de santé de la batterie (PC portable)
+powercfg /batteryreport /output "C:\\battery_report.html"; Start-Process "C:\\battery_report.html"
+
+# Mots de passe WiFi enregistrés (exécution locale requise)
+netsh wlan show profiles | Select-String "All User Profile|Tous les utilisateurs" | %{$name=$_.ToString().Split(":")[1].Trim(); $out=netsh wlan show profile name="$name" key=clear; $pass=($out | Select-String "Key Content|Contenu"); if($pass){[PSCustomObject]@{Profile=$name;Password=$pass.ToString().Split(":")[1].Trim()}}} | Format-Table -AutoSize
+
+# Top 10 des processus les plus gourmands en CPU
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 10
+
+📦 Outils & Installation
+
+# Installer la suite Sysinternals (ProcExp, Autoruns...) dans C:\\Sysinternals
+New-Item -ItemType Directory -Force -Path C:\\Sysinternals; Invoke-WebRequest -Uri https://download.sysinternals.com/files/SysinternalsSuite.zip -OutFile C:\\Sysinternals\\sys.zip; Expand-Archive -Path C:\\Sysinternals\\sys.zip -DestinationPath C:\\Sysinternals -Force; Remove-Item C:\\Sysinternals\\sys.zip
+
+# Sauvegarder tous les pilotes tiers vers C:\\DriversBackup
+Export-WindowsDriver -Online -Destination "C:\\DriversBackup"
+
+# Santé des disques physiques (S.M.A.R.T.)
+Get-PhysicalDisk | Select-Object FriendlyName, MediaType, HealthStatus, OperationalStatus
+
+──────────────────────────────────────────────────────────
+⚠️  Certaines commandes sont destructives ou nécessitent des droits administrateur
+    (logs, reset réseau/WU, WiFi). Toujours créer un point de restauration avant.`,
 }
 
 export function TerminalEmulator() {

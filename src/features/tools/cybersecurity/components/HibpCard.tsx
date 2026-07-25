@@ -8,7 +8,7 @@ import { Badge } from '@shared/ui/Badge'
 import { usePwnedPasswordCheck } from '../hooks/usePwnedPasswordCheck'
 
 export function HibpCard() {
-  const { t } = useTranslation('cybersecurity')
+  const { t } = useTranslation('tools')
   const [password, setPassword] = useState('')
   const { result, loading, error, check } = usePwnedPasswordCheck()
 

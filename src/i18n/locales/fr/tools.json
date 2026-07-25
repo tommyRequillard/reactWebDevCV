@@ -7,10 +7,58 @@
     "secureShare": "Sécurité & Partage",
     "network": "Réseau",
     "dev": "Dev & Utilitaires",
-    "display": "Écran"
+    "display": "Écran",
+    "cybersecurity": "Cybersécurité"
   },
   "errors": {
-    "backendUnavailable": "Ce service nécessite un backend qui n'est pas encore configuré."
+    "backendUnavailable": "Ce service nécessite un backend qui n'est pas encore configuré.",
+    "invalidUrl": "URL invalide",
+    "invalidIp": "Adresse IP invalide",
+    "apiKeyMissing": "Clé API manquante",
+    "quota": "Quota atteint, réessayez plus tard"
+  },
+  "cyberWatch": {
+    "title": "Veille cybersécurité",
+    "subtitle": "Sélection Wakelet · menaces & contre-mesures",
+    "open": "Ouvrir"
+  },
+  "pipelines": {
+    "title": "Pipelines CI/CD",
+    "subtitle": "Pipeline CI/CD · build & tests"
+  },
+  "laboratory": {
+    "title": "Laboratoire"
+  },
+  "virusTotal": {
+    "title": "VirusTotal · URL",
+    "description": "Vérifier la réputation d'une URL",
+    "placeholder": "https://exemple.com",
+    "scan": "Analyser l'URL",
+    "positives": "Détections : {{count}}/{{total}}",
+    "reputation": "Réputation",
+    "lastAnalysis": "Dernière analyse"
+  },
+  "shodan": {
+    "title": "Shodan · IP",
+    "description": "Informations publiques sur une adresse IP",
+    "placeholder": "8.8.8.8",
+    "lookup": "Consulter",
+    "org": "Organisation",
+    "country": "Pays",
+    "ports": "Ports ouverts",
+    "hostnames": "Hostnames"
+  },
+  "hibp": {
+    "title": "Have I Been Pwned",
+    "description": "Un mot de passe a-t-il fuité ?",
+    "placeholder": "Saisir un mot de passe…",
+    "check": "Vérifier",
+    "leaked": "Mot de passe compromis : {{count}} fuites",
+    "safe": "Aucune fuite connue"
+  },
+  "speedTest": {
+    "title": "Test de Vitesse",
+    "description": "Mesurez le débit descendant, montant et la latence de votre connexion."
   },
   "secureNote": {
     "title": "Note Sécurisée · E2EE",
@@ -161,7 +209,7 @@
   },
   "qrGenerator": {
     "title": "Générateur de QR Code",
-    "textPlaceholder": "URL ou Texte (ex: https://etixel.com)",
+    "textPlaceholder": "URL ou texte à encoder…",
     "size": "Taille",
     "sizeSmall": "Petit (128px)",
     "sizeMedium": "Moyen (256px)",
