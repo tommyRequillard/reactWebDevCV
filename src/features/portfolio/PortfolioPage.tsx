@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 
@@ -6,22 +6,16 @@ import { GlassPanel } from '@shared/ui/GlassPanel'
 import { GradientText } from '@shared/ui/GradientText'
 import { Select } from '@shared/ui/Select'
 import { fadeInUp } from '@shared/motion/variants'
-import { useAppDispatch, useAppSelector } from '@stores/hooks'
-import { computeStats } from '@stores/slices/portfolioStatsSlice'
 
 import { projects } from './data/projects'
+import { computeStats } from './lib/computeStats'
 import { ProjectGrid } from './components/ProjectGrid'
 import { StacksRadarChart } from './components/StacksRadarChart'
 
 export function PortfolioPage() {
   const { t } = useTranslation('portfolio')
-  const dispatch = useAppDispatch()
-  const stats = useAppSelector((s) => s.portfolioStats)
+  const stats = useMemo(() => computeStats(projects), [])
   const [filter, setFilter] = useState<string>('')
-
-  useEffect(() => {
-    dispatch(computeStats({ projects }))
-  }, [dispatch])
 
   const stackOptions = useMemo(() => {
     const unique = Array.from(new Set(projects.flatMap((p) => p.stacks))).sort()
