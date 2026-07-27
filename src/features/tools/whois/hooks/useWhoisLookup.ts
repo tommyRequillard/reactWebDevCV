@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import axios from 'axios'
-import { TOOLS_PROXY_BASE } from '../lib/config'
+import { TOOLS_PROXY_BASE } from '../../lib/config'
 
 export interface WhoisEvent {
   eventAction: string

@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { TOOLS_PROXY_BASE } from '../lib/config'
+import { TOOLS_PROXY_BASE } from '../../lib/config'
 
 export type SpeedTestPhase = 'idle' | 'ping' | 'download' | 'upload' | 'done' | 'error'
 

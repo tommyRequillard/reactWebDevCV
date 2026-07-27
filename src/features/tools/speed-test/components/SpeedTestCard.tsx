@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { BoltIcon } from '@heroicons/react/24/outline'
 import { GlassPanel } from '@shared/ui/GlassPanel'
 import { NeonButton } from '@shared/ui/NeonButton'
-import { useSpeedTest } from '../../hooks/useSpeedTest'
+import { useSpeedTest } from '../hooks/useSpeedTest'
 
 function StatTile({ label, value, unit }: { label: string; value: string; unit: string }) {
   return (
