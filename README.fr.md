@@ -55,7 +55,7 @@ npm run dev
 ├── e2e/              # Specs Playwright (testDir dans playwright.config.ts)
 ├── functions/        # Cloudflare Pages Functions — API tools-proxy (voir plus bas)
 ├── public/           # Assets statiques copiés tels quels dans dist/
-├── scripts/          # push_script.ps1 (double push GitHub + GitLab)
+├── push_script.ps1   # Double push GitHub + GitLab (lié à un raccourci clavier local)
 └── docs/             # Notes d'architecture + plans d'implémentation historiques
 ```
 
@@ -70,7 +70,7 @@ Les alias sont déclarés **à la fois** dans `vite.config.ts` et `tsconfig.json
 - **Netlify** (principal) : le workflow GitHub Actions (`.github/workflows/main.yml`) et le pipeline GitLab (`.gitlab-ci.yml`) lancent un scan SonarCloud, buildent avec `DEPLOY_TARGET=netlify` et déploient `dist/` à chaque push sur `master`.
 - **Cloudflare Pages** (`tools-proxy`) : le dossier `functions/` contient les Pages Functions derrière `https://tools-proxy.pages.dev/api/{notes,files,speedtest,whois}`, avec les bindings KV + R2 déclarés dans `wrangler.toml`. `functions/` doit rester à la racine du dépôt — c'est là que Cloudflare Pages le découvre.
 - Le proxy VirusTotal vit dans un **dépôt séparé** (`vt-proxy`, déployé sur `vt-proxy.pages.dev`).
-- `scripts/push_script.ps1` pousse `master` vers les deux remotes `github` et `gitlab`.
+- `push_script.ps1` (racine du dépôt) pousse `master` vers les deux remotes `github` et `gitlab`.
 
 ## Tests
 

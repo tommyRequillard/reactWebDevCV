@@ -3,9 +3,8 @@ $GITHUB_REMOTE = "github"
 $GITLAB_REMOTE = "gitlab"
 
 # Toujours opérer depuis la racine du dépôt, où que le script soit lancé
-$REPO_ROOT = Split-Path $PSScriptRoot -Parent
-Set-Location $REPO_ROOT
-$LOG_FILE = Join-Path $REPO_ROOT "push_log.txt"
+Set-Location $PSScriptRoot
+$LOG_FILE = Join-Path $PSScriptRoot "push_log.txt"
 
 # Date et heure pour le log
 Add-Content -Path $LOG_FILE -Value ("{0} {1} - Démarrage du push" -f (Get-Date).ToShortDateString(), (Get-Date).ToLongTimeString())
