@@ -54,3 +54,11 @@ export { AchievementToast } from './AchievementToast'
 
 export { Timeline } from './Timeline'
 export type { TimelineItem, TimelineProps } from './Timeline'
+
+export { PageTransition } from './PageTransition'
+export type { PageTransitionProps } from './PageTransition'
+export { ScrollReveal } from './ScrollReveal'
+export type { ScrollRevealProps } from './ScrollReveal'
+export { CustomCursor } from './CustomCursor'
+export { TerminalEmulator } from './TerminalEmulator'
+export { WakeletEmbed } from './WakeletEmbed'

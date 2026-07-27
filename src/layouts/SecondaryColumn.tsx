@@ -8,7 +8,7 @@ interface RouteHandle {
 }
 
 const WakeletEmbed = lazy(() =>
-  import('@features/articles/components/WakeletEmbed').then((m) => ({ default: m.WakeletEmbed })),
+  import('@shared/ui/WakeletEmbed').then((m) => ({ default: m.WakeletEmbed })),
 )
 
 export interface SecondaryColumnProps {
