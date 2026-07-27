@@ -9,7 +9,7 @@ test.describe('home (CV)', () => {
   })
 
   test('has a working theme toggle', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/cv')
     const html = page.locator('html')
     const initialTheme = await html.getAttribute('data-theme')
     const toggle = page.getByRole('button', { name: /theme|thème/i }).first()
