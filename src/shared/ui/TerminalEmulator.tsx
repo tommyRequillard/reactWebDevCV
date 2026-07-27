@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useGamificationStore } from '@stores/gamificationStore'
 
@@ -129,11 +129,11 @@ export function TerminalEmulator() {
     setCurrentInput('')
   }
 
-  useEffect(() => {
-    if (isOpen) {
-      setLines([{ type: 'output', text: WELCOME_MSG }])
-    }
-  }, [isOpen])
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen)
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen)
+    if (isOpen) setLines([{ type: 'output', text: WELCOME_MSG }])
+  }
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -171,7 +171,7 @@ export function TerminalEmulator() {
     }
   }, [lines])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     const trimmed = currentInput.trim().toLowerCase()
     if (!trimmed) return

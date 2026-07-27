@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import './LandingPage.css'
 
@@ -9,7 +9,7 @@ interface Gate {
   accent: 'cyan' | 'purple' | 'pink' | 'lime' | 'amber' | 'red'
   label: string
   meta: string
-  icon: React.ReactNode
+  icon: ReactNode
 }
 
 const GATES: Gate[] = [
@@ -401,7 +401,7 @@ export function LandingPage() {
             <p className="landing-sublead">
               Développeur <span className="mono">Full-Stack</span> &amp; spécialiste{' '}
               <span className="mono">Cybersécurité</span>. Vingt ans de terrain, augmentés par
-              l'IA et l'automatisation — du vibe coding à la DevSecOps.
+              l&apos;IA et l&apos;automatisation — du vibe coding à la DevSecOps.
             </p>
 
             <div className="landing-cmdline" role="status" aria-live="polite">

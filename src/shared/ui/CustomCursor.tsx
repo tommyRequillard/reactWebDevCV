@@ -11,12 +11,10 @@ export function CustomCursor() {
 
   const [isHoveringInteractive, setIsHoveringInteractive] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
-  const [isTouchDevice, setIsTouchDevice] = useState(false)
+  const [isTouchDevice] = useState(() => window.matchMedia('(pointer: coarse)').matches)
 
   useEffect(() => {
-    const coarse = window.matchMedia('(pointer: coarse)').matches
-    setIsTouchDevice(coarse)
-    if (coarse) return
+    if (isTouchDevice) return
 
     const handleMove = (e: MouseEvent) => {
       x.set(e.clientX)
@@ -38,7 +36,7 @@ export function CustomCursor() {
       document.removeEventListener('mouseleave', handleLeave)
       document.removeEventListener('mouseenter', handleEnter)
     }
-  }, [x, y, isVisible])
+  }, [x, y, isVisible, isTouchDevice])
 
   if (isTouchDevice) return null
 
